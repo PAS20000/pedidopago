@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { AiOutlineMore } from 'react-icons/ai'
 import { TEmployees } from '../../../../../pages/index'
-import NextImage from '../../../Contracts/NextImage/NextImage'
+import NextImage from '../../../Contracts/NextImage'
 
 const EmployeesBody = ({
     name,

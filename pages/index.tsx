@@ -3,8 +3,8 @@ import { GetStaticProps } from 'next'
 import { axiosConfig } from '../src/utils/axiosConfig'
 import useUserState from '../src/hooks/useUserState/useUserState'
 import useTheme from '../src/hooks/useTheme/useTheme'
-import Card from '../src/components/Card/Card'
-import Table from '../src/components/Table/Table'
+import Card from '../src/components/Card'
+import Table from '../src/components/Table'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -55,6 +55,9 @@ const Home = ({
 
             </header>
             <main>
+                <h1>
+                   Organização
+                </h1>
                <Card>
                     <Table 
                         dataEmployees={dataEmployees} 
