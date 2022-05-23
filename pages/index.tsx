@@ -33,7 +33,7 @@ type TypeEmployees = {
 const Home = ({
     data
 } : TypeEmployees) => {
-    const { userState } = useUserState()
+    const { userState, setUserState } = useUserState()
     const { mode } = useTheme()
 
     console.log(data)
@@ -47,26 +47,34 @@ const Home = ({
             </header>
             <main>
                <Card>
-                    <Table 
-                        data={data} 
-                        tableHead={<>
-                            <th>
+                    <Table data={data} title={'Listagem de colaboradores'}>
+                        <th>
+                           <h4>
                                 Nome completo
-                            </th>
-                            <th>
+                           </h4>
+                        </th>
+                        <th>
+                            <h4>
                                 Departamento
-                            </th>
-                            <th>
+                            </h4>
+                        </th>
+                        <th>
+                            <h4>
                                 Cargo
-                            </th>
-                            <th>
+                            </h4>
+                        </th>
+                        <th >
+                           <h4>
                                 Unidade
-                            </th>
-                            <th>
+                           </h4>
+                        </th>
+                        <th >
+                            <h4>
                                 Status
-                            </th>
-                        </>}
-                    />
+                            </h4>
+                        </th>
+                        <th />
+                    </Table>
                </Card>
             </main>
             <footer>
