@@ -1,15 +1,16 @@
 import * as React from 'react'
 
-type TBread = 'Colaboradores' | 'Cargos'
+type TBread = 'Employees' | 'Roles'
 
-type TProps = {
+export type TBreadContext = {
     breadCrumb:TBread
-    setBreadCrumb:Function
+    setBreadCrumb:React.Dispatch<React.SetStateAction<TBread>>
 }
-export const BreadCrumbContext = React.createContext<TProps>(null)
+
+export const BreadCrumbContext = React.createContext<TBreadContext>(null)
 
 const BreadCrumbProivder = ({children}) => {
-    const [breadCrumb, setBreadCrumb] = React.useState<TBread>('Colaboradores')
+    const [breadCrumb, setBreadCrumb] = React.useState<TBread>('Employees')
    
    return(
         <BreadCrumbContext.Provider value={{breadCrumb, setBreadCrumb}}>

@@ -5,7 +5,7 @@ type States = 'dark' | 'light'
 
 type Contenxt = {
     mode:States
-    setMode:Function
+    setMode:React.Dispatch<React.SetStateAction<States>>
 }
 export const ThemeContext = React.createContext<Contenxt>(null)
 

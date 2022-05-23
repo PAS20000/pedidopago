@@ -1,22 +1,27 @@
 import * as React from 'react'
-import { TData } from '../../../pages'
+import { TEmployees, TRoles } from '../../../pages'
 import NextImage from '../Contracts/NextImage/NextImage'
 import { AiOutlineMore } from 'react-icons/ai'
 import Search from './Search/Search'
 import BreadCrumbs from './BreadCrumbs/BreadCrumbs'
+import useBreadCrumb from '../../hooks/useBreadCrumb/useBreadCrumb'
+import Roles from './Tbodies/Roles'
+import Employees from './Tbodies/Employees'
 
 type TTable = {
     children?:React.ReactNode
-    data:TData[]
+    dataEmployees:TEmployees[]
+    dataRoles:TRoles[]
     title?:string
 }
 
 const Table = ({
     children,
-    data,
-    title
+    dataEmployees,
+    dataRoles,
+    title,
 } : TTable) => {
-
+    const { breadCrumb } = useBreadCrumb()
 
     return(
         <>
@@ -26,41 +31,28 @@ const Table = ({
                 {title}
             </h2>
             <table style={{width:'100%'}}>
-                <thead>
-                    <tr>
-                        {children}
-                    </tr>
-                </thead>
+                {children}
                 <tbody>
-                    {data.map(item => 
-                        <tr key={item.agent_id}>
-                            <td>
-                                <NextImage 
-                                    src={item.image}
-                                    width={'50px'}
-                                    height={'50px'}
-                                    alt={`imagem-${item.name}`}
-                                />
-                                {item.name}
-                            </td>
-                            <td>
-                                {item.department}
-                            </td>
-                            <td>
-                                {item.role}
-                            </td>
-                            <td>
-                                {item.branch}
-                            </td>
-                            <td>
-                                {item.status ?? 'inactive'}
-                            </td>
-                            <td>
-                                <button>
-                                    <AiOutlineMore />
-                                </button>
-                            </td>
-                        </tr>)}
+                    {breadCrumb === 'Employees' && dataEmployees.map(item => 
+                        <Employees 
+                            key={item.agent_id}
+                            name={item.name}
+                            agent_id={item.agent_id}
+                            image={item.image}
+                            branch={item.branch}
+                            department={item.department}
+                            role={item.role}
+                            status={item.status}
+                        />)
+                    }
+                    {breadCrumb === 'Roles' && dataRoles.map(item => 
+                        <Roles 
+                            key={Math.random()} 
+                            agents_quantity={item.agents_quantity}
+                            departament={item.departament}
+                            name={item.name}
+                        />)
+                    }
                 </tbody>
                 <tfoot>
 

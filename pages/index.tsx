@@ -5,18 +5,20 @@ import useUserState from '../src/hooks/useUserState/useUserState'
 import useTheme from '../src/hooks/useTheme/useTheme'
 import Card from '../src/components/Card/Card'
 import Table from '../src/components/Table/Table'
+import Thead from '../src/components/Table/Thead/Thead'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
-    
+    const roles = await axiosConfig('https://pp-api-desafio.herokuapp.com/roles')
     return {
       props: {
-        data:employees.data.items
+        dataEmployees:employees.data.items,
+        dataRoles:roles.data.roles
       }
     }
   }
 
-export type TData = {
+export type TEmployees = {
     agent_id: number
     branch: string
     department: string
@@ -26,17 +28,25 @@ export type TData = {
     status: string
 }
 
-type TypeEmployees = {
-    data:TData[]
+export type TRoles = {
+    name: string,
+	departament: string,
+	agents_quantity: number
+}
+
+type THomeProps = {
+    dataEmployees:TEmployees[]
+    dataRoles:TRoles[]
 }
 
 const Home = ({
-    data
-} : TypeEmployees) => {
+    dataEmployees,
+    dataRoles
+} : THomeProps) => {
     const { userState, setUserState } = useUserState()
     const { mode } = useTheme()
 
-    console.log(data)
+    console.log(dataEmployees)
     console.log(userState)
     console.log(mode)
 
@@ -48,33 +58,39 @@ const Home = ({
             <main>
                <Card>
                     
-                    <Table data={data} title={'Listagem de colaboradores'}>
-                        <th>
-                           <h4>
-                                Nome completo
-                           </h4>
-                        </th>
-                        <th>
+                    <Table 
+                        dataEmployees={dataEmployees} 
+                        dataRoles={dataRoles} 
+                        title={'Listagem de colaboradores'}
+                    >
+                        <Thead>
+                            <th>
+                                <h4>
+                                    Nome completo
+                                </h4>
+                            </th>
+                            <th>
+                                <h4>
+                                    Departamento
+                                </h4>
+                            </th>
+                            <th>
+                                <h4>
+                                    Cargo
+                                </h4>
+                            </th>
+                            <th >
                             <h4>
-                                Departamento
+                                    Unidade
                             </h4>
-                        </th>
-                        <th>
-                            <h4>
-                                Cargo
-                            </h4>
-                        </th>
-                        <th >
-                           <h4>
-                                Unidade
-                           </h4>
-                        </th>
-                        <th >
-                            <h4>
-                                Status
-                            </h4>
-                        </th>
-                        <th />
+                            </th>
+                            <th >
+                                <h4>
+                                    Status
+                                </h4>
+                            </th>
+                            <th />
+                        </Thead>
                     </Table>
                </Card>
             </main>

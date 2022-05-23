@@ -1,14 +1,16 @@
 import * as React from 'react'
 
+type TUserState = 'active' | 'inactive'
+
 type Props = {
-    userState?:'active' | 'inactive'
-    setUserState?:Function
+    userState?:TUserState
+    setUserState?:React.Dispatch<React.SetStateAction<TUserState>>
 }
 
 export const UserStateContext = React.createContext<Props>(null);
 
 const UserStateProvider = ({children}) => {
-  const [userState, setUserState] = React.useState<'active' | 'inactive'>()
+  const [userState, setUserState] = React.useState<TUserState>()
 
    return(
         <UserStateContext.Provider value={{userState, setUserState}}>
