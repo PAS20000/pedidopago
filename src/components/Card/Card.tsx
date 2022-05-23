@@ -17,7 +17,12 @@ const Card = ({
         <div>
            <ul>
                 <li>
-                    <NextImage src={image} width={'50px'} height={'50px'} alt={`imagem-${name}`}/>
+                    <NextImage 
+                        src={image} 
+                        width={'50px'} 
+                        height={'50px'} 
+                        alt={`imagem-${name}`}
+                    />
                     {agent_id}
                     {branch}
                     {department}
