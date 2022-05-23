@@ -2,6 +2,8 @@ import * as React from 'react'
 import { TData } from '../../../pages'
 import NextImage from '../Contracts/NextImage/NextImage'
 import { AiOutlineMore } from 'react-icons/ai'
+import Search from './Search/Search'
+import BreadCrumbs from './BreadCrumbs/BreadCrumbs'
 
 type TTable = {
     children?:React.ReactNode
@@ -18,10 +20,12 @@ const Table = ({
 
     return(
         <>
+            <BreadCrumbs />
+            <Search />
             <h2>
                 {title}
             </h2>
-            <table style={{width:'100%', borderTop:'solid 1px'}}>
+            <table style={{width:'100%'}}>
                 <thead>
                     <tr>
                         {children}

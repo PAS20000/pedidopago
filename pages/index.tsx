@@ -47,6 +47,7 @@ const Home = ({
             </header>
             <main>
                <Card>
+                    
                     <Table data={data} title={'Listagem de colaboradores'}>
                         <th>
                            <h4>
@@ -85,6 +86,3 @@ const Home = ({
 }
 
 export default Home
-
-/*
-    }*/
