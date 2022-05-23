@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next'
 import { axiosConfig } from '../src/utils/axiosConfig'
 import useUserState from '../src/hooks/useUserState/useUserState'
 import useTheme from '../src/hooks/useTheme/useTheme'
+import Card from '../src/components/Card/Card'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -10,35 +11,57 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     return {
       props: {
         data:employees.data.items
-      }, // will be passed to the page component as props
+      }
     }
   }
 
+export type TData = {
+    agent_id: number
+    branch: string
+    department: string
+    image:string
+    name:string
+    role: string
+    status: string
+}
+
 type TypeEmployees = {
-    data:{
-        agent_id: number
-        branch: string
-        department: string
-        image:string
-        name:string
-        role: string
-        status: string
-    }
+    data:TData[]
 }
 
 const Home = ({
     data
-}: TypeEmployees) => {
+} : TypeEmployees) => {
     const { userState } = useUserState()
     const { mode } = useTheme()
+
     console.log(data)
     console.log(userState)
     console.log(mode)
-    
+
     return(
-        <div>
-            Home
-        </div>
+        <>
+            <header>
+
+            </header>
+            <main>
+                {data.map(item => 
+                    <Card 
+                        key={item.agent_id} 
+                        agent_id={item.agent_id} 
+                        branch={item.branch} 
+                        department={item.department} 
+                        image={item.image} 
+                        name={item.name} 
+                        role={item.role} 
+                        status={item.status}
+                    />)
+                }
+            </main>
+            <footer>
+
+            </footer>
+        </>
     )
 }
 

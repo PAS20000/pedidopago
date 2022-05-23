@@ -1,7 +1,7 @@
 module.exports = {
     images: {
         domains: [
-            'lh3.googleusercontent.com',
+           'picsum.photos'
         ]
     },
     trailingSlash: true,
