@@ -4,6 +4,7 @@ import { axiosConfig } from '../src/utils/axiosConfig'
 import useUserState from '../src/hooks/useUserState/useUserState'
 import useTheme from '../src/hooks/useTheme/useTheme'
 import Card from '../src/components/Card/Card'
+import Table from '../src/components/Table/Table'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -45,18 +46,28 @@ const Home = ({
 
             </header>
             <main>
-                {data.map(item => 
-                    <Card 
-                        key={item.agent_id} 
-                        agent_id={item.agent_id} 
-                        branch={item.branch} 
-                        department={item.department} 
-                        image={item.image} 
-                        name={item.name} 
-                        role={item.role} 
-                        status={item.status}
-                    />)
-                }
+               <Card>
+                    <Table 
+                        data={data} 
+                        tableHead={<>
+                            <th>
+                                Nome completo
+                            </th>
+                            <th>
+                                Departamento
+                            </th>
+                            <th>
+                                Cargo
+                            </th>
+                            <th>
+                                Unidade
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </>}
+                    />
+               </Card>
             </main>
             <footer>
 
@@ -66,3 +77,6 @@ const Home = ({
 }
 
 export default Home
+
+/*
+    }*/

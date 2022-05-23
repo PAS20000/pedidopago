@@ -1,37 +1,18 @@
 import * as React from 'react'
-import { TData } from '../../../pages'
-import NextImage from '../Contracts/NextImage/NextImage'
+
+type TCard = {
+    children:React.ReactNode
+}
 
 const Card = ({
-    agent_id,
-    branch,
-    department,
-    image,
-    name,
-    role,
-    status
-} : TData) => {
+    children
+} : TCard) => {
 
 
     return(
         <div>
-           <ul>
-                <li>
-                    <NextImage 
-                        src={image} 
-                        width={'50px'} 
-                        height={'50px'} 
-                        alt={`imagem-${name}`}
-                    />
-                    {agent_id}
-                    {branch}
-                    {department}
-                    {name}
-                    {role}
-                    {status}
-                </li>
-           </ul>
-        </div>
+            {children}
+        </div>     
     )
 }
 
