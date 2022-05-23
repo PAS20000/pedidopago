@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { AiOutlineMore } from 'react-icons/ai'
-import { TRoles } from '../../../../pages'
+import { TRoles } from '../../../../../pages'
 
-const Roles = ({
+const RolesBody = ({
     name,
     departament,
     agents_quantity
@@ -27,4 +27,4 @@ const Roles = ({
 )
 }
 
-export default Roles
+export default RolesBody

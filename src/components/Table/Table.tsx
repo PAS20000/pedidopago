@@ -1,40 +1,52 @@
 import * as React from 'react'
 import { TEmployees, TRoles } from '../../../pages'
-import NextImage from '../Contracts/NextImage/NextImage'
-import { AiOutlineMore } from 'react-icons/ai'
 import Search from './Search/Search'
 import BreadCrumbs from './BreadCrumbs/BreadCrumbs'
 import useBreadCrumb from '../../hooks/useBreadCrumb/useBreadCrumb'
-import Roles from './Tbodies/Roles'
-import Employees from './Tbodies/Employees'
+import EmployeesHead from './Theaders/EmployessHead'
+import EmployeesBody from './Tbodies/EmployeesBody'
+import RolesBody from './Tbodies/RolesBody'
+import RolesHead from './Theaders/RolesHead'
 
 type TTable = {
-    children?:React.ReactNode
     dataEmployees:TEmployees[]
     dataRoles:TRoles[]
-    title?:string
 }
 
 const Table = ({
-    children,
     dataEmployees,
     dataRoles,
-    title,
 } : TTable) => {
     const { breadCrumb } = useBreadCrumb()
+
+    const translate = () : string => {
+        if(breadCrumb === 'Employees'){
+            return 'colaboradores'
+        }
+        if(breadCrumb === 'Roles'){
+            return 'cargos'
+        }
+    }
 
     return(
         <>
             <BreadCrumbs />
             <Search />
             <h2>
-                {title}
+               Listagem de {translate()}
             </h2>
             <table style={{width:'100%'}}>
-                {children}
+                <thead>
+                    {breadCrumb === 'Employees' && 
+                        <EmployeesHead />
+                    }
+                    {breadCrumb === 'Roles' &&
+                        <RolesHead />
+                    }
+                </thead>
                 <tbody>
                     {breadCrumb === 'Employees' && dataEmployees.map(item => 
-                        <Employees 
+                        <EmployeesBody 
                             key={item.agent_id}
                             name={item.name}
                             agent_id={item.agent_id}
@@ -46,7 +58,7 @@ const Table = ({
                         />)
                     }
                     {breadCrumb === 'Roles' && dataRoles.map(item => 
-                        <Roles 
+                        <RolesBody 
                             key={Math.random()} 
                             agents_quantity={item.agents_quantity}
                             departament={item.departament}

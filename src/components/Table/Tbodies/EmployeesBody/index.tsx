@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { AiOutlineMore } from 'react-icons/ai'
-import { TEmployees } from '../../../../pages'
-import NextImage from '../../Contracts/NextImage/NextImage'
+import { TEmployees } from '../../../../../pages/index'
+import NextImage from '../../../Contracts/NextImage/NextImage'
 
-const Employees = ({
+const EmployeesBody = ({
     name,
     image,
     department,
@@ -14,7 +14,7 @@ const Employees = ({
     return(
     <tr>
         <td>
-            <NextImage 
+            <NextImage
                 src={image}
                 width={'50px'}
                 height={'50px'}
@@ -43,4 +43,4 @@ const Employees = ({
     )
 }
 
-export default Employees
+export default EmployeesBody

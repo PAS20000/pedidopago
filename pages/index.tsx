@@ -5,7 +5,7 @@ import useUserState from '../src/hooks/useUserState/useUserState'
 import useTheme from '../src/hooks/useTheme/useTheme'
 import Card from '../src/components/Card/Card'
 import Table from '../src/components/Table/Table'
-import Thead from '../src/components/Table/Thead/Thead'
+import Thead from '../src/components/Table/Theaders/Employees'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -57,41 +57,10 @@ const Home = ({
             </header>
             <main>
                <Card>
-                    
                     <Table 
                         dataEmployees={dataEmployees} 
                         dataRoles={dataRoles} 
-                        title={'Listagem de colaboradores'}
-                    >
-                        <Thead>
-                            <th>
-                                <h4>
-                                    Nome completo
-                                </h4>
-                            </th>
-                            <th>
-                                <h4>
-                                    Departamento
-                                </h4>
-                            </th>
-                            <th>
-                                <h4>
-                                    Cargo
-                                </h4>
-                            </th>
-                            <th >
-                            <h4>
-                                    Unidade
-                            </h4>
-                            </th>
-                            <th >
-                                <h4>
-                                    Status
-                                </h4>
-                            </th>
-                            <th />
-                        </Thead>
-                    </Table>
+                    />
                </Card>
             </main>
             <footer>
