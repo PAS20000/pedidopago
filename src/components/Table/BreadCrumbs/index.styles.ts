@@ -2,11 +2,6 @@ import styled from '@emotion/styled'
 
 export const Flex = styled.div`
 display: flex;
-    h3{
-        color: ${props => props.theme.color.text};
-        margin-right: 10rem;
-        width: 12rem;
-    }
     .select{
         pointer-events: none;
         text-align: end;
@@ -36,4 +31,16 @@ display: flex;
         width: 100%;
     }
    
+`
+
+export const Contributors = styled.h3`
+    color: ${props => props.theme.color.text};
+    margin-right: 5rem;
+    width: 12rem;
+`
+
+export const Roles = styled.h3`
+    color: ${props => props.theme.color.text};
+    margin-right: 5rem;
+    width: 8rem;
 `

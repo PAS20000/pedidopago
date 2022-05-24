@@ -9,6 +9,7 @@ import ContributorsBody from './Tbodies/ContributorsBody'
 import ContributorsFooter from './Tfooters/ContributorsFooter'
 import ContributorsHead from './Theaders/ContributorsHead'
 import useBreadCrumbCTX from '../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
+import { ContainerTable } from './index.styles'
 
 type TTable = {
     dataContributors:TContributors[]
@@ -42,7 +43,7 @@ const Table = ({
             <h2>
                Listagem de {translate()}
             </h2>
-            <table style={{width:'100%'}}>
+            <ContainerTable>
                 <thead>
                     {breadCrumb === 'Contributors' && 
                         <ContributorsHead />
@@ -81,7 +82,7 @@ const Table = ({
                         <RolesFooter />
                     }
                 </tfoot>
-            </table>
+            </ContainerTable>
         </>
     )
 }

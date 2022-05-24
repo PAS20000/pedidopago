@@ -2,6 +2,7 @@ import * as React from 'react'
 import { AiOutlineMore } from 'react-icons/ai'
 import { TContributors } from '../../../../../pages'
 import NextImage from '../../../Contracts/NextImage'
+import { TdName } from './index.styles'
 
 const ContributorsBody = ({
     name,
@@ -13,26 +14,37 @@ const ContributorsBody = ({
 } : TContributors) => {
     return(
     <tr>
-        <td>
+        <TdName>
             <NextImage
                 src={image}
-                width={'50px'}
-                height={'50px'}
                 alt={`imagem-${name}`}
+                width={50}
+                height={50}
+                className={'Avatar'}
             />
-            {name}
+            <p>
+                {name}
+            </p>
+        </TdName>
+        <td>
+            <p>
+                {department}
+            </p>
         </td>
         <td>
-            {department}
+            <p>
+                {role}
+            </p>
         </td>
         <td>
-            {role}
+            <p>
+                {branch}
+            </p>
         </td>
         <td>
-            {branch}
-        </td>
-        <td>
-            {status ?? 'inactive'}
+            <p>
+                {status ?? 'inactive'}
+            </p>
         </td>
         <td>
             <button>

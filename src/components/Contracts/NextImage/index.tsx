@@ -1,11 +1,12 @@
 import * as React from 'react'
 import Image from 'next/image'
+import { ContainerImg } from './index.styles'
 
 
 export type TNextImage = {
     src:string
-    width:string | number
-    height:string | number
+    width?:string | number
+    height?:string | number
     alt:string
     className?:string
     layout?:'fixed' | 'fill' | 'intrinsic' | 'responsive'
@@ -21,7 +22,7 @@ const NextImage = ({
 } : TNextImage) => {
 
     return (
-        <>
+        <ContainerImg>
             <Image 
                 src={src} 
                 width={width} 
@@ -30,7 +31,7 @@ const NextImage = ({
                 className={className} 
                 layout={layout} 
             />
-        </>
+        </ContainerImg>
     )
 }
 

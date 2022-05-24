@@ -1,6 +1,6 @@
 import * as React from 'react'
 import useBreadCrumbCTX from '../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
-import { Flex } from './index.styles'
+import { Contributors, Flex, Roles } from './index.styles'
 
 const BreadCrumbs = () => {
     const { breadCrumb,setBreadCrumb } = useBreadCrumbCTX()
@@ -16,9 +16,9 @@ const BreadCrumbs = () => {
                     'default'
                 }
             >
-                <h3>
+                <Contributors>
                     Colaboradores
-                </h3>
+                </Contributors>
             </div>
             <div 
                 onClick={() => setBreadCrumb('Roles')} 
@@ -28,9 +28,9 @@ const BreadCrumbs = () => {
                     'default'
                 }
             >
-                <h3>
+                <Roles>
                     Cargos
-                </h3>
+                </Roles>
             </div>
             <div className='hr' />
         </Flex>
