@@ -3,7 +3,7 @@ import { BreadCrumbContext, TBreadContext } from '../../context/BreadCrumbsConte
 
 
 
-const useBreadCrumb = () : TBreadContext => {
+const useBreadCrumbCTX = () : TBreadContext => {
     const { breadCrumb, setBreadCrumb } = React.useContext(BreadCrumbContext)
 
     return {
@@ -12,4 +12,4 @@ const useBreadCrumb = () : TBreadContext => {
     }
 }
 
-export default useBreadCrumb
+export default useBreadCrumbCTX

@@ -1,22 +1,25 @@
 import * as React from 'react'
-
+import { light } from '../../theme/light.styles'
+import { ThemeProvider } from '@emotion/react' 
 
 type States = 'dark' | 'light'
 
-type Contenxt = {
+export type TTheme = {
     mode:States
     setMode:React.Dispatch<React.SetStateAction<States>>
 }
-export const ThemeContext = React.createContext<Contenxt>(null)
+export const ThemeContext = React.createContext<TTheme>(null)
 
-const ThemeProvider = ({children}) => {
+const ThemeProviderApp = ({children}) => {
     const [mode, setMode] = React.useState<States>('light')
-   
+    
    return(
         <ThemeContext.Provider value={{mode, setMode}}>
-            {children}
+            <ThemeProvider theme={light}>
+                {children}
+            </ThemeProvider>
         </ThemeContext.Provider>
     )
 }
    
-export default ThemeProvider
+export default ThemeProviderApp

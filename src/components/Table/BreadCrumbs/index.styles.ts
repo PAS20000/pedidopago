@@ -1,6 +1,7 @@
+import { Theme } from '@emotion/react'
 import styled from '@emotion/styled'
 
-export const Flex = styled.div`
+export const Flex = styled.div<Theme>`
 display: flex;
     h3{ 
         margin-right: 10rem;
@@ -11,7 +12,7 @@ display: flex;
         text-align: end;
         pointer-events:none;
         border-bottom:solid 2px;
-        border-color: #00ad71;
+        border-color: ${props => props.theme.color.primary};
         margin-bottom:10px;
     }
     .default{
@@ -19,19 +20,19 @@ display: flex;
         text-align: end;
         opacity:0.5;
         border-bottom: solid 2px;
-        border-color:#000;
+        border-color: ${props => props.theme.color.tertiary};
         margin-bottom: 10px;
         &:hover{
             transition: 1s;
-            color: #00ad71;
-            border-color: #00ad71;
+            color: ${props => props.theme.color.primary};
+            border-color: ${props => props.theme.color.primary};
             opacity: 1;
         }   
     }
     .hr{
         opacity:0.5;
         border-bottom: solid 2px;
-        border-color:#000;
+        border-color: ${props => props.theme.color.tertiary};
         margin-bottom: 10px;
         width: 100%;
     }

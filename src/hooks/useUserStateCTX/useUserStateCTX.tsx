@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { UserStateContext } from '../../context/UserStateContext/UserStateContext'
 
-const useUserState = () => {
+const useUserStateCTX = () => {
     const { userState, setUserState } = React.useContext(UserStateContext)
 
 
@@ -11,4 +11,4 @@ const useUserState = () => {
     }
 }
 
-export default useUserState
+export default useUserStateCTX
