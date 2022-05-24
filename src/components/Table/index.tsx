@@ -9,7 +9,7 @@ import ContributorsBody from './Tbodies/ContributorsBody'
 import ContributorsFooter from './Tfooters/ContributorsFooter'
 import ContributorsHead from './Theaders/ContributorsHead'
 import useBreadCrumbCTX from '../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
-import { ContainerTable } from './index.styles'
+import { ContainerTable, Title } from './index.styles'
 
 type TTable = {
     dataContributors:TContributors[]
@@ -24,15 +24,6 @@ const Table = ({
     const [searchContributors, setSearchContributors] = React.useState<TContributors[]>(dataContributors)
     const [searchRoles, setSearchRoles] = React.useState<TRoles[]>(dataRoles)
 
-    const translate = () : string => {
-        if(breadCrumb === 'Contributors'){
-            return 'colaboradores'
-        }
-        if(breadCrumb === 'Roles'){
-            return 'cargos'
-        }
-    }
-
     return(
         <>
             <BreadCrumbs />
@@ -40,9 +31,16 @@ const Table = ({
                 setSearchContributors={setSearchContributors}
                 setSearchRoles={setSearchRoles}
             />
-            <h2>
-               Listagem de {translate()}
-            </h2>
+            {breadCrumb === 'Contributors' &&
+                <Title>
+                    Listagem de colaboradores
+                </Title>
+            }
+            {breadCrumb === 'Roles' &&
+                <Title>
+                    Listagem de cargos
+                </Title>
+            }
             <ContainerTable>
                 <thead>
                     {breadCrumb === 'Contributors' && 

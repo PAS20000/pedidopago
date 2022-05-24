@@ -2,7 +2,7 @@ import * as React from 'react'
 import { TContributors, TRoles } from '../../../../pages'
 import useBreadCrumbCTX from '../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import { axiosConfig } from '../../../utils/axiosConfig'
-import Input from './Input'
+import Input from './input'
 
 type TSearch = {
     setSearchContributors:React.Dispatch<React.SetStateAction<any>>
