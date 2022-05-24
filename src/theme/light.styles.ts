@@ -7,7 +7,8 @@ declare module '@emotion/react' {
         primary: string,
         secondary: string,
         tertiary: string,
-        bg: string
+        bg: string,
+        text:string
       }
     }
   }
@@ -17,6 +18,7 @@ export const light : Theme = {
         primary: '#23D996',
         secondary: '',
         tertiary: '#000',
-        bg:''
+        bg:'#F8FAF9',
+        text:'#34423D'
     }
 }

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Container } from './index.styles'
 
 type TCard = {
     children:React.ReactNode
@@ -10,9 +11,9 @@ const Card = ({
 
 
     return(
-        <div>
+        <Container>
             {children}
-        </div>     
+        </Container>     
     )
 }
 

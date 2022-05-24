@@ -1,9 +1,9 @@
-import { Theme } from '@emotion/react'
 import styled from '@emotion/styled'
 
-export const Flex = styled.div<Theme>`
+export const Flex = styled.div`
 display: flex;
-    h3{ 
+    h3{
+        color: ${props => props.theme.color.text};
         margin-right: 10rem;
         width: 12rem;
     }
@@ -24,7 +24,6 @@ display: flex;
         margin-bottom: 10px;
         &:hover{
             transition: 1s;
-            color: ${props => props.theme.color.primary};
             border-color: ${props => props.theme.color.primary};
             opacity: 1;
         }   
