@@ -6,7 +6,7 @@ export const Container = styled.div`
 `
 
 export const InputSearch = styled.input`
-    padding: 10px;
+     padding: 12px 30px;
     width: 97.5%;
     border-radius: 10px;
     opacity: 0.5;
@@ -16,7 +16,6 @@ export const InputSearch = styled.input`
     ::placeholder{
         opacity: 1;
         color:  ${props => props.theme.color.text};
-        padding: 20px;
     }
 `
 

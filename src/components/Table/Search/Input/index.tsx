@@ -13,6 +13,7 @@ const Input = ({
     placeholder,
     value
 } : TInput) => {
+   
     return(
         <Container>
             <LabelContainer>
