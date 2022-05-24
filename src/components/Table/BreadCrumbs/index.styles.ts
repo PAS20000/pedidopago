@@ -10,15 +10,15 @@ display: flex;
     .select{
         pointer-events: none;
         text-align: end;
-        pointer-events:none;
-        border-bottom:solid 2px;
+        pointer-events: none;
+        border-bottom: solid 2px;
         border-color: ${props => props.theme.color.primary};
-        margin-bottom:10px;
+        margin-bottom: 10px;
     }
     .default{
         cursor: pointer;
         text-align: end;
-        opacity:0.5;
+        opacity: 0.5;
         border-bottom: solid 2px;
         border-color: ${props => props.theme.color.tertiary};
         margin-bottom: 10px;
