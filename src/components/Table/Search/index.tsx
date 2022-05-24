@@ -46,9 +46,9 @@ const Search = ({
         
         if(contributors && breadCrumb === 'Contributors'){
             setLocalcontributors(contributors.filter((contributor) => contributor.document &&
-                SearchTratament(contributor.document.number).includes(stringSearch.toString().replaceAll(',' , ''))
+                SearchTratament(contributor.document.number).includes(stringSearch)
                 ||
-                SearchTratament(contributor.name).includes(stringSearch.toString().replaceAll(',' , ''))
+                SearchTratament(contributor.name).includes(stringSearch)
             ))
             setStringSearchContributor(stringSearch)
         }
@@ -60,7 +60,7 @@ const Search = ({
         
         if(roles && breadCrumb === 'Roles'){
             setLocalRoles(roles.filter((role) =>
-                SearchTratament(role.name).includes(stringSearch.toString().replaceAll(',' , ''))
+                SearchTratament(role.name).includes(stringSearch)
             ))
             setStringSearchRoles(stringSearch)
         }
