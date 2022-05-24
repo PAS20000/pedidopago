@@ -1,26 +1,30 @@
 import * as React from 'react'
-import { TEmployees, TRoles } from '../../../pages'
+import { TContributors, TRoles } from '../../../pages'
 import Search from './Search'
 import BreadCrumbs from './BreadCrumbs'
 import useBreadCrumb from '../../hooks/useBreadCrumb/useBreadCrumb'
-import EmployeesHead from './Theaders/EmployessHead'
-import EmployeesBody from './Tbodies/EmployeesBody'
 import RolesBody from './Tbodies/RolesBody'
 import RolesHead from './Theaders/RolesHead'
+import RolesFooter from './Tfooters/RolesFooter'
+import ContributorsBody from './Tbodies/ContributorsBody'
+import ContributorsFooter from './Tfooters/ContributorsFooter'
+import ContributorsHead from './Theaders/ContributorsHead'
 
 type TTable = {
-    dataEmployees:TEmployees[]
+    dataContributors:TContributors[]
     dataRoles:TRoles[]
 }
 
 const Table = ({
-    dataEmployees,
+    dataContributors,
     dataRoles,
 } : TTable) => {
     const { breadCrumb } = useBreadCrumb()
+    const [searchContributors, setSearchContributors] = React.useState<TContributors[]>(dataContributors)
+    const [searchRoles, setSearchRoles] = React.useState<TRoles[]>(dataRoles)
 
     const translate = () : string => {
-        if(breadCrumb === 'Employees'){
+        if(breadCrumb === 'Contributors'){
             return 'colaboradores'
         }
         if(breadCrumb === 'Roles'){
@@ -31,22 +35,27 @@ const Table = ({
     return(
         <>
             <BreadCrumbs />
-            <Search />
+            <Search 
+                SearchContributors={searchContributors}
+                setSearchContributors={setSearchContributors}
+                SearchRoles={searchRoles}
+                setSearchRoles={setSearchRoles}
+            />
             <h2>
                Listagem de {translate()}
             </h2>
             <table style={{width:'100%'}}>
                 <thead>
-                    {breadCrumb === 'Employees' && 
-                        <EmployeesHead />
+                    {breadCrumb === 'Contributors' && 
+                        <ContributorsHead />
                     }
                     {breadCrumb === 'Roles' &&
                         <RolesHead />
                     }
                 </thead>
                 <tbody>
-                    {breadCrumb === 'Employees' && dataEmployees.map(item => 
-                        <EmployeesBody 
+                    {breadCrumb === 'Contributors' && searchContributors.map(item => 
+                        <ContributorsBody 
                             key={item.agent_id}
                             name={item.name}
                             agent_id={item.agent_id}
@@ -57,7 +66,7 @@ const Table = ({
                             status={item.status}
                         />)
                     }
-                    {breadCrumb === 'Roles' && dataRoles.map(item => 
+                    {breadCrumb === 'Roles' && searchRoles.map(item => 
                         <RolesBody 
                             key={Math.random()} 
                             agents_quantity={item.agents_quantity}
@@ -67,7 +76,12 @@ const Table = ({
                     }
                 </tbody>
                 <tfoot>
-
+                    {breadCrumb === 'Contributors' && 
+                        <ContributorsFooter />
+                    }
+                    {breadCrumb === 'Roles' && 
+                        <RolesFooter />
+                    }
                 </tfoot>
             </table>
         </>

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const EmployeesHead = () => {
+const ContributorsHead = () => {
     
     return(
         <tr>
@@ -24,4 +24,4 @@ const EmployeesHead = () => {
     )
 }
 
-export default EmployeesHead
+export default ContributorsHead

@@ -1,16 +1,16 @@
 import * as React from 'react'
 import { AiOutlineMore } from 'react-icons/ai'
-import { TEmployees } from '../../../../../pages/index'
+import { TContributors } from '../../../../../pages'
 import NextImage from '../../../Contracts/NextImage'
 
-const EmployeesBody = ({
+const ContributorsBody = ({
     name,
     image,
     department,
     role,
     branch,
     status
-} : TEmployees) => {
+} : TContributors) => {
     return(
     <tr>
         <td>
@@ -43,4 +43,4 @@ const EmployeesBody = ({
     )
 }
 
-export default EmployeesBody
+export default ContributorsBody

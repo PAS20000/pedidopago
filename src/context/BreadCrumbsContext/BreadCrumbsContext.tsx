@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-type TBread = 'Employees' | 'Roles'
+type TBread = 'Contributors' | 'Roles'
 
 export type TBreadContext = {
     breadCrumb:TBread
@@ -10,7 +10,7 @@ export type TBreadContext = {
 export const BreadCrumbContext = React.createContext<TBreadContext>(null)
 
 const BreadCrumbProivder = ({children}) => {
-    const [breadCrumb, setBreadCrumb] = React.useState<TBread>('Employees')
+    const [breadCrumb, setBreadCrumb] = React.useState<TBread>('Contributors')
    
    return(
         <BreadCrumbContext.Provider value={{breadCrumb, setBreadCrumb}}>

@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     }
   }
 
-export type TEmployees = {
+export type TContributors = {
     agent_id: number
     branch: string
     department: string
@@ -34,7 +34,7 @@ export type TRoles = {
 }
 
 type THomeProps = {
-    dataEmployees:TEmployees[]
+    dataEmployees:TContributors[]
     dataRoles:TRoles[]
 }
 
@@ -60,7 +60,7 @@ const Home = ({
                 </h1>
                <Card>
                     <Table 
-                        dataEmployees={dataEmployees} 
+                        dataContributors={dataEmployees} 
                         dataRoles={dataRoles} 
                     />
                </Card>
