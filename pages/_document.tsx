@@ -5,7 +5,7 @@ export default class Document extends NextDocument {
     return (
       <Html lang='pt'>
         <Head />
-        <body>
+        <body style={{margin:0, padding:0, fontFamily:'sans-serif'}}>
             <Main />
             <NextScript />
         </body>
