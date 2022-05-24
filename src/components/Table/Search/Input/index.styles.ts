@@ -14,13 +14,13 @@ export const InputSearch = styled.input`
     border-color: rgba(0,0,0, 0.5);
     ::placeholder{
         font-weight: bold;
-        color:  ${props => props.theme.color.text};
+        color:  ${props => props.theme.color.sextenary};
     }
 `
 
 export const Icon = styled.span`
     position: absolute;
-    padding: 9px;
+    padding: 10px;
 `
 
 export const LabelContainer = styled.div`
@@ -33,6 +33,6 @@ export const LabelContainer = styled.div`
         color: rgba(0,0,0, 0.5);
         position: absolute;
         z-index: 3;
-        background-color: ${props => props.theme.color.bg};
+        background-color: ${props => props.theme.color.secondary};
     }
 `

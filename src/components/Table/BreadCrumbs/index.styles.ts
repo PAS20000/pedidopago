@@ -34,13 +34,13 @@ display: flex;
 `
 
 export const Contributors = styled.h3`
-    color: ${props => props.theme.color.text};
+    color: ${props => props.theme.color.sextenary};
     margin-right: 5rem;
     width: 12rem;
 `
 
 export const Roles = styled.h3`
-    color: ${props => props.theme.color.text};
+    color: ${props => props.theme.color.sextenary};
     margin-right: 5rem;
     width: 8rem;
 `
