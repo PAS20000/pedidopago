@@ -3,7 +3,8 @@ import { GetStaticProps } from 'next'
 import { axiosConfig } from '../src/utils/axiosConfig'
 import Card from '../src/components/Card'
 import Table from '../src/components/Table'
-import styled from '@emotion/styled'
+import Title from '../src/components/Title'
+import Main from '../src/components/Main'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -38,12 +39,9 @@ type THomeProps = {
     dataRoles:TRoles[]
 }
 
-const Main = styled.main`
-  background-color:${props => props.theme.color.bg};
-  h1{
-      color: ${props => props.theme.color.text};
-  }
-`
+
+
+
 const Home = ({
     dataEmployees,
     dataRoles
@@ -55,10 +53,10 @@ const Home = ({
 
             </header>
             <Main>
+                <Title>
+                    Organização
+                </Title>
                <Card>
-                    <h1>
-                        Organização
-                    </h1>
                     <Table 
                         dataContributors={dataEmployees} 
                         dataRoles={dataRoles} 
