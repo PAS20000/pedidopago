@@ -6,15 +6,13 @@ export const Container = styled.div`
 `
 
 export const InputSearch = styled.input`
-     padding: 12px 30px;
-    width: 97.5%;
+    padding: 12px 30px;
+    width: 93%;
     border-radius: 10px;
-    opacity: 0.5;
     border-color: ${props => props.theme.color.tertiary};
     border: solid 1px;
     outline: none;
     ::placeholder{
-        opacity: 1;
         color:  ${props => props.theme.color.text};
     }
 `
