@@ -9,6 +9,19 @@ type TSearch = {
     SearchRoles:TRoles[]
     setSearchRoles:React.Dispatch<React.SetStateAction<any>>
 }
+type TAgent = {
+    email: string
+    phone: {
+        ddd: string
+        ddi: string
+        number: string
+    },
+    document: {
+        type: string
+        number:string
+    },
+    birth_date:string
+}
 
 const Search = ({
     SearchContributors,
@@ -17,47 +30,96 @@ const Search = ({
     setSearchRoles,
 } : TSearch) => {
     const { breadCrumb } = useBreadCrumb()
-    const [ contributor, setContributor ] = React.useState<TContributors[]>()
+    const [ Localcontributors, setLocalcontributors ] = React.useState<TContributors[]>()
+    const [ LocalRoles, setLocalRoles ] = React.useState<TRoles[]>()
+    const [ StringSearchContributor, setStringSearchContributor] = React.useState<string>()
+    const [ StringSearchRoles , setStringSearchRoles] = React.useState<string>()
+
+    const SearchTratament = (StringValue:string) : string => {
+        return StringValue.replaceAll(' ' , '').toUpperCase()
+    }
 
     const searchContributors = (contributorSearch:string) => {
-        const SearchTratament = (StringValue:string) : string => {
-            return StringValue.replaceAll(' ' , '').toUpperCase()
-        }
-        const stringSearch : string = SearchTratament(contributorSearch)
-        const contributors : TContributors[] = JSON.parse(localStorage.contributors)
         
-        if(contributors){
-            setContributor(contributors.filter((contributor) => 
+        const stringSearch : string = SearchTratament(contributorSearch)
+        const contributors : Array<TContributors & TAgent> = JSON.parse(localStorage.contributors)
+        
+        if(contributors && breadCrumb === 'Contributors'){
+            setLocalcontributors(contributors.filter((contributor) => contributor.document &&
+                SearchTratament(contributor.document.number).includes(stringSearch.toString().replaceAll(',' , ''))
+                ||
                 SearchTratament(contributor.name).includes(stringSearch.toString().replaceAll(',' , ''))
             ))
+            setStringSearchContributor(stringSearch)
         }
     }
 
-    const contributorsDetails = async () => {
-        const contributor = await axiosConfig('https://pp-api-desafio.herokuapp.com/agent/1')
+    const searchRoles = (roleSearch:string) => {
+        const stringSearch : string = SearchTratament(roleSearch)
+        const roles : Array<TRoles> = JSON.parse(localStorage.roles)
+        
+        if(roles && breadCrumb === 'Roles'){
+            setLocalRoles(roles.filter((role) =>
+                SearchTratament(role.name).includes(stringSearch.toString().replaceAll(',' , ''))
+            ))
+            setStringSearchRoles(stringSearch)
+        }
     }
+    
     const contributors = async () => {
-        const contributors = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
-        localStorage.setItem('contributors' , JSON.stringify(contributors.data.items))
+        try {
+                const contributors = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
+                const contributorKai = await axiosConfig('https://pp-api-desafio.herokuapp.com/agent/1')
+                const Agent : TAgent = contributorKai.data.agent
+                const items : TContributors[] = contributors.data.items
+                const itemsExceptKai = items.filter((contributor) => contributor.agent_id !== 1)
+                const InJectKaiCPF = [
+                { 
+                    ...items[0], 
+                    email:Agent.email, 
+                    phone:Agent.phone, 
+                    document:Agent.document, 
+                    birth_date:Agent.birth_date
+                }, 
+                ...itemsExceptKai
+            ]
+            
+            localStorage.setItem('contributors' , JSON.stringify(InJectKaiCPF))
+        } catch (e) {
+            alert('Contributors data error'), console.log(e)
+        }
     }
 
+    const roles = async () => {
+        try {
+                const roles = await axiosConfig('https://pp-api-desafio.herokuapp.com/roles')
+
+                localStorage.setItem('roles' , JSON.stringify(roles.data.roles))
+        } catch (e) {
+            alert('Roles data error'), console.log(e)
+        }
+    }
     React.useEffect(() => {
         contributors()
+        roles()
     }, [])
 
     React.useEffect(() => {
-        if(contributor){
-            setSearchContributors(contributor)
+        if(Localcontributors){
+            setSearchContributors(Localcontributors)
         }
-    }, [contributor])
+        if(LocalRoles){
+            setSearchRoles(LocalRoles)
+        }
+    }, [Localcontributors, LocalRoles])
     
     return(
         <>
             {breadCrumb === 'Contributors' &&
-                <input type="text" placeholder='Pesquise por nome ou cpf' onChange={(e) => searchContributors(e.target.value)}/>
+                <input type="text" placeholder='Pesquise por nome ou cpf' onChange={(e) => searchContributors(e.target.value)} value={StringSearchContributor ?? ''}/>
             }
             {breadCrumb === 'Roles' && 
-                <input type="text" placeholder='Pesquise por cargo'/>
+                <input type="text" placeholder='Pesquise por cargo' onChange={(e) => searchRoles(e.target.value)}  value={StringSearchRoles ?? ''}/>
             }
         </>
     )
