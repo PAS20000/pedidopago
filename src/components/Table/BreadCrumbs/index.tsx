@@ -1,21 +1,39 @@
 import * as React from 'react'
 import useBreadCrumb from '../../../hooks/useBreadCrumb/useBreadCrumb'
+import { Flex } from './index.styles'
 
 const BreadCrumbs = () => {
-    const { setBreadCrumb } = useBreadCrumb()
+    const { breadCrumb,setBreadCrumb } = useBreadCrumb()
 
     return(
     <>
-        <div style={{display:'flex', justifyContent:'space-around'}}>
-            <h3 onClick={() => setBreadCrumb('Contributors')}>
-                Colaboradores
-            </h3>
-            <h3 onClick={() => setBreadCrumb('Roles')}>
-                Cargos
-            </h3>
-            
-        </div>
-        <hr />
+        <Flex>
+            <div 
+                onClick={() => setBreadCrumb('Contributors')} 
+                className={breadCrumb === 'Contributors' ? 
+                    'select'
+                    :
+                    'default'
+                }
+            >
+                <h3>
+                    Colaboradores
+                </h3>
+            </div>
+            <div 
+                onClick={() => setBreadCrumb('Roles')} 
+                className={breadCrumb === 'Roles' ? 
+                    'select'
+                    :
+                    'default'
+                }
+            >
+                <h3>
+                    Cargos
+                </h3>
+            </div>
+            <div className='hr' />
+        </Flex>
     </>
     )
 }

@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { GetStaticProps } from 'next'
 import { axiosConfig } from '../src/utils/axiosConfig'
-import useUserState from '../src/hooks/useUserState/useUserState'
-import useTheme from '../src/hooks/useTheme/useTheme'
 import Card from '../src/components/Card'
 import Table from '../src/components/Table'
 
@@ -42,13 +40,7 @@ const Home = ({
     dataEmployees,
     dataRoles
 } : THomeProps) => {
-    const { userState, setUserState } = useUserState()
-    const { mode } = useTheme()
-
-    console.log(dataEmployees)
-    console.log(userState)
-    console.log(mode)
-
+    
     return(
         <>
             <header>

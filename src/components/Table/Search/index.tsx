@@ -4,9 +4,7 @@ import useBreadCrumb from '../../../hooks/useBreadCrumb/useBreadCrumb'
 import { axiosConfig } from '../../../utils/axiosConfig'
 
 type TSearch = {
-    SearchContributors:TContributors[]
     setSearchContributors:React.Dispatch<React.SetStateAction<any>>
-    SearchRoles:TRoles[]
     setSearchRoles:React.Dispatch<React.SetStateAction<any>>
 }
 type TAgent = {
@@ -24,9 +22,7 @@ type TAgent = {
 }
 
 const Search = ({
-    SearchContributors,
     setSearchContributors,
-    SearchRoles,
     setSearchRoles,
 } : TSearch) => {
     const { breadCrumb } = useBreadCrumb()
@@ -55,6 +51,7 @@ const Search = ({
     }
 
     const searchRoles = (roleSearch:string) => {
+        
         const stringSearch : string = SearchTratament(roleSearch)
         const roles : Array<TRoles> = JSON.parse(localStorage.roles)
         
@@ -114,14 +111,14 @@ const Search = ({
     }, [Localcontributors, LocalRoles])
     
     return(
-        <>
+        <div>
             {breadCrumb === 'Contributors' &&
                 <input type="text" placeholder='Pesquise por nome ou cpf' onChange={(e) => searchContributors(e.target.value)} value={StringSearchContributor ?? ''}/>
             }
             {breadCrumb === 'Roles' && 
                 <input type="text" placeholder='Pesquise por cargo' onChange={(e) => searchRoles(e.target.value)}  value={StringSearchRoles ?? ''}/>
             }
-        </>
+        </div>
     )
 }
 

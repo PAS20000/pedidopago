@@ -36,9 +36,7 @@ const Table = ({
         <>
             <BreadCrumbs />
             <Search 
-                SearchContributors={searchContributors}
                 setSearchContributors={setSearchContributors}
-                SearchRoles={searchRoles}
                 setSearchRoles={setSearchRoles}
             />
             <h2>
