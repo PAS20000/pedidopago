@@ -50,7 +50,7 @@ const Search = ({
                 ||
                 SearchTratament(contributor.name).includes(stringSearch)
             ))
-            setStringSearchContributor(stringSearch)
+            setStringSearchContributor(contributorSearch)
         }
     }
 
@@ -62,7 +62,7 @@ const Search = ({
             setLocalRoles(roles.filter((role) =>
                 SearchTratament(role.name).includes(stringSearch)
             ))
-            setStringSearchRoles(stringSearch)
+            setStringSearchRoles(roleSearch)
         }
     }
     
