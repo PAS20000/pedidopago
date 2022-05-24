@@ -2,6 +2,7 @@ import * as React from 'react'
 import { TContributors, TRoles } from '../../../../pages'
 import useBreadCrumbCTX from '../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import { axiosConfig } from '../../../utils/axiosConfig'
+import Input from './Input'
 
 type TSearch = {
     setSearchContributors:React.Dispatch<React.SetStateAction<any>>
@@ -111,14 +112,14 @@ const Search = ({
     }, [Localcontributors, LocalRoles])
     
     return(
-        <div>
+        <>
             {breadCrumb === 'Contributors' &&
-                <input type="text" placeholder='Pesquise por nome ou cpf' onChange={(e) => searchContributors(e.target.value)} value={StringSearchContributor ?? ''}/>
+               <Input placeholder='Pesquise por nome ou cpf' onChange={(e) => searchContributors(e.target.value)} value={StringSearchContributor ?? ''} />
             }
             {breadCrumb === 'Roles' && 
-                <input type="text" placeholder='Pesquise por cargo' onChange={(e) => searchRoles(e.target.value)}  value={StringSearchRoles ?? ''}/>
+                <Input placeholder='Pesquise por cargo' onChange={(e) => searchRoles(e.target.value)}  value={StringSearchRoles ?? ''}/>
             }
-        </div>
+        </>
     )
 }
 
