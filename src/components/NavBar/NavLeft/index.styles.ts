@@ -4,6 +4,6 @@ export const Container = styled.nav`
     background-color: ${props => props.theme.color.secondary[100]};
     position: absolute;
     height: 100vh;
-    padding: 75px;
+    padding: 80px;
     box-shadow: 0 0 0.4em rgba(0,0,0,0.5);
 `
