@@ -10,7 +10,6 @@ import useBreadCrumbCTX from '../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import { ContainerTable, Title } from './index.styles'
 import ContributorsControl from './Tcontrols/ContributorsControl'
 import RolesControl from './Tcontrols/RolesControl'
-import useUXCTX from '../../hooks/useUXCTX'
 
 type TTable = {
     dataContributors:TContributors[]

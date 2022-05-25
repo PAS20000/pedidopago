@@ -10,7 +10,8 @@ const ContributorsBody = ({
     department,
     role,
     branch,
-    status
+    status,
+    agent_id
 } : TContributors) => {
 
     const translate = () : string => {
@@ -61,7 +62,7 @@ const ContributorsBody = ({
             </p>
         </LabelTd>
         <td>
-            <ButtonOptions />
+            <ButtonOptions id={agent_id}/>
         </td>
     </tr>
     )

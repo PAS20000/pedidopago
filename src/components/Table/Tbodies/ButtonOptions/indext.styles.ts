@@ -10,11 +10,14 @@ export const Button = styled.button`
         transition: 1s;
         opacity: 0.5;
     }
-    p{
-        font-size: 18px;
-        margin: 10px;
-        margin-top: 5px;
-       
+    a{
+        text-decoration: none;
+        color: ${props => props.theme.color.secondary[900]};
+        p{
+            font-size: 18px;
+            margin: 10px;
+            margin-top: 5px;
+        }
     }
     span{
         font-size: 24px;

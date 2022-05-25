@@ -25,7 +25,7 @@ const RolesBody = ({
             </p>
         </td>
         <td>
-           <ButtonOptions />
+           <ButtonOptions id={1}/>
         </td>
   </tr>
 )

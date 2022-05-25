@@ -6,10 +6,15 @@ import { BsLayers } from 'react-icons/bs'
 import { GrUpdate } from 'react-icons/gr'
 import useBreadCrumbCTX from '../../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import useId from '../../../../hooks/useId/useId'
+import NextLink from '../../../Contracts/NextLink'
 
+type TButtonOptions = {
+    id:number
+}
 
-
-const ButtonOptions = () => {
+const ButtonOptions = ({
+    id
+}) => {
     const { breadCrumb } = useBreadCrumbCTX()
     const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
     const { sequencial } = useId('options')
@@ -34,9 +39,11 @@ const ButtonOptions = () => {
                                     <span>
                                         <AiOutlineEye />
                                     </span>
-                                    <p>
-                                        Ver colaborador
-                                    </p>
+                                    <NextLink href={`/contributor/${id}/`} target={'_self'}>
+                                        <p>
+                                            Ver colaborador
+                                        </p>    
+                                    </NextLink>
                                 </Flex>
                             </Button>
                             <Button className='isNotImplemented'>
@@ -58,9 +65,11 @@ const ButtonOptions = () => {
                                     <span>
                                         <AiOutlineEye />
                                     </span>
-                                    <p>
-                                        Ver cargo
-                                    </p>
+                                    <NextLink href={`/role/${id}/`} target={'_self'}>
+                                        <p>
+                                            Ver cargo
+                                        </p>    
+                                    </NextLink>
                                 </Flex>
                             </Button>
                             <Button className='isNotImplemented'>
