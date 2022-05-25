@@ -12,7 +12,7 @@ const ControlButtons = () => {
             <h3>
                 1 de 10
             </h3>
-            <button>
+            <button className='next'>
                 <MdArrowForwardIos />
             </button>
         </Container>
