@@ -5,21 +5,35 @@ const ContributorsHead = () => {
     return(
         <tr>
             <th>
-                Nome Completo
+                <h4 className='first'>
+                    Nome Completo
+                </h4>
             </th>
             <th>
-                Departamento
+                <h4>
+                    Departamento
+                </h4>
             </th>
             <th>
-                Cargo
+                <h4>
+                    Cargo
+                </h4>
             </th>
             <th>
-                Unidade
+                <h4>
+                    Unidade
+                </h4>
             </th>
             <th>
-                Status
+                <h4>
+                    Status
+                </h4>
             </th>
-            <th />
+            <th>
+                <h4 className='last'>
+                    &nbsp;
+                </h4>
+            </th>
         </tr>   
     )
 }

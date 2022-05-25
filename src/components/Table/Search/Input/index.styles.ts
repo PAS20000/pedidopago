@@ -14,7 +14,7 @@ export const InputSearch = styled.input`
     border-color: rgba(0,0,0, 0.5);
     ::placeholder{
         font-weight: bold;
-        color:  ${props => props.theme.color.sextenary};
+        color:  ${props => props.theme.color.secondary[900]};
     }
 `
 
@@ -33,6 +33,6 @@ export const LabelContainer = styled.div`
         color: rgba(0,0,0, 0.5);
         position: absolute;
         z-index: 3;
-        background-color: ${props => props.theme.color.secondary};
+        background-color: ${props => props.theme.color.secondary[100]};
     }
 `

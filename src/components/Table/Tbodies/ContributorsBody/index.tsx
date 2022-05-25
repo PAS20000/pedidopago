@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { AiOutlineMore } from 'react-icons/ai'
 import { TContributors } from '../../../../../pages'
 import NextImage from '../../../Contracts/NextImage'
-import { Flex } from './index.styles'
+import ButtonOptions from '../ButtonOptions'
+import { Flex, LabelTd } from './index.styles'
 
 const ContributorsBody = ({
     name,
@@ -12,8 +12,20 @@ const ContributorsBody = ({
     branch,
     status
 } : TContributors) => {
+
+    const translate = () : string => {
+        if(status === 'active'){
+            return 'ativo'
+        }
+        if(status === 'inactive'){
+            return 'inativo'
+        }
+
+        return 'inativo'
+    }
+    
     return(
-    <tr>
+    <tr className={status ?? 'inactive'}>
         <td>
             <Flex>
                 <NextImage
@@ -43,15 +55,13 @@ const ContributorsBody = ({
                 {branch}
             </p>
         </td>
-        <td>
-            <p>
-                {status ?? 'inactive'}
+        <LabelTd>
+            <p className={(status ?? 'inactive')}>
+                {translate()}
             </p>
-        </td>
+        </LabelTd>
         <td>
-            <button>
-                <AiOutlineMore />
-            </button>
+            <ButtonOptions />
         </td>
     </tr>
     )

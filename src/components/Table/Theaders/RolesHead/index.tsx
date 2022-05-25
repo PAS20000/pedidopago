@@ -5,15 +5,25 @@ const RolesHead = () => {
     return(
         <tr>
             <th>
-                Cargo
+                <h4 className='first'>
+                    Cargo
+                </h4>
             </th>
             <th>
-                Departamento
+                <h4>
+                    Departamento
+                </h4>
             </th>
             <th>
-                Colaboradores
+                <h4>
+                    Colaboradores
+                </h4>
             </th>
-            <th />
+            <th>
+                <h4 className='last'>
+                    &nbsp;
+                </h4>
+            </th>
         </tr>   
     )
 }

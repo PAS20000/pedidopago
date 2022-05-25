@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { AiOutlineMore } from 'react-icons/ai'
 import { TRoles } from '../../../../../pages'
+import ButtonOptions from '../ButtonOptions'
 
 const RolesBody = ({
     name,
@@ -10,18 +10,22 @@ const RolesBody = ({
     return(
     <tr>
         <td>
-            {name}
+            <p>
+                {name}
+            </p>
         </td>
         <td>
-            {departament}
+            <p>
+                {departament}
+            </p>
         </td>
         <td>
-            {agents_quantity}
+            <p>
+                {agents_quantity}
+            </p>
         </td>
         <td>
-            <button>
-                <AiOutlineMore />
-            </button>
+           <ButtonOptions />
         </td>
   </tr>
 )
