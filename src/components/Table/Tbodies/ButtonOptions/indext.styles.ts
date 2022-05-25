@@ -13,6 +13,9 @@ export const Button = styled.button`
     p{
         margin-top: 5px;
     }
+    span{
+        font-size: 24px;
+    }
 `
 
 export const ContainerOptions = styled.div`
@@ -32,7 +35,7 @@ export const ContainerOptions = styled.div`
     }
 `
 
-export const Flex = styled.span`
+export const Flex = styled.div`
     display: flex;
     
 `

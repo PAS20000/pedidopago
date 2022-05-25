@@ -4,12 +4,12 @@ import Search from './Search'
 import BreadCrumbs from './BreadCrumbs'
 import RolesBody from './Tbodies/RolesBody'
 import RolesHead from './Theaders/RolesHead'
-import RolesFooter from './Tfooters/RolesFooter'
 import ContributorsBody from './Tbodies/ContributorsBody'
-import ContributorsFooter from './Tfooters/ContributorsFooter'
 import ContributorsHead from './Theaders/ContributorsHead'
 import useBreadCrumbCTX from '../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import { ContainerTable, Title } from './index.styles'
+import ContributorsControl from './Tcontrols/ContributorsControl'
+import RolesControl from './Tcontrols/RolesControl'
 
 type TTable = {
     dataContributors:TContributors[]
@@ -72,15 +72,15 @@ const Table = ({
                         />)
                     }
                 </tbody>
-                <tfoot>
-                    {breadCrumb === 'Contributors' && 
-                        <ContributorsFooter />
-                    }
-                    {breadCrumb === 'Roles' && 
-                        <RolesFooter />
-                    }
-                </tfoot>
             </ContainerTable>
+            <div>
+                {breadCrumb === 'Contributors' && 
+                    <ContributorsControl />
+                }
+                {breadCrumb === 'Roles' && 
+                    <RolesControl />
+                }
+            </div>
         </>
     )
 }

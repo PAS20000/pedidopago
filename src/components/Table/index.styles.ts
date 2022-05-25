@@ -30,7 +30,7 @@ export const ContainerTable = styled.table`
     th{
         text-align: start;
         color: ${props => props.theme.color.secondary[500]};
-        
+
         h4{
             border-color: ${props => props.theme.color.secondary[300]};
             border-top: solid 1px;

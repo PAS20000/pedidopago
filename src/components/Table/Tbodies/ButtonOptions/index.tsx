@@ -9,12 +9,12 @@ import useBreadCrumbCTX from '../../../../hooks/useBreadCrumbCTX/useBreadCrumbCT
 const ButtonOptions = () => {
     const [open, setOpen] = React.useState<boolean>(false)
     const { breadCrumb } = useBreadCrumbCTX()
-    
-    const sizeDefault = '24px'
     return (
         <>
             <Button onClick={() => setOpen(open === false ? true : false)}>
-                <FiMoreVertical size={sizeDefault}/>
+                <span>
+                    <FiMoreVertical />
+                </span>
             </Button>
             {open &&
                 <ContainerOptions>
@@ -22,7 +22,9 @@ const ButtonOptions = () => {
                         <>
                             <Button>
                                 <Flex>
-                                    <AiOutlineEye size={sizeDefault}/>
+                                    <span>
+                                        <AiOutlineEye />
+                                    </span>
                                     <p>
                                         Ver colaborador
                                     </p>
@@ -30,7 +32,9 @@ const ButtonOptions = () => {
                             </Button>
                             <Button className='isNotImplemented'>
                                 <Flex>
-                                    <FiTrash2 size={sizeDefault}/>
+                                    <span>
+                                        <FiTrash2 />
+                                    </span>
                                     <p>
                                         Excluir
                                     </p>
@@ -42,7 +46,9 @@ const ButtonOptions = () => {
                         <>
                             <Button>
                                 <Flex>
-                                    <AiOutlineEye size={sizeDefault}/>
+                                    <span>
+                                        <AiOutlineEye />
+                                    </span>
                                     <p>
                                         Ver cargo
                                     </p>
@@ -50,7 +56,9 @@ const ButtonOptions = () => {
                             </Button>
                             <Button className='isNotImplemented'>
                                 <Flex>
-                                    <FiEdit size={sizeDefault}/>
+                                    <span>
+                                        <FiEdit />
+                                    </span>
                                     <p>
                                         Editar
                                     </p>
@@ -58,7 +66,9 @@ const ButtonOptions = () => {
                             </Button>
                             <Button className='isNotImplemented'>
                                 <Flex>
-                                    <BsLayers size={sizeDefault}/>
+                                    <span>
+                                        <BsLayers />
+                                    </span>
                                     <p>
                                         Duplicar
                                     </p>
@@ -66,7 +76,9 @@ const ButtonOptions = () => {
                             </Button>
                             <Button className='isNotImplemented'>
                                 <Flex>
-                                    <GrUpdate size={sizeDefault}/>
+                                    <span>
+                                        <GrUpdate />
+                                    </span>
                                     <p>
                                         Excluir
                                     </p>
