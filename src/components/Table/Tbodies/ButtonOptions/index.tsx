@@ -5,23 +5,19 @@ import { Button, ContainerOptions, Flex, Grid } from './indext.styles'
 import { BsLayers } from 'react-icons/bs'
 import { GrUpdate } from 'react-icons/gr'
 import useBreadCrumbCTX from '../../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
-import useUXCTX from '../../../../hooks/useUXCTX'
 import useId from '../../../../hooks/useId/useId'
 
 
 
 const ButtonOptions = () => {
-    const { globalOpen, setGlobalOpen } = useUXCTX()
     const { breadCrumb } = useBreadCrumbCTX()
     const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
-    const { sequencial } = useId('myId')
+    const { sequencial } = useId('options')
 
     const Open = () => {
        setLocalOpen(prev => prev === false ? true : false)
     }
-   
-    console.log(localOpen)
-
+    
     return (
         <>
             <Button onClick={Open}>
@@ -30,9 +26,9 @@ const ButtonOptions = () => {
                 </span>
             </Button>
             {localOpen &&
-                <ContainerOptions>
+                <ContainerOptions onMouseLeave={() => setLocalOpen(false)}>
                     {breadCrumb === 'Contributors' && 
-                        <Grid>
+                        <Grid id={sequencial}>
                             <Button>
                                 <Flex>
                                     <span>
@@ -56,7 +52,7 @@ const ButtonOptions = () => {
                         </Grid>
                     }
                     {breadCrumb === 'Roles' &&  
-                        <Grid>
+                        <Grid id={sequencial}>
                             <Button>
                                 <Flex>
                                     <span>
