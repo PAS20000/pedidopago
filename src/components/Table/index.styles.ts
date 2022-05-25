@@ -17,7 +17,6 @@ export const ContainerTable = styled.table`
         }
     }
     tr{
-        color: ${props => props.theme.color.secondary[900]};
         text-transform: capitalize;
         animation: show 1s;
     }
@@ -30,7 +29,10 @@ export const ContainerTable = styled.table`
     }
     th{
         text-align: start;
+        color: ${props => props.theme.color.secondary[500]};
+        
         h4{
+            border-color: ${props => props.theme.color.secondary[300]};
             border-top: solid 1px;
             border-bottom: solid 1px;
             margin: -1px;

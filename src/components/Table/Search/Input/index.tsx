@@ -23,7 +23,7 @@ const Input = ({
             </LabelContainer>
             <div>
                 <Icon>
-                    <FiSearch size={'18px'}/>
+                    <FiSearch size={'20px'}/>
                 </Icon>
                 <InputSearch type="text" placeholder={placeholder} onChange={onChange} value={value}/>
             </div>

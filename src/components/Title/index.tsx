@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TitleH1 } from './index.styles'
+import { Container } from './index.styles'
 
 type TTitle = {
     children:React.ReactChild
@@ -10,9 +10,9 @@ const Title = ({
 } : TTitle) => {
 
     return (
-        <TitleH1>
+        <Container>
             {children}
-        </TitleH1>
+        </Container>
     )
 }
 

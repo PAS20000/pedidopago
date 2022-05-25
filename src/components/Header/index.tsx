@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { Container } from './index.styles'
 
-type TMain = {
+type THeader = {
     children:React.ReactNode
 }
 
-const Main = ({
+const Header = ({
     children
-} : TMain) => {
+} : THeader) => {
 
     return (
         <Container>
@@ -16,4 +16,4 @@ const Main = ({
     )
 }
 
-export default Main
+export default Header

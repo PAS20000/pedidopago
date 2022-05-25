@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 
 
 export const Container = styled.div`
-   padding: 5px;
+   padding: 10px;
 `
 
 export const InputSearch = styled.input`
-    padding: 12px 30px;
+    padding: 15px 40px;
     width: 93%;
     border-radius: 10px;
     border: solid 1px;
@@ -20,7 +20,7 @@ export const InputSearch = styled.input`
 
 export const Icon = styled.span`
     position: absolute;
-    padding: 10px;
+    padding: 12px;
 `
 
 export const LabelContainer = styled.div`

@@ -27,7 +27,7 @@ const Search = ({
     setSearchRoles,
 } : TSearch) => {
     const { breadCrumb } = useBreadCrumbCTX()
-    const [ Localcontributors, setLocalcontributors ] = React.useState<TContributors[]>()
+    const [ LocalContributors, setLocalContributors ] = React.useState<TContributors[]>()
     const [ LocalRoles, setLocalRoles ] = React.useState<TRoles[]>()
     const [ StringSearchContributor, setStringSearchContributor] = React.useState<string>()
     const [ StringSearchRoles , setStringSearchRoles] = React.useState<string>()
@@ -42,7 +42,7 @@ const Search = ({
         const contributors : Array<TContributors & TAgent> = JSON.parse(localStorage.contributors)
         
         if(contributors && breadCrumb === 'Contributors'){
-            setLocalcontributors(contributors.filter((contributor) => contributor.document &&
+            setLocalContributors(contributors.filter((contributor) => contributor.document &&
                 SearchTratament(contributor.document.number).includes(stringSearch)
                 ||
                 SearchTratament(contributor.name).includes(stringSearch)
@@ -103,13 +103,13 @@ const Search = ({
     }, [])
 
     React.useEffect(() => {
-        if(Localcontributors){
-            setSearchContributors(Localcontributors)
+        if(LocalContributors){
+            setSearchContributors(LocalContributors)
         }
         if(LocalRoles){
             setSearchRoles(LocalRoles)
         }
-    }, [Localcontributors, LocalRoles])
+    }, [LocalContributors, LocalRoles])
     
     return(
         <>
