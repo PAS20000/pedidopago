@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { FiMoreVertical, FiTrash2, FiEdit } from 'react-icons/fi'
 import { AiOutlineEye } from 'react-icons/ai'
-import { Button, ContainerOptions, Flex } from './indext.styles'
+import { Button, ContainerOptions, Flex, Grid } from './indext.styles'
 import { BsLayers } from 'react-icons/bs'
 import { GrUpdate } from 'react-icons/gr'
 import useBreadCrumbCTX from '../../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
@@ -11,18 +11,20 @@ import useId from '../../../../hooks/useId/useId'
 
 
 const ButtonOptions = () => {
-    const { globalOpen } = useUXCTX()
+    const { globalOpen, setGlobalOpen } = useUXCTX()
     const { breadCrumb } = useBreadCrumbCTX()
     const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
     const { sequencial } = useId('myId')
 
     const Open = () => {
-        setLocalOpen(localOpen === false ? true : false)
+       setLocalOpen(prev => prev === false ? true : false)
     }
-    
+   
+    console.log(localOpen)
+
     return (
         <>
-            <Button onClick={Open} id={sequencial}>
+            <Button onClick={Open}>
                 <span>
                     <FiMoreVertical />
                 </span>
@@ -30,7 +32,7 @@ const ButtonOptions = () => {
             {localOpen &&
                 <ContainerOptions>
                     {breadCrumb === 'Contributors' && 
-                        <>
+                        <Grid>
                             <Button>
                                 <Flex>
                                     <span>
@@ -51,10 +53,10 @@ const ButtonOptions = () => {
                                     </p>
                                 </Flex>
                             </Button>
-                        </>
+                        </Grid>
                     }
                     {breadCrumb === 'Roles' &&  
-                        <>
+                        <Grid>
                             <Button>
                                 <Flex>
                                     <span>
@@ -95,7 +97,7 @@ const ButtonOptions = () => {
                                     </p>
                                 </Flex>
                             </Button>
-                        </>
+                        </Grid>
                     }
                 </ContainerOptions>
             }

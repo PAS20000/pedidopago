@@ -12,6 +12,7 @@ export const Button = styled.button`
 
     p{
         margin-top: 5px;
+        font-size: 18px;
     }
     span{
         font-size: 24px;
@@ -19,15 +20,24 @@ export const Button = styled.button`
 `
 
 export const ContainerOptions = styled.div`
-    display: grid;
+    @keyframes show {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    animation: show 1s;
+    display: flex;
     box-shadow: ${props => props.theme.globalProps.shadow};
     position: absolute;
     z-index: 2;
     background-color: ${props => props.theme.color.secondary[100]};
     border-radius: 10px;
-    width: 16rem;
+    width: 15rem;
     padding: 20px;
-    transform: translateX(-16rem);
+    transform: translateX(-15rem);
     .isNotImplemented{
         opacity: 0.5;
         pointer-events: none;
@@ -36,6 +46,9 @@ export const ContainerOptions = styled.div`
 `
 
 export const Flex = styled.div`
-    display: flex;
-    
+    display: flex;   
+`
+
+export const Grid = styled.div`
+    display: grid;
 `

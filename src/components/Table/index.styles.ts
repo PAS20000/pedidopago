@@ -22,7 +22,7 @@ export const ContainerTable = styled.table`
     }
     td{
         border-bottom: solid 1px rgba(0, 0, 0, 0.2);
-        padding: 20px;
+        padding: 10px;
         p{
             margin-left:5px;
         }
