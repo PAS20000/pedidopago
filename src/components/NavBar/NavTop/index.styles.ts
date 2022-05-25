@@ -20,3 +20,15 @@ export const Flex = styled.div`
         }
     }
 `
+
+export const DefaultAtavar = styled.div`
+    background-color: ${props => props.theme.color.primary[1000]};
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    p{
+       text-align: end;
+       padding: 6px;
+    }
+` 

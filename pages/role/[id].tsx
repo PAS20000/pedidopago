@@ -9,7 +9,7 @@ import Card from '../../src/components/Card'
 import Title from '../../src/components/Title'
 import { TRoles } from '..'
 
-type TPrams = {
+type TParams = {
     params:{
         id:string
     }
@@ -17,7 +17,7 @@ type TPrams = {
 
 export const getStaticProps: GetStaticProps = async ({
     params
-} : TPrams) => {
+} : TParams) => {
     
     try {
         const resp = await axiosConfig(`https://pp-api-desafio.herokuapp.com/role/${params.id}`)
@@ -37,8 +37,6 @@ export const getStaticProps: GetStaticProps = async ({
             notFound:true
           }
     }
-
-    
   }
 
 export const getStaticPaths : GetStaticPaths = async () => {

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import NextImage from '../../Contracts/NextImage'
-import { Container, Flex } from './index.styles'
+import { Container, DefaultAtavar, Flex } from './index.styles'
 
 
 const NavTop = () => {
@@ -14,13 +14,11 @@ const NavTop = () => {
                 height='50px'
             />
             <Flex>
-                <NextImage 
-                    src='/img/defaultAvatar.png'
-                    alt='avatar'
-                    width='50px'
-                    height='50px'
-                    className='Avatar'
-                />
+                <DefaultAtavar>
+                    <p>
+                        LZ
+                    </p>
+                </DefaultAtavar>
                 <p>
                     Luiz ZloChevsky<br />
                     <span>

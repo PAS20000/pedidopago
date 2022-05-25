@@ -10,7 +10,7 @@ import Main from '../../src/components/Main'
 import Card from '../../src/components/Card'
 import Title from '../../src/components/Title'
 
-type TPrams = {
+type TParams = {
     params:{
         id:string
     }
@@ -18,7 +18,7 @@ type TPrams = {
 
 export const getStaticProps: GetStaticProps = async ({
     params
-} : TPrams) => {
+} : TParams) => {
     
     try {
         const contributor = await axiosConfig(`https://pp-api-desafio.herokuapp.com/agent/${params.id}`)
@@ -83,7 +83,7 @@ const Contributor = ({
               </Card>
             </Main>
             <footer>
-                
+
             </footer>
         </>
     )
