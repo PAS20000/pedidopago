@@ -32,6 +32,7 @@ export const light : Theme = {
         secondary: {
           1000:'#000',
           900:'#34423D',
+          400:'#A3B8B0',
           300:'#EAEFED',
           100:'#fff',
         },
