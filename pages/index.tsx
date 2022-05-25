@@ -5,9 +5,8 @@ import Card from '../src/components/Card'
 import Table from '../src/components/Table'
 import Title from '../src/components/Title'
 import Main from '../src/components/Main'
-import NavTop from '../src/components/NavBars/NavTop'
-import NavLeft from '../src/components/NavBars/NavLeft'
 import Header from '../src/components/Header'
+import NavBar from '../src/components/NavBar'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -53,8 +52,7 @@ const Home = ({
     return(
         <>
             <Header>
-                <NavTop />
-                <NavLeft />
+                <NavBar />
             </Header>
             <Main>
                 <Title>
