@@ -8,7 +8,8 @@ type TSearch = {
     setSearchContributors:React.Dispatch<React.SetStateAction<any>>
     setSearchRoles:React.Dispatch<React.SetStateAction<any>>
 }
-type TAgent = {
+
+export type TAgent = {
     email: string
     phone: {
         ddd: string
@@ -97,6 +98,7 @@ const Search = ({
             alert('Roles data error'), console.log(e)
         }
     }
+
     React.useEffect(() => {
         contributors()
         roles()
