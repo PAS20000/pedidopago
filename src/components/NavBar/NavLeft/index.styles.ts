@@ -5,5 +5,5 @@ export const Container = styled.nav`
     position: absolute;
     height: 100vh;
     padding: 80px;
-    box-shadow: 0 0 0.4em rgba(0,0,0,0.5);
+    box-shadow: ${props => props.theme.globalProps.shadow};
 `

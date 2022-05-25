@@ -17,7 +17,7 @@ export const Button = styled.button`
 
 export const ContainerOptions = styled.div`
     display: grid;
-    box-shadow: 0 0 0.4em rgba(0,0,0,0.5);
+    box-shadow: ${props => props.theme.globalProps.shadow};
     position: absolute;
     z-index: 2;
     background-color: ${props => props.theme.color.secondary[100]};

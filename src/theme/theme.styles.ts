@@ -16,6 +16,9 @@ type TVariants = {
 
 declare module '@emotion/react' {
     export interface Theme {
+      globalProps?:{
+        shadow:string
+      }
       color?: {
         primary:TVariants
         secondary: TVariants
@@ -24,6 +27,9 @@ declare module '@emotion/react' {
   }
 
 export const light : Theme = {
+    globalProps:{
+      shadow:'0 0 0.5em rgba(0,0,0,0.2)',
+    },
     color: {
         primary: {
           1000:'#23D996',

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { light } from '../../theme/light.styles'
+import { light } from '../../theme/theme.styles'
 import { ThemeProvider } from '@emotion/react' 
 
 type States = 'dark' | 'light'
