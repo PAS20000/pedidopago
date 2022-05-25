@@ -8,9 +8,16 @@ export type TTheme = {
     mode:States
     setMode:React.Dispatch<React.SetStateAction<States>>
 }
+
+type TThemeProviderApp = {
+    children:React.ReactNode
+}
+
 export const ThemeContext = React.createContext<TTheme>(null)
 
-const ThemeProviderApp = ({children}) => {
+const ThemeProviderApp = ({
+    children
+} : TThemeProviderApp) => {
     const [mode, setMode] = React.useState<States>('light')
     
    return(

@@ -7,9 +7,15 @@ type Props = {
     setUserState?:React.Dispatch<React.SetStateAction<TUserState>>
 }
 
+type TUserStateProvider = {
+    children:React.ReactNode
+}
+
 export const UserStateContext = React.createContext<Props>(null);
 
-const UserStateProvider = ({children}) => {
+const UserStateProvider = ({
+    children
+} : TUserStateProvider) => {
   const [userState, setUserState] = React.useState<TUserState>()
 
    return(

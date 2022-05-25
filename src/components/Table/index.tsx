@@ -10,6 +10,7 @@ import useBreadCrumbCTX from '../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import { ContainerTable, Title } from './index.styles'
 import ContributorsControl from './Tcontrols/ContributorsControl'
 import RolesControl from './Tcontrols/RolesControl'
+import useUXCTX from '../../hooks/useUXCTX'
 
 type TTable = {
     dataContributors:TContributors[]
@@ -23,7 +24,7 @@ const Table = ({
     const { breadCrumb } = useBreadCrumbCTX()
     const [searchContributors, setSearchContributors] = React.useState<TContributors[]>(dataContributors)
     const [searchRoles, setSearchRoles] = React.useState<TRoles[]>(dataRoles)
-
+    
     return(
         <>
             <BreadCrumbs />
@@ -50,7 +51,7 @@ const Table = ({
                         <RolesHead />
                     }
                 </thead>
-                <tbody>
+                <tbody >
                     {breadCrumb === 'Contributors' && searchContributors.map(item => 
                         <ContributorsBody 
                             key={item.agent_id}

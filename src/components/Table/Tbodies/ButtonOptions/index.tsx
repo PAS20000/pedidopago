@@ -5,18 +5,29 @@ import { Button, ContainerOptions, Flex } from './indext.styles'
 import { BsLayers } from 'react-icons/bs'
 import { GrUpdate } from 'react-icons/gr'
 import useBreadCrumbCTX from '../../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
+import useUXCTX from '../../../../hooks/useUXCTX'
+import useId from '../../../../hooks/useId/useId'
+
+
 
 const ButtonOptions = () => {
-    const [open, setOpen] = React.useState<boolean>(false)
+    const { globalOpen } = useUXCTX()
     const { breadCrumb } = useBreadCrumbCTX()
+    const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
+    const { sequencial } = useId('myId')
+
+    const Open = () => {
+        setLocalOpen(localOpen === false ? true : false)
+    }
+    
     return (
         <>
-            <Button onClick={() => setOpen(open === false ? true : false)}>
+            <Button onClick={Open} id={sequencial}>
                 <span>
                     <FiMoreVertical />
                 </span>
             </Button>
-            {open &&
+            {localOpen &&
                 <ContainerOptions>
                     {breadCrumb === 'Contributors' && 
                         <>

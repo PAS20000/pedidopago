@@ -7,9 +7,15 @@ export type TBreadContext = {
     setBreadCrumb:React.Dispatch<React.SetStateAction<TBread>>
 }
 
+type TBreadCrumbContext = {
+    children:React.ReactNode
+}
+
 export const BreadCrumbContext = React.createContext<TBreadContext>(null)
 
-const BreadCrumbProivder = ({children}) => {
+const BreadCrumbProivder = ({
+    children
+} : TBreadCrumbContext) => {
     const [breadCrumb, setBreadCrumb] = React.useState<TBread>('Contributors')
    
    return(
