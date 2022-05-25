@@ -26,7 +26,7 @@ const ContributorsBody = ({
     
     return(
     <tr className={status ?? 'inactive'}>
-        <td>
+        <td className={status ?? 'inactive'}>
             <Flex>
                 <NextImage
                     src={image}
@@ -40,17 +40,17 @@ const ContributorsBody = ({
                 </p>
             </Flex>
         </td>
-        <td>
+        <td className={status ?? 'inactive'}>
             <p>
                 {department}
             </p>
         </td>
-        <td>
+        <td className={status ?? 'inactive'}>
             <p>
                 {role}
             </p>
         </td>
-        <td>
+        <td className={status ?? 'inactive'}>
             <p>
                 {branch}
             </p>

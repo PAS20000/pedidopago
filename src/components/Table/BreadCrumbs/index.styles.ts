@@ -34,7 +34,6 @@ display: flex;
         &:hover{
             transition: 1s;
             border-color: ${props => props.theme.color.primary[1000]};
-            opacity: 1;
         }
         .contributors{
             color: ${props => props.theme.color.secondary[400]};

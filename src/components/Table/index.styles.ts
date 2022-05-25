@@ -12,8 +12,9 @@ export const ContainerTable = styled.table`
     width: 100%;
     border-collapse: collapse;
     tr.inactive{
-        opacity: 0.5;
-        pointer-events: none;
+        td.inactive{
+            opacity: 0.5;
+        }
     }
     tr{
         color: ${props => props.theme.color.secondary[900]};
