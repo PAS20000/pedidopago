@@ -1,13 +1,9 @@
 import * as React from 'react'
 import { TContributors, TRoles } from '../../../../pages'
 import useBreadCrumbCTX from '../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
+import useDataCTX from '../../../hooks/useDataCTX/useDataCTX'
 import { axiosConfig } from '../../../utils/axiosConfig'
 import Input from './input'
-
-type TSearch = {
-    setSearchContributors:React.Dispatch<React.SetStateAction<any>>
-    setSearchRoles:React.Dispatch<React.SetStateAction<any>>
-}
 
 export type TAgent = {
     email: string
@@ -23,18 +19,14 @@ export type TAgent = {
     birth_date:string
 }
 
-const Search = ({
-    setSearchContributors,
-    setSearchRoles,
-} : TSearch) => {
+const Search = ({}) => {
+    const { dataContributors, setDataContributors, setDataRoles, dataRoles } = useDataCTX({})
     const { breadCrumb } = useBreadCrumbCTX()
-    const [ LocalContributors, setLocalContributors ] = React.useState<TContributors[]>()
-    const [ LocalRoles, setLocalRoles ] = React.useState<TRoles[]>()
     const [ StringSearchContributor, setStringSearchContributor] = React.useState<string>()
     const [ StringSearchRoles , setStringSearchRoles] = React.useState<string>()
-
+    console.log(dataContributors)
     const SearchTratament = (StringValue:string) : string => {
-        return StringValue.replaceAll(' ' , '').toUpperCase()
+        return StringValue && StringValue.replaceAll(' ' , '').toUpperCase()
     }
 
     const searchContributors = (contributorSearch:string) => {
@@ -43,7 +35,7 @@ const Search = ({
         const contributors : Array<TContributors & TAgent> = JSON.parse(localStorage.contributors)
         
         if(contributors && breadCrumb === 'Contributors'){
-            setLocalContributors(contributors.filter((contributor) => contributor.document &&
+            setDataContributors(contributors.filter((contributor) => contributor.document &&
                 SearchTratament(contributor.document.number).includes(stringSearch)
                 ||
                 SearchTratament(contributor.name).includes(stringSearch)
@@ -58,60 +50,12 @@ const Search = ({
         const roles : Array<TRoles> = JSON.parse(localStorage.roles)
         
         if(roles && breadCrumb === 'Roles'){
-            setLocalRoles(roles.filter((role) =>
+            setDataRoles(roles.filter((role) =>
                 SearchTratament(role.name).includes(stringSearch)
             ))
             setStringSearchRoles(roleSearch)
         }
     }
-    
-    const contributors = async () => {
-        try {
-                const contributors = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
-                const contributorKai = await axiosConfig('https://pp-api-desafio.herokuapp.com/agent/1')
-                const Agent : TAgent = contributorKai.data.agent
-                const items : TContributors[] = contributors.data.items
-                const itemsExceptKai = items.filter((contributor) => contributor.agent_id !== 1)
-                const InJectKaiCPF = [
-                { 
-                    ...items[0], 
-                    email:Agent.email, 
-                    phone:Agent.phone, 
-                    document:Agent.document, 
-                    birth_date:Agent.birth_date
-                }, 
-                ...itemsExceptKai
-            ]
-            
-            localStorage.setItem('contributors' , JSON.stringify(InJectKaiCPF))
-        } catch (e) {
-            alert('Contributors data error'), console.log(e)
-        }
-    }
-
-    const roles = async () => {
-        try {
-                const roles = await axiosConfig('https://pp-api-desafio.herokuapp.com/roles')
-
-                localStorage.setItem('roles' , JSON.stringify(roles.data.roles))
-        } catch (e) {
-            alert('Roles data error'), console.log(e)
-        }
-    }
-
-    React.useEffect(() => {
-        contributors()
-        roles()
-    }, [])
-
-    React.useEffect(() => {
-        if(LocalContributors){
-            setSearchContributors(LocalContributors)
-        }
-        if(LocalRoles){
-            setSearchRoles(LocalRoles)
-        }
-    }, [LocalContributors, LocalRoles])
     
     return(
         <>

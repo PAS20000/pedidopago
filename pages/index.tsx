@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
     return {
       props: {
-        dataEmployees:employees.data.items,
+        dataContributor:employees.data.items,
         dataRoles:roles.data.roles
       }
     }
@@ -37,7 +37,7 @@ export type TRoles = {
 }
 
 type THomeProps = {
-    dataEmployees:TContributors[]
+    dataContributor:TContributors[]
     dataRoles:TRoles[]
 }
 
@@ -45,7 +45,7 @@ type THomeProps = {
 
 
 const Home = ({
-    dataEmployees,
+    dataContributor,
     dataRoles
 } : THomeProps) => {
     
@@ -60,8 +60,8 @@ const Home = ({
                 </Title>
                <Card>
                     <Table 
-                        dataContributors={dataEmployees} 
-                        dataRoles={dataRoles} 
+                        staticDataContributors={dataContributor} 
+                        staticDataRoles={dataRoles} 
                     />
                </Card>
             </Main>

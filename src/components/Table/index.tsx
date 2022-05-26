@@ -10,27 +10,27 @@ import useBreadCrumbCTX from '../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import { ContainerTable, Title } from './index.styles'
 import ContributorsControl from './Tcontrols/ContributorsControl'
 import RolesControl from './Tcontrols/RolesControl'
+import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
 
 type TTable = {
-    dataContributors:TContributors[]
-    dataRoles:TRoles[]
+    staticDataContributors?:TContributors[]
+    staticDataRoles?:TRoles[]
 }
 
 const Table = ({
-    dataContributors,
-    dataRoles,
+    staticDataContributors,
+    staticDataRoles
 } : TTable) => {
     const { breadCrumb } = useBreadCrumbCTX()
-    const [searchContributors, setSearchContributors] = React.useState<TContributors[]>(dataContributors)
-    const [searchRoles, setSearchRoles] = React.useState<TRoles[]>(dataRoles)
-    
+    const { dataContributors, dataRoles } = useDataCTX({
+        staticDataContributors,
+        staticDataRoles
+    })
+
     return(
         <>
             <BreadCrumbs />
-            <Search 
-                setSearchContributors={setSearchContributors}
-                setSearchRoles={setSearchRoles}
-            />
+            <Search />
             {breadCrumb === 'Contributors' &&
                 <Title>
                     Listagem de colaboradores
@@ -51,7 +51,7 @@ const Table = ({
                     }
                 </thead>
                 <tbody >
-                    {breadCrumb === 'Contributors' && searchContributors.map(item => 
+                    {breadCrumb === 'Contributors' && dataContributors.map(item => 
                         <ContributorsBody 
                             key={item.agent_id}
                             name={item.name}
@@ -63,7 +63,7 @@ const Table = ({
                             status={item.status}
                         />)
                     }
-                    {breadCrumb === 'Roles' && searchRoles.map(item => 
+                    {breadCrumb === 'Roles' && dataRoles.map(item => 
                         <RolesBody 
                             key={Math.random()} 
                             agents_quantity={item.agents_quantity}
