@@ -3,15 +3,17 @@ import { ContainerStyle } from './index.styles'
 
 type TCard = {
     children:React.ReactNode
+    border?:string
 }
 
 const Container = ({
-    children
+    children,
+    border
 } : TCard) => {
 
 
     return(
-        <ContainerStyle>
+        <ContainerStyle className={border}>
             {children}
         </ContainerStyle>     
     )

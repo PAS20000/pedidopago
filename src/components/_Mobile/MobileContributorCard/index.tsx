@@ -1,6 +1,7 @@
 import * as React from 'react'
 import useDataCTX from '../../../hooks/useDataCTX/useDataCTX'
-import Card from '../../Container'
+import Container from '../../Container'
+import NextImage from '../../Contracts/NextImage'
 
 const MobileContributorCard = () => {
     const { dataContributors } = useDataCTX({})
@@ -8,9 +9,24 @@ const MobileContributorCard = () => {
     return(
          <div>
             {dataContributors.map(contributor => 
-                <Card key={Math.random()}>
-                    <h1>{contributor.name}</h1>
-                </Card>
+                <Container key={Math.random()} border='solid'>
+                    <h3>
+                        Nome completo
+                    </h3>
+                    <div>
+                        <NextImage 
+                            src={contributor.image}
+                            width='50px'
+                            height='50px'
+                            alt={`avatar-${contributor.name}`}
+                            className='Avatar'
+                            layout='fixed'
+                        />
+                        <h4>
+                            {contributor.name}
+                        </h4>
+                    </div>
+                </Container>
             )}    
          </div>
     )

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { GetStaticProps } from 'next'
 import { axiosConfig } from '../src/utils/axiosConfig'
-import Card from '../src/components/Container'
 import Title from '../src/components/Title'
 import Main from '../src/components/Main'
 import Header from '../src/components/Header'
@@ -10,6 +9,8 @@ import useResposive from '../src/hooks/useResponsive/useResponsive'
 import MobileContributorCard from '../src/components/_Mobile/MobileContributorCard'
 import DesktopNavBar from '../src/components/_Desktop/DesktopNavBar'
 import DesktopTable from '../src/components/_Desktop/DesktopTable'
+import Container from '../src/components/Container'
+import { breakPoints } from '../src/utils/breakPoints'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -58,30 +59,41 @@ const Home = ({
 
     return(
         <>
-            {width > 800 ?
+            {width > breakPoints[1] &&
                 <>
                     <Header>
                         <DesktopNavBar />
                     </Header>
                     <Main>
-                        <Title>
-                            Organização
-                        </Title>
-                        <Card>
-                            <DesktopTable />
-                        </Card>
+                        <section>
+                            <Title>
+                                Organização
+                            </Title>
+                            <Container>
+                                <DesktopTable />
+                            </Container>
+                        </section>
                     </Main>
                     <footer>
                         
                     </footer> 
                 </>
-                :
-                <>
-                   <header>
+            }
 
-                   </header>
+            {width < breakPoints[1] && // mobile
+                <>
+                   <Header>
+                        
+                   </Header>
                    <main>
-                        <MobileContributorCard />
+                       <section>
+                            <Title>
+                                Colaboradores
+                            </Title>
+                            <Container>
+                                <MobileContributorCard />
+                            </Container>
+                       </section>
                    </main>
                    <footer>
 
