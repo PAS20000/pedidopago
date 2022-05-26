@@ -6,15 +6,19 @@ const useUXCTX = () : TUX  => {
             globalOpen, 
             setGlobalOpen, 
             breadCrumb, 
-            setBreadCrumb 
-        } = React.useContext(UXContext)
+            setBreadCrumb,
+            searchValue,
+            setSearchValue
+        } 
+    = React.useContext(UXContext)
 
-    
     return {
         globalOpen, 
         setGlobalOpen, 
         breadCrumb, 
-        setBreadCrumb 
+        setBreadCrumb,
+        searchValue,
+        setSearchValue
     }
 }
 

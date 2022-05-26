@@ -74,14 +74,14 @@ const Role = ({
     if(isFallback){
         return <div>Carregando...</div>
     }
-    console.log(role)
+    
     return(
         <>
             <Header>
                 <NavBar />
             </Header>
             <Main>
-              <Title>
+              <Title href='/'>
                 Permissões do cargo
               </Title>
               <Card>

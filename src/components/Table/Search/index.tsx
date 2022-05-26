@@ -20,9 +20,7 @@ export type TAgent = {
 
 const Search = ({}) => {
     const { setDataContributors, setDataRoles } = useDataCTX({})
-    const { breadCrumb } = useUXCTX()
-    const [ StringSearchContributor, setStringSearchContributor] = React.useState<string>()
-    const [ StringSearchRoles , setStringSearchRoles] = React.useState<string>()
+    const { breadCrumb, searchValue, setSearchValue } = useUXCTX()
     
     const SearchTratament = (StringValue:string) : string => {
         return StringValue && StringValue.replaceAll(' ' , '').toUpperCase()
@@ -39,7 +37,11 @@ const Search = ({}) => {
                 ||
                 SearchTratament(contributor.name).includes(stringSearch)
             ))
-            setStringSearchContributor(contributorSearch)
+
+            setSearchValue({
+                ...searchValue,
+                contributors:contributorSearch,
+            })
         }
     }
 
@@ -52,17 +54,27 @@ const Search = ({}) => {
             setDataRoles(roles.filter((role) =>
                 SearchTratament(role.name).includes(stringSearch)
             ))
-            setStringSearchRoles(roleSearch)
+
+            setSearchValue({
+                ...searchValue,
+                roles:roleSearch
+            })
         }
     }
-    
+   
+    React.useEffect(() => {
+        return () => {
+            setSearchValue({})
+        }
+    }, [])
+
     return(
         <>
             {breadCrumb === 'Contributors' &&
-               <Input placeholder='Pesquise por nome ou cpf' onChange={(e) => searchContributors(e.target.value)} value={StringSearchContributor ?? ''} />
+               <Input placeholder='Pesquise por nome ou cpf' onChange={(e) => searchContributors(e.target.value)} value={searchValue.contributors} />
             }
             {breadCrumb === 'Roles' && 
-                <Input placeholder='Pesquise por cargo' onChange={(e) => searchRoles(e.target.value)}  value={StringSearchRoles ?? ''}/>
+                <Input placeholder='Pesquise por cargo' onChange={(e) => searchRoles(e.target.value)}  value={searchValue.roles}/>
             }
         </>
     )

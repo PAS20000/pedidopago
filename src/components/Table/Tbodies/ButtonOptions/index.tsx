@@ -15,14 +15,14 @@ type TButtonOptions = {
 const ButtonOptions = ({
     id
 } : TButtonOptions) => {
-    const { breadCrumb } = useUXCTX()
-    const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
+    const { breadCrumb, globalOpen, setGlobalOpen } = useUXCTX()
     const { sequencial } = useId('options')
+    const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
 
     const Open = () => {
-       setLocalOpen(prev => prev === false ? true : false)
+        setLocalOpen(localOpen === false ? true : false)
     }
-    
+
     return (
         <>
             <Button onClick={Open}>
@@ -30,8 +30,8 @@ const ButtonOptions = ({
                     <FiMoreVertical />
                 </span>
             </Button>
-            {localOpen &&
-                <ContainerOptions onMouseLeave={() => setLocalOpen(false)}>
+            {localOpen && globalOpen &&
+                <ContainerOptions>
                     {breadCrumb === 'Contributors' && 
                         <Grid id={sequencial}>
                             <Button>

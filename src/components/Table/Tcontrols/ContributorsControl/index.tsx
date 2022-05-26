@@ -10,7 +10,7 @@ const ContributorsControl = () => {
         <Container>
            <span>
                <h4>
-                    Mostrando 10 de {dataContributors.length} registros
+                    Mostrando {dataContributors.length} de {dataContributors.length} registros
                </h4>
                 <select>
                     <option value="10">

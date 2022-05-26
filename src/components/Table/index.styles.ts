@@ -1,4 +1,8 @@
 import styled from "@emotion/styled";
+import { Media } from "../../utils/breakPoints";
+
+
+
 
 export const ContainerTable = styled.table`
  @keyframes show {
@@ -9,8 +13,11 @@ export const ContainerTable = styled.table`
             opacity:1;
         }
     }
-    width: 100%;
+    ${Media(0)}{
+        font-size: 12px;
+    }
     border-collapse: collapse;
+    width: 100%;
     tr.inactive{
         td.inactive{
             opacity: 0.5;
@@ -30,22 +37,22 @@ export const ContainerTable = styled.table`
     th{
         text-align: start;
         color: ${props => props.theme.color.secondary[500]};
-
         h4{
             border-color: ${props => props.theme.color.secondary[300]};
             border-top: solid 1px;
+            font-size: 1rem;
             border-bottom: solid 1px;
             margin: -1px;
-            padding: 20px;
+            padding: 1.2rem;
             opacity: 0.6;
             font-weight: bold;
             margin-bottom: 5px;
         }
-        .first{
+        h4.first{
             border-left: solid 1px;
             border-top-left-radius: 10px;
         }  
-        .last{
+        h4.last{
             border-right: solid 1px;
             border-top-right-radius: 10px;
         }

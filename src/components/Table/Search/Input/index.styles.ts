@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const InputSearch = styled.input`
     padding: 15px 40px;
-    width: 93%;
+    width: 90%;
     border-radius: 10px;
     border: solid 1px;
     outline: none;
