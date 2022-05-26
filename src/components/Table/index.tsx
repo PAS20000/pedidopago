@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { TContributors, TRoles } from '../../../pages'
 import Search from './Search'
 import BreadCrumbs from './BreadCrumbs'
 import RolesBody from './Tbodies/RolesBody'
@@ -12,20 +11,9 @@ import ContributorsControl from './Tcontrols/ContributorsControl'
 import RolesControl from './Tcontrols/RolesControl'
 import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
 
-type TTable = {
-    staticDataContributors?:TContributors[]
-    staticDataRoles?:TRoles[]
-}
-
-const Table = ({
-    staticDataContributors,
-    staticDataRoles
-} : TTable) => {
+const Table = () => {
     const { breadCrumb } = useBreadCrumbCTX()
-    const { dataContributors, dataRoles } = useDataCTX({
-        staticDataContributors,
-        staticDataRoles
-    })
+    const { dataContributors, dataRoles } = useDataCTX({})
 
     return(
         <>

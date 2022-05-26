@@ -7,6 +7,7 @@ import Title from '../src/components/Title'
 import Main from '../src/components/Main'
 import Header from '../src/components/Header'
 import NavBar from '../src/components/NavBar'
+import useDataCTX from '../src/hooks/useDataCTX/useDataCTX'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -41,14 +42,16 @@ type THomeProps = {
     dataRoles:TRoles[]
 }
 
-
-
-
 const Home = ({
     dataContributor,
     dataRoles
 } : THomeProps) => {
-    
+
+    useDataCTX({
+        staticDataContributors:dataContributor, 
+        staticDataRoles:dataRoles
+    })
+
     return(
         <>
             <Header>
@@ -59,10 +62,7 @@ const Home = ({
                     Organização
                 </Title>
                <Card>
-                    <Table 
-                        staticDataContributors={dataContributor} 
-                        staticDataRoles={dataRoles} 
-                    />
+                    <Table />
                </Card>
             </Main>
             <footer>

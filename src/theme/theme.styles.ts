@@ -26,10 +26,15 @@ declare module '@emotion/react' {
     }
   }
 
+
+export const cssConfig : Theme = {
+  globalProps:{
+    shadow:'0 0 0.5em rgba(0,0,0,0.2)',
+  },
+}
+
 export const light : Theme = {
-    globalProps:{
-      shadow:'0 0 0.5em rgba(0,0,0,0.2)',
-    },
+    ...cssConfig,
     color: {
         primary: {
           1000:'#23D996',

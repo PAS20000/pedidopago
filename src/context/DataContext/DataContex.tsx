@@ -30,15 +30,15 @@ const DataProvider = ({
             const Agent : TAgent = contributorKai.data.agent
             const itemsExceptKai = contributors.filter((contributor) => contributor.agent_id !== 1)
             const InJectKaiCPF = [
-            { 
-                ...contributors[0], 
-                email:Agent.email, 
-                phone:Agent.phone, 
-                document:Agent.document, 
-                birth_date:Agent.birth_date
-            }, 
-            ...itemsExceptKai
-        ]
+                { 
+                    ...contributors[0], 
+                    email:Agent.email, 
+                    phone:Agent.phone, 
+                    document:Agent.document, 
+                    birth_date:Agent.birth_date
+                }, 
+                ...itemsExceptKai
+            ]
         
         setDataContributors(contributors)
         localStorage.setItem('contributors' , JSON.stringify(InJectKaiCPF))

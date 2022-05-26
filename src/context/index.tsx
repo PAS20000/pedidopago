@@ -10,7 +10,7 @@ type Props = {
 
 export const GlobalProvider = ({
     children
-}:Props) => {
+} : Props) => {
 
     return(
         <DataProvider>
