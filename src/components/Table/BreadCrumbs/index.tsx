@@ -1,9 +1,9 @@
 import * as React from 'react'
-import useBreadCrumbCTX from '../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
+import useUXCTX from '../../../hooks/useUXCTX/useUXCTX'
 import { Flex } from './index.styles'
 
 const BreadCrumbs = () => {
-    const { breadCrumb,setBreadCrumb } = useBreadCrumbCTX()
+    const { breadCrumb,setBreadCrumb } = useUXCTX()
 
     return(
     <>

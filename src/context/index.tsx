@@ -1,6 +1,5 @@
 import * as React from 'react'
 import ThemeProvider from '../context/ThemeContext/ThemeContext'
-import BreadCrumbProivder from './BreadCrumbsContext/BreadCrumbsContext'
 import DataProvider from './DataContext/DataContex'
 import UXProvider from './UXContext/UXContext'
 
@@ -16,9 +15,7 @@ export const GlobalProvider = ({
         <DataProvider>
             <UXProvider>
                 <ThemeProvider>
-                    <BreadCrumbProivder>
-                        {children}
-                    </BreadCrumbProivder>
+                    {children}
                 </ThemeProvider>
             </UXProvider>
         </DataProvider>

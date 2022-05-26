@@ -4,9 +4,9 @@ import { AiOutlineEye } from 'react-icons/ai'
 import { Button, ContainerOptions, Flex, Grid } from './indext.styles'
 import { BsLayers } from 'react-icons/bs'
 import { GrUpdate } from 'react-icons/gr'
-import useBreadCrumbCTX from '../../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import useId from '../../../../hooks/useId/useId'
 import NextLink from '../../../Contracts/NextLink'
+import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
 
 type TButtonOptions = {
     id:number
@@ -14,8 +14,8 @@ type TButtonOptions = {
 
 const ButtonOptions = ({
     id
-}) => {
-    const { breadCrumb } = useBreadCrumbCTX()
+} : TButtonOptions) => {
+    const { breadCrumb } = useUXCTX()
     const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
     const { sequencial } = useId('options')
 

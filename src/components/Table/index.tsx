@@ -5,14 +5,14 @@ import RolesBody from './Tbodies/RolesBody'
 import RolesHead from './Theaders/RolesHead'
 import ContributorsBody from './Tbodies/ContributorsBody'
 import ContributorsHead from './Theaders/ContributorsHead'
-import useBreadCrumbCTX from '../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import { ContainerTable, Title } from './index.styles'
 import ContributorsControl from './Tcontrols/ContributorsControl'
 import RolesControl from './Tcontrols/RolesControl'
 import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
+import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 
 const Table = () => {
-    const { breadCrumb } = useBreadCrumbCTX()
+    const { breadCrumb } = useUXCTX()
     const { dataContributors, dataRoles } = useDataCTX({})
 
     return(

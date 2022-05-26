@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { TContributors, TRoles } from '../../../../pages'
-import useBreadCrumbCTX from '../../../hooks/useBreadCrumbCTX/useBreadCrumbCTX'
 import useDataCTX from '../../../hooks/useDataCTX/useDataCTX'
-import { axiosConfig } from '../../../utils/axiosConfig'
+import useUXCTX from '../../../hooks/useUXCTX/useUXCTX'
 import Input from './input'
 
 export type TAgent = {
@@ -21,7 +20,7 @@ export type TAgent = {
 
 const Search = ({}) => {
     const { setDataContributors, setDataRoles } = useDataCTX({})
-    const { breadCrumb } = useBreadCrumbCTX()
+    const { breadCrumb } = useUXCTX()
     const [ StringSearchContributor, setStringSearchContributor] = React.useState<string>()
     const [ StringSearchRoles , setStringSearchRoles] = React.useState<string>()
     
