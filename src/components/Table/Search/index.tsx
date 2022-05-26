@@ -20,11 +20,11 @@ export type TAgent = {
 }
 
 const Search = ({}) => {
-    const { dataContributors, setDataContributors, setDataRoles, dataRoles } = useDataCTX({})
+    const { setDataContributors, setDataRoles } = useDataCTX({})
     const { breadCrumb } = useBreadCrumbCTX()
     const [ StringSearchContributor, setStringSearchContributor] = React.useState<string>()
     const [ StringSearchRoles , setStringSearchRoles] = React.useState<string>()
-    console.log(dataContributors)
+    
     const SearchTratament = (StringValue:string) : string => {
         return StringValue && StringValue.replaceAll(' ' , '').toUpperCase()
     }
