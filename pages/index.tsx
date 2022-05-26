@@ -1,13 +1,15 @@
 import * as React from 'react'
 import { GetStaticProps } from 'next'
 import { axiosConfig } from '../src/utils/axiosConfig'
-import Card from '../src/components/Card'
-import Table from '../src/components/Table'
+import Card from '../src/components/Container'
 import Title from '../src/components/Title'
 import Main from '../src/components/Main'
 import Header from '../src/components/Header'
-import NavBar from '../src/components/NavBar'
 import useDataCTX from '../src/hooks/useDataCTX/useDataCTX'
+import useResposive from '../src/hooks/useResponsive/useResponsive'
+import MobileContributorCard from '../src/components/_Mobile/MobileContributorCard'
+import DesktopNavBar from '../src/components/_Desktop/DesktopNavBar'
+import DesktopTable from '../src/components/_Desktop/DesktopTable'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -52,22 +54,40 @@ const Home = ({
         staticDataRoles:dataRoles
     })
 
+    const { width } = useResposive()
+
     return(
         <>
-            <Header>
-                <NavBar />
-            </Header>
-            <Main>
-                <Title>
-                    Organização
-                </Title>
-               <Card>
-                    <Table />
-               </Card>
-            </Main>
-            <footer>
-                
-            </footer>
+            {width > 800 ?
+                <>
+                    <Header>
+                        <DesktopNavBar />
+                    </Header>
+                    <Main>
+                        <Title>
+                            Organização
+                        </Title>
+                        <Card>
+                            <DesktopTable />
+                        </Card>
+                    </Main>
+                    <footer>
+                        
+                    </footer> 
+                </>
+                :
+                <>
+                   <header>
+
+                   </header>
+                   <main>
+                        <MobileContributorCard />
+                   </main>
+                   <footer>
+
+                   </footer>
+                </>
+            }
         </>
     )
 }

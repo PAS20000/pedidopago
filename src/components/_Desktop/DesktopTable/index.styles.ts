@@ -1,8 +1,11 @@
 import styled from "@emotion/styled";
-import { Media } from "../../utils/breakPoints";
+import { Media } from "../../../utils/breakPoints";
 
 
 
+export const Container = styled.div`
+    padding: 10px;
+`
 
 export const ContainerTable = styled.table`
  @keyframes show {
@@ -13,9 +16,11 @@ export const ContainerTable = styled.table`
             opacity:1;
         }
     }
+
     ${Media(0)}{
-        font-size: 12px;
+        font-size: 10px;
     }
+    
     border-collapse: collapse;
     width: 100%;
     tr.inactive{
@@ -40,7 +45,6 @@ export const ContainerTable = styled.table`
         h4{
             border-color: ${props => props.theme.color.secondary[300]};
             border-top: solid 1px;
-            font-size: 1rem;
             border-bottom: solid 1px;
             margin: -1px;
             padding: 1.2rem;

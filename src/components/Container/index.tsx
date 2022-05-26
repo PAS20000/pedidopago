@@ -1,20 +1,20 @@
 import * as React from 'react'
-import { Container } from './index.styles'
+import { ContainerStyle } from './index.styles'
 
 type TCard = {
     children:React.ReactNode
 }
 
-const Card = ({
+const Container = ({
     children
 } : TCard) => {
 
 
     return(
-        <Container>
+        <ContainerStyle>
             {children}
-        </Container>     
+        </ContainerStyle>     
     )
 }
 
-export default Card
+export default Container

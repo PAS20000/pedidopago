@@ -4,9 +4,9 @@ import { AiOutlineEye } from 'react-icons/ai'
 import { Button, ContainerOptions, Flex, Grid } from './indext.styles'
 import { BsLayers } from 'react-icons/bs'
 import { GrUpdate } from 'react-icons/gr'
-import useId from '../../../../hooks/useId/useId'
-import NextLink from '../../../Contracts/NextLink'
-import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
+import useId from '../../../../../hooks/useId/useId'
+import NextLink from '../../../../Contracts/NextLink'
+import useUXCTX from '../../../../../hooks/useUXCTX/useUXCTX'
 
 type TButtonOptions = {
     id:number

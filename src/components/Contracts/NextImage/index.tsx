@@ -8,7 +8,7 @@ export type TNextImage = {
     width?:string | number
     height?:string | number
     alt:string
-    className?:string
+    className?:'Avatar'
     layout?:'fixed' | 'fill' | 'intrinsic' | 'responsive'
 }
 

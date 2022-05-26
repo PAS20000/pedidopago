@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TRoles } from '../../../../../pages'
+import { TRoles } from '../../../../../../pages'
 import ButtonOptions from '../ButtonOptions'
 
 const RolesBody = ({

@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { TContributors, TRoles } from '../../../../pages'
-import useDataCTX from '../../../hooks/useDataCTX/useDataCTX'
-import useUXCTX from '../../../hooks/useUXCTX/useUXCTX'
+import { TContributors, TRoles } from '../../../pages'
+import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
+import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
+import { Container } from '../_Desktop/DesktopTable/index.styles'
 import Input from './input'
 
 export type TAgent = {
@@ -64,19 +65,22 @@ const Search = ({}) => {
    
     React.useEffect(() => {
         return () => {
-            setSearchValue({})
+            setSearchValue({
+                contributors:'',
+                roles:''
+            })
         }
     }, [])
 
     return(
-        <>
+        <Container>
             {breadCrumb === 'Contributors' &&
                <Input placeholder='Pesquise por nome ou cpf' onChange={(e) => searchContributors(e.target.value)} value={searchValue.contributors} />
             }
             {breadCrumb === 'Roles' && 
                 <Input placeholder='Pesquise por cargo' onChange={(e) => searchRoles(e.target.value)}  value={searchValue.roles}/>
             }
-        </>
+        </Container>
     )
 }
 

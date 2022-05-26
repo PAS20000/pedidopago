@@ -11,7 +11,6 @@ export const Button = styled.button`
         opacity: 0.5;
     }
     p{
-        font-size: 18px;
         margin: 10px;
         margin-top: 5px;
     }

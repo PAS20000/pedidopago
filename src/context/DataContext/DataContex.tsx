@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { TContributors, TRoles } from '../../../pages'
-import { TAgent } from '../../components/Table/Search'
+import { TAgent } from '../../components/Search'
 import { axiosConfig } from '../../utils/axiosConfig'
 
 export type TDataContext = {
