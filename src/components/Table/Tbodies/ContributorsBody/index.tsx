@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { TContributors } from '../../../../../../pages'
-import AvatarContributor from '../../../../AvatarContributor'
-import Status from '../../../../Status'
+import { TContributors } from '../../../../../pages'
+import AvatarContributor from '../../../AvatarContributor'
+import Status from '../../../Status'
 import ButtonOptions from '../ButtonOptions'
 
 const ContributorsBody = ({

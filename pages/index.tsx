@@ -5,12 +5,9 @@ import Title from '../src/components/Title'
 import Main from '../src/components/Main'
 import Header from '../src/components/Header'
 import useDataCTX from '../src/hooks/useDataCTX/useDataCTX'
-import useResposive from '../src/hooks/useResponsive/useResponsive'
-import MobileContributorCard from '../src/components/_Mobile/MobileContributorCard'
-import DesktopNavBar from '../src/components/_Desktop/DesktopNavBar'
-import DesktopTable from '../src/components/_Desktop/DesktopTable'
 import Container from '../src/components/Container'
-import { breakPoints } from '../src/utils/breakPoints'
+import Table from '../src/components/Table'
+import NavBar from '../src/components/NavBar'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -55,14 +52,11 @@ const Home = ({
         staticDataRoles:dataRoles
     })
 
-    const { width } = useResposive()
-
     return(
         <>
-            {width > breakPoints[1] &&
                 <>
                     <Header>
-                        <DesktopNavBar />
+                        <NavBar />
                     </Header>
                     <Main>
                         <section>
@@ -70,7 +64,7 @@ const Home = ({
                                 Organização
                             </Title>
                             <Container>
-                                <DesktopTable />
+                                <Table />
                             </Container>
                         </section>
                     </Main>
@@ -78,28 +72,6 @@ const Home = ({
                         
                     </footer> 
                 </>
-            }
-
-            {width < breakPoints[1] && // mobile
-                <>
-                   <Header>
-                        
-                   </Header>
-                   <Main>
-                       <section>
-                            <Title>
-                                Colaboradores
-                            </Title>
-                            <Container>
-                                <MobileContributorCard />
-                            </Container>
-                       </section>
-                   </Main>
-                   <footer>
-
-                   </footer>
-                </>
-            }
         </>
     )
 }

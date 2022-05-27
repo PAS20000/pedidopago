@@ -1,5 +1,5 @@
 import * as React from 'react'
-import NextImage from '../../../Contracts/NextImage'
+import NextImage from '../../Contracts/NextImage'
 import { Container, DefaultAtavar, Flex } from './index.styles'
 
 

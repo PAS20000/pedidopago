@@ -1,5 +1,5 @@
 import * as React from 'react'
-import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
+import useUXCTX from '../../../hooks/useUXCTX/useUXCTX'
 import { Flex } from './index.styles'
 
 const BreadCrumbs = () => {

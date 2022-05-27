@@ -2,7 +2,7 @@ import * as React from 'react'
 import { TContributors, TRoles } from '../../../pages'
 import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
 import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
-import { Container } from '../_Desktop/DesktopTable/index.styles'
+import { Container } from '../Table/index.styles'
 import Input from './input'
 
 export type TAgent = {

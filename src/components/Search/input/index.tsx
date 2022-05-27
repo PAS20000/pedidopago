@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { FiSearch } from 'react-icons/fi'
-import useId from '../../../hooks/useId/useId'
+import LabelText from '../../LabelText'
 import { Container, Icon, InputSearch, LabelContainer } from './index.styles'
 
 type TInput = {
@@ -17,11 +17,9 @@ const Input = ({
    
     return(
         <Container>
-            <LabelContainer>
-                <label>
-                    Pesquisar por
-                </label>
-            </LabelContainer>
+            <LabelText>
+                Pesquisar por
+            </LabelText>
             <div>
                 <Icon>
                     <FiSearch />

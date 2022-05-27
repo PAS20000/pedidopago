@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Search from '../../Search'
+import Search from '../Search'
 import BreadCrumbs from './BreadCrumbs'
 import RolesBody from './Tbodies/RolesBody'
 import RolesHead from './Theaders/RolesHead'
@@ -8,10 +8,10 @@ import ContributorsHead from './Theaders/ContributorsHead'
 import { Container, ContainerTable, Title } from './index.styles'
 import ContributorsControl from './Tcontrols/ContributorsControl'
 import RolesControl from './Tcontrols/RolesControl'
-import useDataCTX from '../../../hooks/useDataCTX/useDataCTX'
-import useUXCTX from '../../../hooks/useUXCTX/useUXCTX'
+import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
+import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 
-const DesktopTable = () => {
+const Table = () => {
     const { breadCrumb } = useUXCTX()
     const { dataContributors, dataRoles } = useDataCTX({})
 
@@ -73,4 +73,4 @@ const DesktopTable = () => {
     )
 }
 
-export default DesktopTable
+export default Table

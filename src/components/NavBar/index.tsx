@@ -3,7 +3,7 @@ import NavLeft from './NavLeft'
 import NavTop from './NavTop'
 
 
-const DesktopNavBar = () => {
+const NavBar = () => {
 
     return(
         <>
@@ -13,4 +13,4 @@ const DesktopNavBar = () => {
     )
 }
 
-export default DesktopNavBar
+export default NavBar

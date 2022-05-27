@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { axiosConfig } from '../../src/utils/axiosConfig'
 import Header from '../../src/components/Header'
-import NavBar from '../../src/components/_Desktop/DesktopNavBar'
+import NavBar from '../../src/components/NavBar'
 import Main from '../../src/components/Main'
 import Card from '../../src/components/Container'
 import Title from '../../src/components/Title'
@@ -15,7 +15,7 @@ type TParams = {
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({
+export const getStaticProps : GetStaticProps = async ({
     params
 } : TParams) => {
     

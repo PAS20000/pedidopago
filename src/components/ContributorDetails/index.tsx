@@ -1,12 +1,15 @@
 import * as React from 'react'
 import { TContributors } from '../../../pages'
 import Container from '../Container'
-import { TAgent } from '../Search'
-import { Avatar, Card, ContainerInfo, Icon } from './index.styles'
+import { Avatar, ContainerInfo, ContainerOrganizations } from './index.styles'
 import { GrDocumentText } from 'react-icons/gr'
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import AvatarContributor from '../AvatarContributor'
+import LabelText from '../LabelText'
+import Personal from './Personal'
+import Organization from './Organizaiton'
+import { TAgent } from '../Search'
 
 const ContributorDetails = ({
     name,
@@ -44,82 +47,43 @@ const ContributorDetails = ({
                 Informações pessoais
             </h4>
             <ContainerInfo>
-                <Card>
-                    <div>
-                        <Icon>
-                            <GrDocumentText />
-                        </Icon>
-                        <p>
-                            <span>
-                                {document.type} 
-                            </span>
-                            <br />
-                            {document.number}
-                        </p>
-                    </div>
-                </Card>
-                <Card>
-                    <div>
-                        <Icon>
-                            <FiPhoneCall />
-                        </Icon>
-                        <p>
-                            <span>
-                                telefone
-                            </span> <br />
-                            {phone.ddi} {phone.ddd} {phone.number}
-                        </p>
-                    </div>
-                </Card>
-                <Card>
-                    <div>
-                        <Icon>
-                            <AiOutlineCalendar />
-                        </Icon>
-                        <p>
-                            <span>
-                                nascimento
-                            </span> <br />
-                            {birth_dateTratament()}
-                        </p>
-                    </div>
-                </Card>
+                <Personal
+                    icon={<GrDocumentText />}
+                    title={document.type} 
+                    text={document.number}
+                />
+                <Personal 
+                    icon={<FiPhoneCall />}
+                    title={'telefone'}
+                    text={`${phone.ddi} ${phone.ddd} ${phone.number}`}
+                />
+                <Personal 
+                    icon={<AiOutlineCalendar />}
+                    title={'nascimento'}
+                    text={birth_dateTratament()}
+                />
             </ContainerInfo>
-            <h4>
-                Dados Organizacionais
-            </h4>
-            <fieldset>
-                <div>
-                    <h4>
-                        Unidade
-                    </h4>
-                    <p>
-                        {branch}
-                    </p>
-                </div>
-                <div>
-                    <h4>
-                        Departamento
-                    </h4>
-                    <p>
-                        {department}
-                    </p>
-                </div>
-                <div>
-                    <h4>
-                        Cargo
-                    </h4>
-                    <p>
-                        {role}
-                    </p>
-                </div>
-                <div>
-                    <h4>
-                        Status
-                    </h4>
-                    {status}
-                </div>
-            </fieldset>
+            <ContainerOrganizations>
+                <h4>
+                    Dados Organizacionais
+                </h4>
+                <Organization 
+                    title='unidade'
+                    options={[branch]}
+                />
+                 <Organization 
+                    title='departamento'
+                    options={[department]}
+                />
+                <Organization 
+                    title='Cargo'
+                    options={[role]}
+                />
+                <Organization 
+                    title='Status'
+                    options={[status]}
+                />
+            </ContainerOrganizations>
         </Container>
     )
 }
