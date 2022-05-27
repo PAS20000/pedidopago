@@ -31,10 +31,12 @@ export const LabelContainer = styled.div`
     padding: 6px;
     margin-left: 5px;
     pointer-events: none;
+    
     label{
-        width: auto;
+        width: 5rem;
+        text-align: center;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 0.7rem;
         color: rgba(0,0,0, 0.5);
         position: absolute;
         z-index: 3;
