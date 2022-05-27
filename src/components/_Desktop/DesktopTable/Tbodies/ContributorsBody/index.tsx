@@ -20,6 +20,7 @@ const ContributorsBody = ({
                 <AvatarContributor 
                     image={image}
                     name={name}
+                    size={'50px'}
                 />
             </td>
             <td className={status ?? 'inactive'}>

@@ -7,12 +7,14 @@ type TAvatar = {
     name:string
     image:string
     email?:string
+    size:string | number
 }
 
 const AvatarContributor = ({
     name,
     image,
-    email
+    email,
+    size
 } : TAvatar) => {
 
     return (
@@ -20,17 +22,17 @@ const AvatarContributor = ({
             <NextImage
                 src={image}
                 alt={`imagem-${name}`}
-                width={40}
-                height={40}
+                width={size}
+                height={size}
                 className={'Avatar'}
                 layout='fixed'
             />
             {!email ? 
-                <p>
+                <p className='AvatarName'>
                     {name}
                 </p>
                 :
-                <p>
+                <p className='AvatarNameEmail'>
                     {name} <br />
                     {email}
                 </p>

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { TContributors } from '../../../pages'
 import Container from '../Container'
 import { TAgent } from '../Search'
-import { Card, ContainerInfo, Icon } from './index.styles'
+import { Avatar, Card, ContainerInfo, Icon } from './index.styles'
 import { GrDocumentText } from 'react-icons/gr'
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineCalendar } from 'react-icons/ai'
@@ -32,11 +32,14 @@ const ContributorDetails = ({
 
     return (
         <Container>
-            <AvatarContributor 
-                name={name}
-                image={image}
-                email={email}
-            />
+            <Avatar>
+                <AvatarContributor 
+                    name={name}
+                    image={image}
+                    email={email}
+                    size={'75px'}
+                />
+            </Avatar>
             <h4>
                 Informações pessoais
             </h4>

@@ -19,7 +19,6 @@ export const Card = styled.div`
             text-transform: capitalize;
         }
     }
-    
 `
 
 export const ContainerInfo = styled.div`
@@ -38,5 +37,12 @@ export const Icon = styled.div`
     background-color: ${props => props.theme.color.secondary[400]};
     svg{
         padding: 0.6rem;
+    }
+`
+
+export const Avatar = styled.div`
+ p.AvatarNameEmail{
+        margin-left: 1rem;
+        margin-top: 1rem;
     }
 `

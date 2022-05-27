@@ -18,9 +18,14 @@ export const ContainerTable = styled.table`
     }
 
     ${Media(0)}{
-        font-size: 10px;
+        font-size: 0.5rem;
+        p.AvatarName{
+            padding: 1rem;
+        }
     }
-    
+    p.AvatarName{
+        margin-left: 0.5rem;
+    }
     border-collapse: collapse;
     width: 100%;
     tr.inactive{
