@@ -8,7 +8,7 @@ type TCard = {
 
 const Container = ({
     children,
-    border
+    border,
 } : TCard) => {
 
     return(

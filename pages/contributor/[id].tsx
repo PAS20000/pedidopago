@@ -7,8 +7,8 @@ import { TAgent } from '../../src/components/Search'
 import Header from '../../src/components/Header'
 import NavBar from '../../src/components/_Desktop/DesktopNavBar'
 import Main from '../../src/components/Main'
-import Card from '../../src/components/Container'
 import Title from '../../src/components/Title'
+import ContributorDeatails from '../../src/components/ContributorDetails'
 
 type TParams = {
     params:{
@@ -55,7 +55,7 @@ export const getStaticPaths : GetStaticPaths = async () => {
     };
   }
 
-type TContributor = {
+export type TContributor = {
     contributor:TContributors & TAgent
 }
 
@@ -78,9 +78,19 @@ const Contributor = ({
               <Title>
                 Detalhes do colaborador
               </Title>
-              <Card>
-                  {contributor.name}
-              </Card>
+              <ContributorDeatails 
+                name={contributor.name}
+                branch={contributor.branch}
+                agent_id={contributor.agent_id}
+                department={contributor.department}
+                image={contributor.image}
+                status={contributor.status}
+                role={contributor.role}
+                document={contributor.document}
+                email={contributor.email}
+                phone={contributor.phone}
+                birth_date={contributor.birth_date}
+              />
             </Main>
             <footer>
 

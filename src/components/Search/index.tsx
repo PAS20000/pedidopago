@@ -6,17 +6,17 @@ import { Container } from '../_Desktop/DesktopTable/index.styles'
 import Input from './input'
 
 export type TAgent = {
-    email: string
-    phone: {
+    email?: string
+    phone?: {
         ddd: string
         ddi: string
         number: string
     },
-    document: {
+    document?: {
         type: string
         number:string
     },
-    birth_date:string
+    birth_date?:string
 }
 
 const Search = ({}) => {

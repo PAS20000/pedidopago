@@ -31,7 +31,7 @@ export type TContributors = {
     image:string
     name:string
     role: string
-    status: string
+    status: 'active' | 'inactive'
 }
 
 export type TRoles = {
@@ -85,7 +85,7 @@ const Home = ({
                    <Header>
                         
                    </Header>
-                   <main>
+                   <Main>
                        <section>
                             <Title>
                                 Colaboradores
@@ -94,7 +94,7 @@ const Home = ({
                                 <MobileContributorCard />
                             </Container>
                        </section>
-                   </main>
+                   </Main>
                    <footer>
 
                    </footer>
