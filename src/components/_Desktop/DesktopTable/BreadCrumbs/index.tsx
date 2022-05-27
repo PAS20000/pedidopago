@@ -3,7 +3,7 @@ import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
 import { Flex } from './index.styles'
 
 const BreadCrumbs = () => {
-    const { breadCrumb,setBreadCrumb } = useUXCTX()
+    const { breadCrumb, setBreadCrumb } = useUXCTX()
 
     return(
     <>

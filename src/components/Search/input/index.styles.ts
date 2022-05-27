@@ -4,11 +4,12 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
    padding: 10px;
    margin: 5px;
+   margin-left: -20px;
 `
 
 export const InputSearch = styled.input`
-    padding: 15px 40px;
-    width: 90%;
+    padding: 1rem 2.5rem;
+    width: 91%;
     border-radius: 10px;
     border: solid 1px;
     outline: none;
@@ -21,16 +22,19 @@ export const InputSearch = styled.input`
 
 export const Icon = styled.span`
     position: absolute;
-    padding: 12px;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+    pointer-events: none;
 `
 
 export const LabelContainer = styled.div`
     padding: 6px;
     margin-left: 5px;
+    pointer-events: none;
     label{
         width: auto;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 1rem;
         color: rgba(0,0,0, 0.5);
         position: absolute;
         z-index: 3;

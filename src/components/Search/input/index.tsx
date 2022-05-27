@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { FiSearch } from 'react-icons/fi'
+import useId from '../../../hooks/useId/useId'
 import { Container, Icon, InputSearch, LabelContainer } from './index.styles'
 
 type TInput = {
@@ -23,9 +24,14 @@ const Input = ({
             </LabelContainer>
             <div>
                 <Icon>
-                    <FiSearch size={'20px'}/>
+                    <FiSearch />
                 </Icon>
-                <InputSearch type="text" placeholder={placeholder} onChange={onChange} value={value}/>
+                <InputSearch 
+                    type="text" 
+                    placeholder={placeholder} 
+                    onChange={onChange} 
+                    value={value}
+                />
             </div>
         </Container>
     )

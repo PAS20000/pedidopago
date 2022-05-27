@@ -12,7 +12,8 @@ export const ContainerStyle = styled.div`
    border: ${props => props.className && 'solid 1px'};
 
    ${Media(1)}{
-      padding: 0.5rem;
+      padding: 40px, 0px, 40px, 0px;
       margin: 0.5rem;
+      border-color: ${props => props.theme.color.secondary[400]};
    }
 `

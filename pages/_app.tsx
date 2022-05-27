@@ -1,7 +1,11 @@
 import GlobalProvider from "../src/context"
 import '../src/style/reset.css'
+import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }) {
+const PedidoPagoApp = ({ 
+  Component, 
+  pageProps 
+} : AppProps) => {
 
   return (
       <GlobalProvider>
@@ -10,4 +14,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default PedidoPagoApp

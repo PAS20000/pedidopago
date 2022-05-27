@@ -11,12 +11,10 @@ module.exports = {
             headers:[{
                 key:'X-Frame-Options',
                 value:'SAMEORIGIN',
-               
             },{
                 key:'x-robots-tag',
                 value:'*',
-            }
-            ]
+            }]
         }]
     }
 }

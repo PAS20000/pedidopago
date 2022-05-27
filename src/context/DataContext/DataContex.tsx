@@ -37,7 +37,7 @@ const DataProvider = ({
                     document:Agent.document, 
                     birth_date:Agent.birth_date
                 }, 
-                ...itemsExceptKai
+                ...itemsExceptKai,
             ]
         
         setDataContributors(contributors)

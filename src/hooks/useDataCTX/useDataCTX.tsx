@@ -12,13 +12,21 @@ const useDataCTX = ({
     staticDataContributors,
     staticDataRoles
 } : TUseDataCTX) : TDataContext => {
-    const { dataContributors, setDataContributors, dataRoles, setDataRoles } = React.useContext(DataContext)
+    const { 
+        dataContributors,
+        setDataContributors, 
+        dataRoles, 
+        setDataRoles 
+    } = React.useContext(DataContext)
 
     React.useEffect(() => {
         if(staticDataContributors && staticDataRoles){
             setDataContributors(staticDataContributors)
             setDataRoles(staticDataRoles)
         }
+        console.log(
+            'Este protótipo usa window.innerWidth/Height, portanto dê F5 se estiver usando o inspecionar elemento para testar resposividade.'
+        )
     }, [])
 
     return {

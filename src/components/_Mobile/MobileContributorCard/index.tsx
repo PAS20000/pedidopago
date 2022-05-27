@@ -2,6 +2,8 @@ import * as React from 'react'
 import useDataCTX from '../../../hooks/useDataCTX/useDataCTX'
 import Container from '../../Container'
 import NextImage from '../../Contracts/NextImage'
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
+import { Flex, Title } from './index.styles'
 
 const MobileContributorCard = () => {
     const { dataContributors } = useDataCTX({})
@@ -10,22 +12,28 @@ const MobileContributorCard = () => {
          <div>
             {dataContributors.map(contributor => 
                 <Container key={Math.random()} border='solid'>
-                    <h3>
+                    <Title>
                         Nome completo
-                    </h3>
-                    <div>
-                        <NextImage 
-                            src={contributor.image}
-                            width='50px'
-                            height='50px'
-                            alt={`avatar-${contributor.name}`}
-                            className='Avatar'
-                            layout='fixed'
-                        />
-                        <h4>
-                            {contributor.name}
-                        </h4>
-                    </div>
+                    </Title>
+                    <Flex>
+                        <Flex>
+                            <NextImage 
+                                src={contributor.image}
+                                width='50px'
+                                height='50px'
+                                alt={`avatar-${contributor.name}`}
+                                className='Avatar'
+                                layout='fixed'
+                            />
+                            <h5>
+                                {contributor.name}
+                            </h5>
+                        </Flex>
+                        <div>
+                            <IoIosArrowDown />
+                            <IoIosArrowUp />
+                        </div>
+                    </Flex>
                 </Container>
             )}    
          </div>

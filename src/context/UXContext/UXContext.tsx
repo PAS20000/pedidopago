@@ -49,5 +49,5 @@ const UXProvider = ({
         </UXContext.Provider>
     )
 }
-   
+
 export default UXProvider
