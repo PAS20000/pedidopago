@@ -16,7 +16,7 @@ const BreadCrumbs = () => {
                     'default'
                 }
             >
-                <h3 className='contributors'>
+                <h3>
                     Colaboradores
                 </h3>
             </div>
@@ -28,11 +28,15 @@ const BreadCrumbs = () => {
                     'default'
                 }
             >
-                <h3 className='roles'>
+                <h3>
                     Cargos
                 </h3>
             </div>
-            <div className='hr' />
+            <div className='default end'>
+                <h3>
+                    &nbsp;
+                </h3>
+            </div>
         </Flex>
     </>
     )
