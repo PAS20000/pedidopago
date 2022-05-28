@@ -41,7 +41,7 @@ const UXProvider = ({
   })
   const [sliceData, setSliceData] = React.useState<TSliceData>({
       init:0,
-      final:6
+      final:10
   })
 
   const value = {

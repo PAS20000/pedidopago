@@ -22,7 +22,17 @@ const ContributorsControl = () => {
        const contributorsClientSide = JSON.parse(localStorage.contributors).length
        const slicer = 10
        for (let opt = 1; opt < Math.ceil(contributorsClientSide / slicer + 1); opt++) {
-            setOptions(prev => [...prev, opt * 10])
+
+            const optCalc = () : number => {
+                if(contributorsClientSide < opt * slicer){
+                    return contributorsClientSide
+                } else {
+                    return opt * 10
+                }
+                
+            }
+
+            setOptions(prev => [...prev, optCalc()])
        }
       
     }, [])
@@ -37,9 +47,6 @@ const ContributorsControl = () => {
                     ...sliceData,
                     final:parseInt(e.target.value)
                 })}>
-                    <option value="6">
-                        6
-                    </option>
                     {options.map((opt, i) => 
                         <option key={i} value={opt}>
                             {opt}
