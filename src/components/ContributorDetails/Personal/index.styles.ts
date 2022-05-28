@@ -18,7 +18,7 @@ export const Card = styled.div`
         font-weight: 600;
         font-size: 14px;
         line-height: 100%;
-        margin: 5px;
+        margin: 2px;
         span{
             width: 52px;
             height: 14px;
@@ -31,8 +31,6 @@ export const Card = styled.div`
 `
 
 export const Icon = styled.div`
-    height: 38px;
-    width: 38px;
     border-radius: 50%;
     text-align: center;
     margin-right: 0.5rem;
