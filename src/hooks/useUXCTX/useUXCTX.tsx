@@ -11,6 +11,9 @@ const useUXCTX = () : TUX  => {
             setSearchValue,
             sliceData,
             setSliceData,
+            pages,
+            setPages,
+            slicer,
         } 
     = React.useContext(UXContext)
 
@@ -22,7 +25,10 @@ const useUXCTX = () : TUX  => {
         searchValue,
         setSearchValue,
         sliceData,
-        setSliceData
+        setSliceData,
+        pages,
+        setPages,
+        slicer,
     }
 }
 

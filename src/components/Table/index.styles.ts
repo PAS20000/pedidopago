@@ -36,14 +36,16 @@ export const Title = styled.h2`
         }
     }
     animation: show 1s;
-    width: 223px;
-    margin-bottom: 24px;
-    margin-left: 6px;
     margin-bottom: 50px;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;
-    text-align: center;
+    text-align: start;
     color: ${props => props.theme.color.secondary[1000]};
+`
+
+export const ContainerRoles = styled.div`
+    display: flex;
+    justify-content: end;
 `

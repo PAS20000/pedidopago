@@ -5,38 +5,55 @@ import ControlButtons from '../_ControlsButton'
 import { Container, SelectContainer } from './index.styles'
 
 const ContributorsControl = () => {
-    const { sliceData, setSliceData } = useUXCTX()
+    const { sliceData, setSliceData, pages, setPages, breadCrumb } = useUXCTX()
     const { dataContributors } = useDataCTX({})
-    const [options, setOptions] = React.useState<Array<number>>([])
 
     const ShowItems = () : string => {
 
         if(dataContributors.length < sliceData.final){
             return `${dataContributors.length}`
-        } else {
+        }
+        else {
             return `${sliceData.final}`
         }
     }
 
-    React.useEffect(() => {
-       const contributorsClientSide = JSON.parse(localStorage.contributors).length
-       const slicer = 10
-       for (let opt = 1; opt < Math.ceil(contributorsClientSide / slicer + 1); opt++) {
-
+    const CountPages = (data:Array<Object>) => {
+        const countPages = Math.ceil(data.length / 10 + 1)
+    
+        for (let opt = 1; opt < countPages; opt++) {
+    
             const optCalc = () : number => {
-                if(contributorsClientSide < opt * slicer){
-                    return contributorsClientSide
+                if(data.length < opt * 10){
+                    return data.length
                 } else {
                     return opt * 10
                 }
                 
             }
-
-            setOptions(prev => [...prev, optCalc()])
+     
+            setPages(prev => [...prev, optCalc()])
        }
-      
-    }, [])
+    }
+
+    React.useEffect(() => {
+     if(breadCrumb === 'Contributors'){
+         CountPages(JSON.parse(localStorage.contributors))
+     }
+     if(breadCrumb === 'Roles'){
+         CountPages(JSON.parse(localStorage.roles))
+     }
+
+     return () => {
+        setSliceData({
+            init:0,
+            final:10
+        })
+        
+        setPages([])
+    }
     
+    }, [breadCrumb])
     return( 
         <Container>
            <SelectContainer>
@@ -47,7 +64,7 @@ const ContributorsControl = () => {
                         ...sliceData,
                         final:parseInt(e.target.value)
                     })}>
-                    {options.map((opt, i) => 
+                    {pages.map((opt, i) => 
                       <option key={i} value={opt}>
                         {opt} 
                       </option>

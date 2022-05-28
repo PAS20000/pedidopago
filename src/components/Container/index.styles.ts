@@ -11,7 +11,6 @@ export const ContainerStyle = styled.div`
    border-radius: 8px;
    border: ${props => props.className && 'solid 1px'};
    width: 956px;
-   height: auto;
 
    ${Media(1)}{
       padding: 40px, 0px, 40px, 0px;

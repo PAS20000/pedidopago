@@ -26,6 +26,10 @@ export const Container = styled.div`
             color: ${props => props.theme.color.secondary[1000]};
         }
     }
+    button.ghost{
+        opacity: 0.5;
+        pointer-events: none;
+    }
 
     button.next{
         border-radius: 0px 10px 10px 0px;

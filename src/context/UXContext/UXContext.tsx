@@ -22,6 +22,9 @@ export type TUX = {
     setSearchValue:React.Dispatch<React.SetStateAction<TSearch>>
     sliceData:TSliceData
     setSliceData:React.Dispatch<React.SetStateAction<TSliceData>>
+    pages:Array<number>
+    setPages:React.Dispatch<React.SetStateAction<Array<number>>>
+    slicer:number
 }
 
 type TUXProvider = {
@@ -39,11 +42,13 @@ const UXProvider = ({
       contributors:'',
       roles:''
   })
+  const slicer = 10
   const [sliceData, setSliceData] = React.useState<TSliceData>({
       init:0,
-      final:10
+      final:slicer
   })
-
+  const [ pages, setPages ] = React.useState<Array<number>>([])
+   
   const value = {
       globalOpen, 
       setGlobalOpen, 
@@ -52,7 +57,10 @@ const UXProvider = ({
       searchValue,
       setSearchValue,
       sliceData,
-      setSliceData
+      setSliceData,
+      pages,
+      setPages,
+      slicer,
     }
     
    return(

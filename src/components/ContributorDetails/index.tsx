@@ -1,12 +1,11 @@
 import * as React from 'react'
 import { TContributors } from '../../../pages'
 import Container from '../Container'
-import { Avatar, ContainerInfo, ContainerOrganizations } from './index.styles'
+import { Avatar, ContainerInfo, ContainerOrganizations, Grid, Title } from './index.styles'
 import { GrDocumentText } from 'react-icons/gr'
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import AvatarContributor from '../AvatarContributor'
-import LabelText from '../LabelText'
 import Personal from './Personal'
 import Organization from './Organizaiton'
 import { TAgent } from '../Search'
@@ -40,12 +39,12 @@ const ContributorDetails = ({
                     name={name}
                     image={image}
                     email={email}
-                    size={'75px'}
+                    size={'80px'}
                 />
             </Avatar>
-            <h4>
+            <Title>
                 Informações pessoais
-            </h4>
+            </Title>
             <ContainerInfo>
                 <Personal
                     icon={<GrDocumentText />}
@@ -63,31 +62,29 @@ const ContributorDetails = ({
                     text={birth_dateTratament()}
                 />
             </ContainerInfo>
-            <h4>
-                    Dados Organizacionais
-                </h4>
+            
             <ContainerOrganizations>
-                
-                <Organization
-                    width='4.4rem'
-                    title='unidade'
-                    options={[branch]}
-                />
-                 <Organization 
-                    width='7rem'
-                    title='departamento'
-                    options={[department]}
-                />
-                <Organization 
-                    width='3.2rem'
-                    title='Cargo'
-                    options={[role]}
-                />
-                <Organization 
-                    width='3.2rem'
-                    title='Status'
-                    options={[status]}
-                />
+                <Title>
+                    Dados Organizacionais
+                </Title>
+                <Grid>
+                    <Organization
+                        title='unidade'
+                        options={[branch]}
+                    />
+                    <Organization 
+                        title='departamento'
+                        options={[department]}
+                    />
+                    <Organization 
+                        title='Cargo'
+                        options={[role]}
+                    />
+                    <Organization 
+                        title='Status'
+                        options={[status]}
+                    />
+                </Grid>
             </ContainerOrganizations>
         </Container>
     )

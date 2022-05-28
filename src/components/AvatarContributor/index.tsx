@@ -1,6 +1,6 @@
 import * as React from 'react'
 import NextImage from '../Contracts/NextImage'
-import { Flex } from './index.styles'
+import { Flex, Name } from './index.styles'
 
 
 type TAvatar = {
@@ -19,6 +19,7 @@ const AvatarContributor = ({
 
     return (
         <Flex>
+            <div className='AvatarContainer'> 
             <NextImage
                 src={image}
                 alt={`imagem-${name}`}
@@ -27,17 +28,20 @@ const AvatarContributor = ({
                 className={'Avatar'}
                 layout='fixed'
             />
-            <div>
+            <Name>
                 {!email ? 
-                    <p className='AvatarName'>
+                    <p className='Avatar Name'>
                         {name}
                     </p>
                     :
-                    <p className='AvatarNameEmail'>
+                    <p className='Avatar Name'>
                         {name} <br />
-                        {email}
+                        <span className='Email'>
+                            {email}
+                        </span>
                     </p>
                 }
+            </Name>
             </div>
         </Flex>
     )

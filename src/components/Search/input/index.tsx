@@ -17,7 +17,7 @@ const Input = ({
    
     return(
         <Container>
-            <LabelText width='6.5rem'>
+            <LabelText className='search'>
                 Pesquisar por
             </LabelText>
             <div>

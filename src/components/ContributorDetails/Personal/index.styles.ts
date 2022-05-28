@@ -1,36 +1,44 @@
 import styled from "@emotion/styled";
 
 export const Card = styled.div`
-    background-color: ${props => props.theme.color.secondary[300]};
-    padding: 0rem 0.5rem 0rem 0.5rem;
-    width: 20rem;
-    margin-left: 0.5rem;
-    border: solid 2px ${props => props.theme.color.secondary[400]};
-    border-radius: 10px;
+    background-color: ${props => props.theme.color.secondary[400]};
+    padding: 16px;
+    width: 286.67px;
+    height: 35px;
+    margin-left: 24px;
+    border: solid 2px ${props => props.theme.color.secondary[500]};
+    border-radius: 8px;
+    
     div{
         display: flex;
     }
     p{
-        font-size: 0.8rem;
-        color: ${props => props.theme.color.secondary[900]};
+        color: ${props => props.theme.color.secondary[1000]};
         font-weight: bold;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        margin: 5px;
         span{
-            font-weight: normal;
-            text-transform: capitalize;
+            width: 52px;
+            height: 14px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 120%;
         }
     }
 `
 
 export const Icon = styled.div`
-    height: 2.3rem;
-    width: 2.3rem;
+    height: 38px;
+    width: 38px;
     border-radius: 50%;
     text-align: center;
-    margin-top: 0.5rem;
     margin-right: 0.5rem;
     font-size: 18px;
-    background-color: ${props => props.theme.color.secondary[400]};
+    background-color: ${props => props.theme.color.secondary[700]};
     svg{
-        padding: 0.6rem;
+       padding: 0.6rem;
     }
 `

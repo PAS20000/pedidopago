@@ -3,13 +3,12 @@ import Search from '../Search'
 import BreadCrumbs from './BreadCrumbs'
 import RolesBody from './TableBodies/RolesBody'
 import ContributorsBody from './TableBodies/ContributorsBody'
-import { ContainerTable, Title } from './index.styles'
+import { ContainerRoles, ContainerTable, Title } from './index.styles'
 import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
 import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import TableHead from './TableHead'
-import TableControls from './Tcontrols/ContributorsControl'
 import ContributorsControl from './Tcontrols/ContributorsControl'
-import RolesControl from './Tcontrols/RolesControl'
+import ControlButtons from './Tcontrols/_ControlsButton'
 
 const Table = () => {
     const { breadCrumb, sliceData } = useUXCTX()
@@ -69,7 +68,7 @@ const Table = () => {
                             status={item.status}
                         />)
                     }
-                    {breadCrumb === 'Roles' && dataRoles.map(item => 
+                    {breadCrumb === 'Roles' && dataRoles.slice(sliceData.init, sliceData.final).map(item => 
                         <RolesBody 
                             key={Math.random()} 
                             agents_quantity={item.agents_quantity}
@@ -84,7 +83,9 @@ const Table = () => {
                     <ContributorsControl />
                 }
                 {breadCrumb === 'Roles' && 
-                    <RolesControl />
+                    <ContainerRoles>
+                        <ControlButtons />
+                    </ContainerRoles>
                 }
             </div>
         </>
