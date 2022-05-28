@@ -19,11 +19,14 @@ const ContributorsControl = () => {
     }
 
     React.useEffect(() => {
-       for (let opt = 1; opt <  Math.ceil(JSON.parse(localStorage.contributors).length / 10 + 1); opt++) {
+       const contributorsClientSide = JSON.parse(localStorage.contributors).length
+       const slicer = 10
+       for (let opt = 1; opt < Math.ceil(contributorsClientSide / slicer + 1); opt++) {
             setOptions(prev => [...prev, opt * 10])
        }
+      
     }, [])
-
+    
     return( 
         <Container>
            <span>
