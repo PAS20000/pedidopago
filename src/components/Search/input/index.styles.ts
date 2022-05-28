@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 
 
 export const Container = styled.div`
-  
+  margin-top: 56px;
+  margin-bottom: 40px;
 `
 
 export const InputSearch = styled.input`

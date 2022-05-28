@@ -6,7 +6,7 @@ export const Container = styled.h1`
     text-align: start;
     margin-left: 15%;
     margin-top: 51px;
-
+    
     ${Media(1)}{
         margin: 1rem;
     }

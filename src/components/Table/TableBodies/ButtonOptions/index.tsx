@@ -1,12 +1,14 @@
 import * as React from 'react'
 import { FiMoreVertical, FiTrash2, FiEdit } from 'react-icons/fi'
 import { AiOutlineEye } from 'react-icons/ai'
-import { Button, ContainerOptions, Flex, Grid } from './indext.styles'
+import { ContainerOptions } from './indext.styles'
 import { BsLayers } from 'react-icons/bs'
 import { GrUpdate } from 'react-icons/gr'
 import useId from '../../../../hooks/useId/useId'
 import NextLink from '../../../Contracts/NextLink'
 import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
+import Drop from './Drop'
+import { Button } from './Drop/index.styles'
 
 type TButtonOptions = {
     id:number
@@ -16,7 +18,6 @@ const ButtonOptions = ({
     id
 } : TButtonOptions) => {
     const { breadCrumb, globalOpen, setGlobalOpen } = useUXCTX()
-    const { sequencial } = useId('options')
     const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
 
     const Open = () => {
@@ -33,76 +34,46 @@ const ButtonOptions = ({
             {localOpen && globalOpen &&
                 <ContainerOptions>
                     {breadCrumb === 'Contributors' && 
-                        <Grid id={sequencial}>
-                            <Button>
-                                <Flex>
-                                    <span>
-                                        <AiOutlineEye />
-                                    </span>
-                                    <NextLink href={`/contributor/${id}/`} target={'_self'}>
-                                        <p>
-                                            Ver colaborador
-                                        </p>    
-                                    </NextLink>
-                                </Flex>
-                            </Button>
-                            <Button className='isNotImplemented'>
-                                <Flex>
-                                    <span>
-                                        <FiTrash2 />
-                                    </span>
-                                    <p>
-                                        Excluir
-                                    </p>
-                                </Flex>
-                            </Button>
-                        </Grid>
+                        <>
+                            <Drop 
+                                href={`/contributor/${id}/`}
+                                icon={<AiOutlineEye />}
+                                ancorText='Ver colaborador'
+                            />
+                            <Drop 
+                                href='#'
+                                icon={<FiTrash2 />}
+                                ancorText='Excluir'
+                                className='isNotImplemented'
+                            />
+                        </>
                     }
-                    {breadCrumb === 'Roles' &&  
-                        <Grid id={sequencial}>
-                            <Button>
-                                <Flex>
-                                    <span>
-                                        <AiOutlineEye />
-                                    </span>
-                                    <NextLink href={`/role/${id}/`} target={'_self'}>
-                                        <p>
-                                            Ver cargo
-                                        </p>    
-                                    </NextLink>
-                                </Flex>
-                            </Button>
-                            <Button className='isNotImplemented'>
-                                <Flex>
-                                    <span>
-                                        <FiEdit />
-                                    </span>
-                                    <p>
-                                        Editar
-                                    </p>
-                                </Flex>
-                            </Button>
-                            <Button className='isNotImplemented'>
-                                <Flex>
-                                    <span>
-                                        <BsLayers />
-                                    </span>
-                                    <p>
-                                        Duplicar
-                                    </p>
-                                </Flex>
-                            </Button>
-                            <Button className='isNotImplemented'>
-                                <Flex>
-                                    <span>
-                                        <GrUpdate />
-                                    </span>
-                                    <p>
-                                        Excluir
-                                    </p>
-                                </Flex>
-                            </Button>
-                        </Grid>
+                    {breadCrumb === 'Roles' &&
+                    <>
+                            <Drop 
+                                href={`/role/${id}/`}
+                                icon={<AiOutlineEye />}
+                                ancorText='Ver cargo'
+                            />
+                            <Drop 
+                                href={'#'}
+                                icon={<FiEdit />}
+                                ancorText='Editar'
+                                className='isNotImplemented'
+                            />
+                            <Drop 
+                                href={'#'}
+                                icon={<BsLayers />}
+                                ancorText='Duplicar'
+                                className='isNotImplemented'
+                            />
+                            <Drop 
+                                href={'#'}
+                                icon={<GrUpdate />}
+                                ancorText='Excluir'
+                                className='isNotImplemented'
+                            />
+                    </>
                     }
                 </ContainerOptions>
             }

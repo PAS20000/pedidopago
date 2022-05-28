@@ -13,18 +13,19 @@ th{
         padding: 15px;
         font-weight: bold;
         margin-bottom: 5px;
-        border-color: ${props => props.theme.color.secondary[800]};
+        border-color: ${props => props.theme.color.secondary[700]};
         height: 17px;
     }
     
     h4.first{
         border-left: solid 1px;
-        border-top-left-radius: 10px;
+        border-top-left-radius: 10px; 
+        border-color: ${props => props.theme.color.secondary[700]};
     }  
     h4.end{
         border-right: solid 1px;
         border-top-right-radius: 10px;
-        text-indent: 1rem;
+        border-color: ${props => props.theme.color.secondary[700]};
     }
 }
 `

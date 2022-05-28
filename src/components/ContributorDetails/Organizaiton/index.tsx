@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import LabelText from '../../LabelText'
 import { ContainerOrg } from './index.styles'
 
@@ -20,13 +21,18 @@ const Organization = ({
             <LabelText width={width}>
                 {title}
             </LabelText>
-            <select>
+            <div className='Drop'>
                 {options.map((option, index) => 
-                    <option key={index} value={option}>
-                        {option}
-                    </option>
+                    <div key={index}>
+                        <span>
+                            {option}
+                        </span>
+                        <span className='icon'>
+                            <MdOutlineKeyboardArrowDown />
+                        </span>
+                    </div>
                 )}
-            </select>    
+            </div>    
         </ContainerOrg>
     )
 }

@@ -5,17 +5,33 @@ export const Container = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     color:${props => props.theme.color.secondary[400]};
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    h4{
+        width: 229px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+
+        color: ${props => props.theme.color.secondary[900]};
+    }
     span{
         display: flex;
+       
         select{
-            color:${props => props.theme.color.secondary[400]};
+            outline: none;
+            color:${props => props.theme.color.secondary[900]};
             border: solid 2px;
-            text-align: center;
-            margin: 12px;
-            margin-left: 20px;
-            border-radius: 10px;
-            width: 70px;
+            padding: 8px;
+            border: 2px solid ${props => props.theme.color.secondary[400]};
+            border-radius: 8px;
             height: 35px;
+            width: 70px;
+            margin-top: 15px;
+            margin-left: 10px;
         }
     }
 `

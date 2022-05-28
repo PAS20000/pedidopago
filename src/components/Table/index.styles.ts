@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
 
-export const Container = styled.div`
-
-`
-
 export const ContainerTable = styled.table`
  @keyframes show {
         from{
@@ -43,6 +39,7 @@ export const Title = styled.h2`
     width: 223px;
     margin-bottom: 24px;
     margin-left: 6px;
+    margin-bottom: 50px;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;

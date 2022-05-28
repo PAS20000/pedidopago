@@ -5,7 +5,11 @@ import { Container } from './index.styles'
 
 const ContributorsControl = () => {
     const { dataContributors } = useDataCTX({})
-    const [ contributorsCount ] = React.useState<number>(dataContributors.length)
+    const [ contributorsCount, setContributorsCount ] = React.useState<number>(dataContributors.length)
+    
+    React.useEffect(() => {
+        setContributorsCount(dataContributors.length)
+    }, [dataContributors])
 
     return( 
         <Container>
