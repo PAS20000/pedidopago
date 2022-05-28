@@ -27,16 +27,18 @@ const AvatarContributor = ({
                 className={'Avatar'}
                 layout='fixed'
             />
-            {!email ? 
-                <p className='AvatarName'>
-                    {name}
-                </p>
-                :
-                <p className='AvatarNameEmail'>
-                    {name} <br />
-                    {email}
-                </p>
-            }
+            <div>
+                {!email ? 
+                    <p className='AvatarName'>
+                        {name}
+                    </p>
+                    :
+                    <p className='AvatarNameEmail'>
+                        {name} <br />
+                        {email}
+                    </p>
+                }
+            </div>
         </Flex>
     )
 }

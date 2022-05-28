@@ -5,17 +5,19 @@ import { ContainerOrg } from './index.styles'
 type TOrganization = {
     title:string
     options:Array<string>
+    width:string
 }
 
 
 const Organization = ({
     title,
-    options
+    options,
+    width
 } : TOrganization) => {
 
     return(
         <ContainerOrg>
-            <LabelText>
+            <LabelText width={width}>
                 {title}
             </LabelText>
             <select>

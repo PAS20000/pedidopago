@@ -19,4 +19,6 @@ export const ContainerOrganizations = styled.div`
     margin: 1rem;
     border: solid 2px ${props => props.theme.color.secondary[400]};
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 `

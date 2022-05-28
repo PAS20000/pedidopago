@@ -5,5 +5,6 @@ export const ContainerOrg = styled.div`
         border: solid 1px;
         border-radius: 10px;
         padding: 1rem 1.5rem;
+        width: 80%;
     }
 `

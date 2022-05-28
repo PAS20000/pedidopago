@@ -4,14 +4,16 @@ import { LabelContainer } from './index.styles'
 
 type TLabel = {
    children:React.ReactChild
+   width:string
 }
 
 const LabelText = ({
-    children
+    children,
+    width
 } : TLabel) => {
-   
+    
     return(
-        <LabelContainer>
+        <LabelContainer className={width}>
             <label>
                 {children}
             </label>

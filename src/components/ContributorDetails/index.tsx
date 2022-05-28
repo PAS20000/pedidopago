@@ -63,23 +63,28 @@ const ContributorDetails = ({
                     text={birth_dateTratament()}
                 />
             </ContainerInfo>
-            <ContainerOrganizations>
-                <h4>
+            <h4>
                     Dados Organizacionais
                 </h4>
-                <Organization 
+            <ContainerOrganizations>
+                
+                <Organization
+                    width='4.4rem'
                     title='unidade'
                     options={[branch]}
                 />
                  <Organization 
+                    width='7rem'
                     title='departamento'
                     options={[department]}
                 />
                 <Organization 
+                    width='3.2rem'
                     title='Cargo'
                     options={[role]}
                 />
                 <Organization 
+                    width='3.2rem'
                     title='Status'
                     options={[status]}
                 />

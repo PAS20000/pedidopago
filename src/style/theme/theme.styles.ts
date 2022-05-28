@@ -37,14 +37,15 @@ export const light : Theme = {
     ...cssConfig,
     color: {
         primary: {
-          1000:'#23D996',
-          300:'#BBF2DE'
+          1000:'#22E0A1',
+          900:'#B5F1DD',
         },
         secondary: {
-          1000:'#000',
-          900:'#34423D',
-          400:'#A3B8B0',
-          300:'#EAEFED',
+          1000:'#34423D',
+          900:'#587169',
+          800:'#A3B8B0',
+          700:'#CAD6D1',
+          600:'#EAEFED',
           100:'#fff',
         },
     }

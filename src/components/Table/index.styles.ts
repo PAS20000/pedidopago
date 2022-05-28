@@ -16,55 +16,23 @@ export const ContainerTable = styled.table`
             opacity:1;
         }
     }
-
-    ${Media(0)}{
-        font-size: 0.5rem;
-        p.AvatarName{
-            padding: 1rem;
-        }
-    }
-    p.AvatarName{
-        margin-left: 0.5rem;
-    }
+    font-size: 12px;
+    color: ${props => props.theme.color.secondary[900]};
     border-collapse: collapse;
     width: 100%;
-    tr.inactive{
-        td.inactive{
-            opacity: 0.5;
-        }
-    }
     tr{
         text-transform: capitalize;
         animation: show 1s;
     }
     td{
         border-bottom: solid 1px rgba(0, 0, 0, 0.2);
-        padding: 10px;
-        p{
-            margin-left:5px;
-        }
-    }
-    th{
+        width: 124px;
+        height: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        padding: 5px;
         text-align: start;
-        color: ${props => props.theme.color.secondary[500]};
-        h4{
-            border-color: ${props => props.theme.color.secondary[300]};
-            border-top: solid 1px;
-            border-bottom: solid 1px;
-            margin: -1px;
-            padding: 1.2rem;
-            opacity: 0.6;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        h4.first{
-            border-left: solid 1px;
-            border-top-left-radius: 10px;
-        }  
-        h4.last{
-            border-right: solid 1px;
-            border-top-right-radius: 10px;
-        }
     }
 `
 

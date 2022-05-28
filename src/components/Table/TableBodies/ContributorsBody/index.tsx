@@ -3,6 +3,7 @@ import { TContributors } from '../../../../../pages'
 import AvatarContributor from '../../../AvatarContributor'
 import Status from '../../../Status'
 import ButtonOptions from '../ButtonOptions'
+import { ContainerTr } from './index.styles'
 
 const ContributorsBody = ({
     name,
@@ -15,12 +16,12 @@ const ContributorsBody = ({
 } : TContributors) => {
     
     return(
-        <tr className={status ?? 'inactive'}>
+        <ContainerTr className={status ?? 'inactive'}>
             <td className={status ?? 'inactive'}>
                 <AvatarContributor 
                     image={image}
                     name={name}
-                    size={'50px'}
+                    size={'32px'}
                 />
             </td>
             <td className={status ?? 'inactive'}>
@@ -44,7 +45,7 @@ const ContributorsBody = ({
             <td>
                 <ButtonOptions id={agent_id}/>
             </td>
-        </tr> 
+        </ContainerTr> 
     )
 }
 

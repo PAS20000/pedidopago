@@ -1,15 +1,14 @@
 import * as React from 'react'
 import Search from '../Search'
 import BreadCrumbs from './BreadCrumbs'
-import RolesBody from './Tbodies/RolesBody'
-import RolesHead from './Theaders/RolesHead'
-import ContributorsBody from './Tbodies/ContributorsBody'
-import ContributorsHead from './Theaders/ContributorsHead'
+import RolesBody from './TableBodies/RolesBody'
+import ContributorsBody from './TableBodies/ContributorsBody'
 import { Container, ContainerTable, Title } from './index.styles'
 import ContributorsControl from './Tcontrols/ContributorsControl'
 import RolesControl from './Tcontrols/RolesControl'
 import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
 import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
+import TableHead from './TableHead'
 
 const Table = () => {
     const { breadCrumb } = useUXCTX()
@@ -32,10 +31,24 @@ const Table = () => {
             <ContainerTable>
                 <thead>
                     {breadCrumb === 'Contributors' && 
-                        <ContributorsHead />
+                        <TableHead 
+                            titles={[
+                                'nome completo',
+                                'departamento',
+                                'cargo',
+                                'unidade',
+                                'status',
+                            ]}
+                        />
                     }
                     {breadCrumb === 'Roles' &&
-                        <RolesHead />
+                        <TableHead 
+                            titles={[
+                                'cargo',
+                                'departamento',
+                                'colaboradores',
+                            ]}
+                        />
                     }
                 </thead>
                 <tbody >

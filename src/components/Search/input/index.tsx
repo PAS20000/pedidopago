@@ -17,7 +17,7 @@ const Input = ({
    
     return(
         <Container>
-            <LabelText>
+            <LabelText width='7.5rem'>
                 Pesquisar por
             </LabelText>
             <div>
