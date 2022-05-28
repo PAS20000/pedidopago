@@ -39,15 +39,18 @@ const UXProvider = ({
 } : TUXProvider) => {
   const [globalOpen, setGlobalOpen] = React.useState<boolean>(true)
   const [breadCrumb, setBreadCrumb] = React.useState<TBread>('Contributors')
+
   const [searchValue, setSearchValue] = React.useState<TSearch>({
       contributors:'',
       roles:''
   })
+
   const slicer = 10
   const [sliceData, setSliceData] = React.useState<TSliceData>({
       init:0,
       final:slicer
   })
+
   const [ pages, setPages ] = React.useState<Array<number>>([])
 
   const translate = (status:string) : string => {
@@ -57,9 +60,9 @@ const UXProvider = ({
     if(status === 'inactive'){
         return 'inativo'
     }
-    if(status === '' || !status){
+    if(!status){
         return 'inativo'
-        
+
     } else {
         return 'inativo'
     }

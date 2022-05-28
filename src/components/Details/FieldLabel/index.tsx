@@ -6,12 +6,14 @@ import { ContainerOrg } from './index.styles'
 type TOrganization = {
     title:string
     options:Array<string>
+    icon?:boolean
 }
 
 
-const Organization = ({
+const FieldLabel = ({
     title,
     options,
+    icon,
 } : TOrganization) => {
 
     return(
@@ -25,7 +27,7 @@ const Organization = ({
                         <span className='option'>
                             {option}
                         </span>
-                        {index === 0 && 
+                        {index === 0 && icon &&
                             <span className='icon'>
                                 <MdOutlineKeyboardArrowDown />
                             </span>
@@ -37,4 +39,4 @@ const Organization = ({
     )
 }
 
-export default Organization
+export default FieldLabel

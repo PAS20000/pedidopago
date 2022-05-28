@@ -14,12 +14,23 @@ export const Container = styled.h1`
             line-height: 100%;  
             color: ${props => props.theme.color.secondary[1000]};
         }
-        button{
-            padding: 10px;
-            margin: 10px;
-            background: #EAEFED;
+        a{
+            margin-top: 18px;
+            margin-right: 16px;
+            width: 36px;
+            height: 36px;
+            text-decoration: none;
+            color: ${props => props.theme.color.secondary[1000]};
             border-radius: 80px;
-            border: none;
+            background: ${props => props.theme.color.secondary[700]}; //#EAEFED
+            &:hover{
+                transition: 1s;
+                opacity: 0.5;
+            }
+            svg{
+                font-size: 24px;
+                padding: 5px;
+            }
         }
     }
     

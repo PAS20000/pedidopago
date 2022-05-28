@@ -9,13 +9,14 @@ import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import TableHead from './TableHead'
 import ContributorsControl from './Tcontrols/ContributorsControl'
 import ControlButtons from './Tcontrols/_ControlsButton'
+import Container from '../_Layout/Container'
 
 const Table = () => {
     const { breadCrumb, sliceData } = useUXCTX()
     const { dataContributors, dataRoles } = useDataCTX({})
    
     return(
-        <>
+        <Container>
             <BreadCrumbs />
             <Search />
             {breadCrumb === 'Contributors' &&
@@ -88,7 +89,7 @@ const Table = () => {
                     </ContainerRoles>
                 }
             </div>
-        </>
+        </Container>
     )
 }
 

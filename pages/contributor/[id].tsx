@@ -6,9 +6,9 @@ import { TContributors } from '..'
 import { TAgent } from '../../src/components/Search'
 import Header from '../../src/components/Header'
 import NavBar from '../../src/components/NavBar'
-import Main from '../../src/components/Main'
+import Main from '../../src/components/_Layout/Main'
 import Title from '../../src/components/Title'
-import ContributorDeatails from '../../src/components/ContributorDetails'
+import ContributorDeatails from '../../src/components/Details/ContributorDetails'
 
 type TParams = {
     params:{

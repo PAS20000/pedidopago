@@ -17,7 +17,7 @@ type TButtonOptions = {
 const ButtonOptions = ({
     id
 } : TButtonOptions) => {
-    const { breadCrumb, globalOpen, setGlobalOpen } = useUXCTX()
+    const { breadCrumb, globalOpen, setGlobalOpen, setBreadCrumb } = useUXCTX()
     const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
 
     const Open = () => {
@@ -50,7 +50,7 @@ const ButtonOptions = ({
                     }
                     {breadCrumb === 'Roles' &&
                     <>
-                            <Drop 
+                            <Drop
                                 href={`/role/${id}/`}
                                 icon={<AiOutlineEye />}
                                 ancorText='Ver cargo'

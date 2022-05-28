@@ -19,9 +19,7 @@ const Title = ({
             {href ?
                 <div>
                     <NextLink href={href} target={'_self'}>
-                        <button>
-                            <AiOutlineArrowLeft />
-                        </button>
+                        <AiOutlineArrowLeft />
                     </NextLink>
                     <h1>
                         {children}

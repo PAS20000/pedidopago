@@ -4,10 +4,11 @@ import { useRouter } from 'next/router'
 import { axiosConfig } from '../../src/utils/axiosConfig'
 import Header from '../../src/components/Header'
 import NavBar from '../../src/components/NavBar'
-import Main from '../../src/components/Main'
-import Card from '../../src/components/Container'
+import Main from '../../src/components/_Layout/Main'
 import Title from '../../src/components/Title'
 import { TRoles } from '..'
+import RoleDetais from '../../src/components/Details/RoleDetails'
+import useUXCTX from '../../src/hooks/useUXCTX/useUXCTX'
 
 type TParams = {
     params:{
@@ -52,17 +53,23 @@ export const getStaticPaths : GetStaticPaths = async () => {
     };
   }
 
-type ObjRules = {
-  permissions: Array<string>
+export type TPermissions = [
+    'read',
+    'delete',
+    'write'
+  ]
+
+export type ObjRules = {
+  permissions: Array<TPermissions>
   role:string
 }
 
-type TGroupRules = {
+export type TGroupRules = {
   department:string // na api está como department path:https://pp-api-desafio.herokuapp.com/role/1
   grouprules:Array<ObjRules>
 }
 
-type TRole = {
+export type TRole = {
     role:TRoles & TGroupRules
 }
 
@@ -70,7 +77,7 @@ const Role = ({
     role
 } : TRole) => {
     const { isFallback } = useRouter()
-
+   
     if(isFallback){
         return <div>Carregando...</div>
     }
@@ -84,10 +91,11 @@ const Role = ({
               <Title href='/'>
                 Permissões do cargo
               </Title>
-              <Card>
-                  {role.name}
-                  {role.department}
-              </Card>
+              <RoleDetais 
+                name={role.name}
+                groupRules={role.grouprules}
+                department={role.department}
+              />
             </Main>
             <footer>
                 

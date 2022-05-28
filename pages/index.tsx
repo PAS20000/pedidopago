@@ -2,11 +2,10 @@ import * as React from 'react'
 import { GetStaticProps } from 'next'
 import { axiosConfig } from '../src/utils/axiosConfig'
 import Title from '../src/components/Title'
-import Main from '../src/components/Main'
+import Main from '../src/components/_Layout/Main'
 import Header from '../src/components/Header'
 import useDataCTX from '../src/hooks/useDataCTX/useDataCTX'
-import Container from '../src/components/Container'
-import Table from '../src/components/Table'
+import Table from '../src/components/Tables'
 import NavBar from '../src/components/NavBar'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
@@ -63,9 +62,7 @@ const Home = ({
                             <Title>
                                 Organização
                             </Title>
-                            <Container>
-                                <Table />
-                            </Container>
+                            <Table />
                         </section>
                     </Main>
                     <footer>

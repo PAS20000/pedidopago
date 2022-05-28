@@ -1,15 +1,15 @@
 import * as React from 'react'
-import { TContributors } from '../../../pages'
-import Container from '../Container'
+import { TContributors } from '../../../../pages'
+import Container from '../../_Layout/Container'
 import { Avatar, ContainerInfo, ContainerOrganizations, Grid, Title } from './index.styles'
 import { GrDocumentText } from 'react-icons/gr'
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineCalendar } from 'react-icons/ai'
-import AvatarContributor from '../AvatarContributor'
+import AvatarContributor from '../../AvatarContributor'
 import Personal from './Personal'
-import Organization from './Organizaiton'
-import { TAgent } from '../Search'
-import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
+import { TAgent } from '../../Search'
+import useUXCTX from '../../../hooks/useUXCTX/useUXCTX'
+import FieldLabel from '../FieldLabel'
 
 const ContributorDetails = ({
     name,
@@ -72,21 +72,25 @@ const ContributorDetails = ({
                     Dados Organizacionais
                 </Title>
                 <Grid>
-                    <Organization
+                    <FieldLabel
                         title='unidade'
                         options={[branch]}
+                        icon
                     />
-                    <Organization 
+                    <FieldLabel 
                         title='departamento'
                         options={[department]}
+                        icon
                     />
-                    <Organization 
+                    <FieldLabel 
                         title='Cargo'
                         options={[role]}
+                        icon
                     />
-                    <Organization 
+                    <FieldLabel 
                         title='Status'
                         options={[translate(status)]}
+                        icon
                     />
                 </Grid>
             </ContainerOrganizations>

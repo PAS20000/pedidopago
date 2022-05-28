@@ -19,7 +19,7 @@ const AvatarContributor = ({
 
     return (
         <Flex>
-            <div className='AvatarContainer'> 
+            <div className='AvatarContainer'>
             <NextImage
                 src={image}
                 alt={`imagem-${name}`}

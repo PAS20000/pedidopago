@@ -7,17 +7,19 @@ type TDrop = {
     ancorText:string
     href:string
     className?:string
+    onClick?:React.MouseEventHandler
 }
 
 const Drop = ({
     icon,
     ancorText,
     href,
-    className
+    className,
+    onClick
 } : TDrop) => {
     return(
         <Grid>
-            <Button className={className}>
+            <Button className={className} onClick={onClick}>
                 <Flex>
                     <span>
                         {icon}
