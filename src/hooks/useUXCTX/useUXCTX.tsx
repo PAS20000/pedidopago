@@ -8,7 +8,9 @@ const useUXCTX = () : TUX  => {
             breadCrumb, 
             setBreadCrumb,
             searchValue,
-            setSearchValue
+            setSearchValue,
+            sliceData,
+            setSliceData,
         } 
     = React.useContext(UXContext)
 
@@ -18,7 +20,9 @@ const useUXCTX = () : TUX  => {
         breadCrumb, 
         setBreadCrumb,
         searchValue,
-        setSearchValue
+        setSearchValue,
+        sliceData,
+        setSliceData
     }
 }
 

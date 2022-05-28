@@ -16,7 +16,7 @@ const useDataCTX = ({
         dataContributors,
         setDataContributors, 
         dataRoles, 
-        setDataRoles 
+        setDataRoles
     } = React.useContext(DataContext)
 
     React.useEffect(() => {
@@ -24,9 +24,6 @@ const useDataCTX = ({
             setDataContributors(staticDataContributors)
             setDataRoles(staticDataRoles)
         }
-        console.log(
-            'Este protótipo usa window.innerWidth/Height, portanto dê F5 se estiver usando o inspecionar elemento para testar resposividade.'
-        )
     }, [])
 
     return {

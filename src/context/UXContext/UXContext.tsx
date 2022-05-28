@@ -1,12 +1,17 @@
 import * as React from 'react'
 
-
 export type TBread = 'Contributors' | 'Roles'
 
 export type TSearch = {
     contributors?:string
     roles?:string
 }
+
+type TSliceData = {
+    init:number
+    final:number
+}
+
 
 export type TUX = {
     globalOpen:boolean
@@ -15,6 +20,8 @@ export type TUX = {
     setBreadCrumb:React.Dispatch<React.SetStateAction<TBread>>
     searchValue:TSearch
     setSearchValue:React.Dispatch<React.SetStateAction<TSearch>>
+    sliceData:TSliceData
+    setSliceData:React.Dispatch<React.SetStateAction<TSliceData>>
 }
 
 type TUXProvider = {
@@ -32,15 +39,20 @@ const UXProvider = ({
       contributors:'',
       roles:''
   })
+  const [sliceData, setSliceData] = React.useState<TSliceData>({
+      init:0,
+      final:6
+  })
 
-  
   const value = {
       globalOpen, 
       setGlobalOpen, 
       breadCrumb, 
       setBreadCrumb,
       searchValue,
-      setSearchValue
+      setSearchValue,
+      sliceData,
+      setSliceData
     }
     
    return(

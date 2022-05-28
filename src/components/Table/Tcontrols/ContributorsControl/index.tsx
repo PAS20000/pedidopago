@@ -1,26 +1,47 @@
 import * as React from 'react'
 import useDataCTX from '../../../../hooks/useDataCTX/useDataCTX'
+import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
 import ControlButtons from '../_ControlsButton'
 import { Container } from './index.styles'
 
 const ContributorsControl = () => {
+    const { sliceData, setSliceData } = useUXCTX()
     const { dataContributors } = useDataCTX({})
-    const [ contributorsCount, setContributorsCount ] = React.useState<number>(dataContributors.length)
-    
+    const [options, setOptions] = React.useState<Array<number>>([])
+
+    const ShowItems = () : string => {
+
+        if(dataContributors.length < sliceData.final){
+            return `${dataContributors.length}`
+        } else {
+            return `${sliceData.final}`
+        }
+    }
+
     React.useEffect(() => {
-        setContributorsCount(dataContributors.length)
-    }, [dataContributors])
+       for (let opt = 1; opt <  Math.ceil(JSON.parse(localStorage.contributors).length / 10 + 1); opt++) {
+            setOptions(prev => [...prev, opt * 10])
+       }
+    }, [])
 
     return( 
         <Container>
            <span>
                <h4>
-                    Mostrando {dataContributors.length} de {contributorsCount} registros
+                    Mostrando {ShowItems()} de {dataContributors.length} registros
                </h4>
-                <select>
-                    <option value="10">
-                        10
+                <select onChange={(e) =>  setSliceData({
+                    ...sliceData,
+                    final:parseInt(e.target.value)
+                })}>
+                    <option value="6">
+                        6
                     </option>
+                    {options.map((opt, i) => 
+                        <option key={i} value={opt}>
+                            {opt}
+                        </option>
+                    )}
                 </select>
            </span>
            <ControlButtons />

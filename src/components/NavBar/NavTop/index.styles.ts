@@ -31,4 +31,5 @@ export const DefaultAtavar = styled.div`
        text-align: end;
        padding: 1px;
     }
+    
 ` 

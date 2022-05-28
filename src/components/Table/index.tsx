@@ -11,9 +11,9 @@ import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import TableHead from './TableHead'
 
 const Table = () => {
-    const { breadCrumb } = useUXCTX()
+    const { breadCrumb, sliceData } = useUXCTX()
     const { dataContributors, dataRoles } = useDataCTX({})
-
+   
     return(
         <>
             <BreadCrumbs />
@@ -56,7 +56,7 @@ const Table = () => {
                     }
                 </thead>
                 <tbody >
-                    {breadCrumb === 'Contributors' && dataContributors.map(item => 
+                    {breadCrumb === 'Contributors' && dataContributors.slice(sliceData.init, sliceData.final).map(item => 
                         <ContributorsBody 
                             key={item.agent_id}
                             name={item.name}

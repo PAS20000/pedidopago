@@ -4,5 +4,6 @@ import { Media } from "../../utils/breakPoints";
 export const Container = styled.main`
 
   
-   padding: 50px;
+   margin-left: 8%;
+   padding-top: 51px;
 `
