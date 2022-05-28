@@ -4,11 +4,12 @@ import BreadCrumbs from './BreadCrumbs'
 import RolesBody from './TableBodies/RolesBody'
 import ContributorsBody from './TableBodies/ContributorsBody'
 import { ContainerTable, Title } from './index.styles'
-import ContributorsControl from './Tcontrols/ContributorsControl'
-import RolesControl from './Tcontrols/RolesControl'
 import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
 import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import TableHead from './TableHead'
+import TableControls from './Tcontrols/ContributorsControl'
+import ContributorsControl from './Tcontrols/ContributorsControl'
+import RolesControl from './Tcontrols/RolesControl'
 
 const Table = () => {
     const { breadCrumb, sliceData } = useUXCTX()

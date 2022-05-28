@@ -3,10 +3,9 @@ import ControlButtons from '../_ControlsButton'
 import { Container } from './index.styles'
 
 const RolesControl = () => {
-    
-    return(
+    return( 
         <Container>
-            <ControlButtons />
+           <ControlButtons />
         </Container>
     )
 }

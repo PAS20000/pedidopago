@@ -19,9 +19,10 @@ export const Container = styled.div`
 
         color: ${props => props.theme.color.secondary[900]};
     }
-    span{
+`
+
+export const SelectContainer = styled.div`
         display: flex;
-       
         select{
             outline: none;
             color:${props => props.theme.color.secondary[900]};
@@ -34,5 +35,4 @@ export const Container = styled.div`
             margin-top: 15px;
             margin-left: 10px;
         }
-    }
 `

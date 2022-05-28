@@ -2,7 +2,7 @@ import * as React from 'react'
 import useDataCTX from '../../../../hooks/useDataCTX/useDataCTX'
 import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
 import ControlButtons from '../_ControlsButton'
-import { Container } from './index.styles'
+import { Container, SelectContainer } from './index.styles'
 
 const ContributorsControl = () => {
     const { sliceData, setSliceData } = useUXCTX()
@@ -39,21 +39,21 @@ const ContributorsControl = () => {
     
     return( 
         <Container>
-           <span>
-               <h4>
+           <SelectContainer>
+                <h4>
                     Mostrando {ShowItems()} de {dataContributors.length} registros
-               </h4>
+                </h4>
                 <select onChange={(e) =>  setSliceData({
-                    ...sliceData,
-                    final:parseInt(e.target.value)
-                })}>
+                        ...sliceData,
+                        final:parseInt(e.target.value)
+                    })}>
                     {options.map((opt, i) => 
-                        <option key={i} value={opt}>
-                            {opt}
-                        </option>
+                      <option key={i} value={opt}>
+                        {opt} 
+                      </option>
                     )}
                 </select>
-           </span>
+            </SelectContainer> 
            <ControlButtons />
         </Container>
     )
