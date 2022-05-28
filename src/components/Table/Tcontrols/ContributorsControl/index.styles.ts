@@ -9,6 +9,7 @@ export const Container = styled.div`
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
+    padding: 10px;
     h4{
         width: 229px;
         font-style: normal;
