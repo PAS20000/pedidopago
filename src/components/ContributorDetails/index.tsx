@@ -9,6 +9,7 @@ import AvatarContributor from '../AvatarContributor'
 import Personal from './Personal'
 import Organization from './Organizaiton'
 import { TAgent } from '../Search'
+import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 
 const ContributorDetails = ({
     name,
@@ -22,6 +23,9 @@ const ContributorDetails = ({
     phone,
     birth_date
 } : TContributors & TAgent) => {
+
+    const { translate } = useUXCTX()
+
 
     const birth_dateTratament = () : string => {
         const date =  birth_date.split('T')[0].split('-').reverse()
@@ -82,7 +86,7 @@ const ContributorDetails = ({
                     />
                     <Organization 
                         title='Status'
-                        options={[status]}
+                        options={[translate(status)]}
                     />
                 </Grid>
             </ContainerOrganizations>

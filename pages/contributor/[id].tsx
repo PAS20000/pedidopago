@@ -75,7 +75,7 @@ const Contributor = ({
                 <NavBar />
             </Header>
             <Main>
-              <Title>
+              <Title href='/'>
                 Detalhes do colaborador
               </Title>
               <ContributorDeatails 

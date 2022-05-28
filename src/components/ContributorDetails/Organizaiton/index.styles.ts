@@ -16,6 +16,7 @@ export const ContainerOrg = styled.div`
                 font-weight: 500;
                 font-size: 16px;
                 line-height: 150%;
+                text-transform: capitalize;
                 color: ${props => props.theme.color.secondary[900]};
             }
             span.icon{

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import { Label } from './index.styles'
 
 type TStatus = {
@@ -9,21 +10,12 @@ const Status = ({
     status
 } : TStatus) => {
 
-    const translate = () : string => {
-        if(status === 'active'){
-            return 'ativo'
-        }
-        if(status === 'inactive'){
-            return 'inativo'
-        }
-
-        return 'inativo'
-    }
+   const { translate } = useUXCTX()
 
     return(
     <Label>
         <p className={(status ?? 'inactive')}>
-            {translate()}
+            {translate(status)}
         </p>
     </Label>
     )

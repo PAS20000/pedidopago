@@ -25,6 +25,7 @@ export type TUX = {
     pages:Array<number>
     setPages:React.Dispatch<React.SetStateAction<Array<number>>>
     slicer:number
+    translate:Function
 }
 
 type TUXProvider = {
@@ -48,7 +49,24 @@ const UXProvider = ({
       final:slicer
   })
   const [ pages, setPages ] = React.useState<Array<number>>([])
-   
+
+  const translate = (status:string) : string => {
+    if(status === 'active'){
+        return 'ativo'
+    }
+    if(status === 'inactive'){
+        return 'inativo'
+    }
+    if(status === '' || !status){
+        return 'inativo'
+        
+    } else {
+        return 'inativo'
+    }
+    
+}
+
+
   const value = {
       globalOpen, 
       setGlobalOpen, 
@@ -61,6 +79,7 @@ const UXProvider = ({
       pages,
       setPages,
       slicer,
+      translate
     }
     
    return(
