@@ -16,21 +16,7 @@ th{
         border-color: ${props => props.theme.color.secondary[800]};
         height: 17px;
     }
-    h4.nome.completo.contributors{
-        width: 196px;
-    }
-    h4.departamento.contributors{
-        width: 124px;
-    }
-    h4.cargo.contributors{
-        width: 96px;
-    }
-    h4.unidade.contributors{
-        width: 142px;
-    }
-    h4.status.contributors{
-        width: 182px;
-    }
+    
     h4.first{
         border-left: solid 1px;
         border-top-left-radius: 10px;

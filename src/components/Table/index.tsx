@@ -3,7 +3,7 @@ import Search from '../Search'
 import BreadCrumbs from './BreadCrumbs'
 import RolesBody from './TableBodies/RolesBody'
 import ContributorsBody from './TableBodies/ContributorsBody'
-import { Container, ContainerTable, Title } from './index.styles'
+import { ContainerTable, Title } from './index.styles'
 import ContributorsControl from './Tcontrols/ContributorsControl'
 import RolesControl from './Tcontrols/RolesControl'
 import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
@@ -15,7 +15,7 @@ const Table = () => {
     const { dataContributors, dataRoles } = useDataCTX({})
 
     return(
-        <Container>
+        <>
             <BreadCrumbs />
             <Search />
             {breadCrumb === 'Contributors' &&
@@ -50,6 +50,7 @@ const Table = () => {
                                 'cargo',
                                 'departamento',
                                 'colaboradores',
+                                ''
                             ]}
                         />
                     }
@@ -85,7 +86,7 @@ const Table = () => {
                     <RolesControl />
                 }
             </div>
-        </Container>
+        </>
     )
 }
 
