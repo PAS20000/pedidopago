@@ -17,6 +17,11 @@ export const Flex = styled.div`
         color: ${props => props.theme.color.secondary[800]};
         border-bottom: 2px solid;
         cursor: pointer;
+        &:hover{
+            transition: 1s;
+            color: ${props => props.theme.color.secondary[1000]};
+            border-color: ${props => props.theme.color.primary[1000]};
+        }
     }
     .default.end{
         width: 100%;

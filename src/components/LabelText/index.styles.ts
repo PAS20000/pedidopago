@@ -5,13 +5,14 @@ export const LabelContainer = styled.div`
     margin-left: 5px;
     pointer-events: none;
     text-transform: capitalize;
-   
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    
     label{
         width: ${props => props.className};
         text-align: center;
-        font-weight: bold;
-        font-size: 14px;
-        color: rgba(0,0,0, 0.5);
+        color: ${props => props.theme.color.secondary[700]};
         position: absolute;
         z-index: 3;
         background-color: ${props => props.theme.color.secondary[100]};

@@ -8,25 +8,27 @@ type TFirstOrEnd = {
 }
 type THead = {
     titles:Array<string>
+    classHead:string
 }
 const TableHead = ({
     titles,
+    classHead
 } : THead) => {
 
-    const  firstOrEnd = ({
+    const firstOrEnd = ({
         title,
         index, 
         array
     } : TFirstOrEnd ) : string => {
        
         if(index + 1 === 1){
-            return 'first'
+            return `${title} first ${classHead}`
         }
         if(index + 1 === array.length){
-            return 'end'
+            return `${title === '' && 'titleNull'} end ${classHead}`
         }
         else {
-            return title
+            return `${title} ${classHead}`
         }
     }
 

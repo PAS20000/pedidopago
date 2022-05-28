@@ -6,15 +6,10 @@ export const Label = styled.div`
     text-transform: capitalize;
     font-size: 14px;
     font-weight: 500;
-
     p{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
         padding: 4px 8px;
-        width: 72px;
-        height: 24px;
+        gap: 4px;
+        width: 52px;
         border-radius: 80px;
     }
     

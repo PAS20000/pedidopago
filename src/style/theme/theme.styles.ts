@@ -29,7 +29,7 @@ declare module '@emotion/react' {
 
 export const cssConfig : Theme = {
   globalProps:{
-    shadow:'0 0 0.5em rgba(0,0,0,0.2)',
+    shadow:'0px 4px 8px rgba(165, 171, 179, 0.16);',
   },
 }
 
@@ -46,6 +46,7 @@ export const light : Theme = {
           800:'#A3B8B0',
           700:'#CAD6D1',
           600:'#EAEFED',
+          500:'#E5E5E5',
           100:'#fff',
         },
     }

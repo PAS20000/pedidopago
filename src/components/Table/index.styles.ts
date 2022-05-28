@@ -1,6 +1,4 @@
 import styled from "@emotion/styled";
-import { Media } from "../../utils/breakPoints";
-
 
 
 export const Container = styled.div`
@@ -25,14 +23,11 @@ export const ContainerTable = styled.table`
         animation: show 1s;
     }
     td{
-        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
-        width: 124px;
-        height: 17px;
+        border-bottom: solid 1px #EAEFED;
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
         padding: 5px;
-        text-align: start;
     }
 `
 
@@ -46,4 +41,13 @@ export const Title = styled.h2`
         }
     }
     animation: show 1s;
+    width: 223px;
+    margin-bottom: 24px;
+    margin-left: 6px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: ${props => props.theme.color.secondary[1000]};
 `

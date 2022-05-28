@@ -32,17 +32,20 @@ const Table = () => {
                 <thead>
                     {breadCrumb === 'Contributors' && 
                         <TableHead 
+                            classHead='contributors'
                             titles={[
                                 'nome completo',
                                 'departamento',
                                 'cargo',
                                 'unidade',
                                 'status',
+                                ''
                             ]}
                         />
                     }
                     {breadCrumb === 'Roles' &&
-                        <TableHead 
+                        <TableHead
+                            classHead='roles'
                             titles={[
                                 'cargo',
                                 'departamento',

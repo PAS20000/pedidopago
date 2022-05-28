@@ -2,29 +2,33 @@ import styled from "@emotion/styled";
 
 
 export const Container = styled.div`
-   padding: 10px;
-   margin: 5px;
-   margin-left: -20px;
+  
 `
 
 export const InputSearch = styled.input`
-    padding: 1rem 2.5rem;
-    width: 91%;
-    border-radius: 10px;
-    border: solid 1px;
+    padding: 0.8rem 3rem;
+    width: 90%;
+    border: 2px solid ${props => props.theme.color.secondary[700]};
+    border-radius: 8px; 
     outline: none;
-    border-color: rgba(0,0,0, 0.5);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    font-family: 'Poppins';
+    color: ${props => props.theme.color.secondary[900]};
     ::placeholder{
-        font-weight: bold;
-        color:  ${props => props.theme.color.secondary[900]};
+        color: ${props => props.theme.color.secondary[900]};
     }
 `
 
 export const Icon = styled.span`
     position: absolute;
-    padding: 0.7rem;
-    font-size: 1.5rem;
+    margin: 12px;
+    margin-left: 20px;
+    font-size: 24px;
     pointer-events: none;
+    color:  ${props => props.theme.color.secondary[900]};
 `
 
 export const LabelContainer = styled.div`
