@@ -3,7 +3,7 @@ import { Media } from "../../../utils/breakPoints";
 
 
 export const ContainerStyle = styled.div`
-   transform: translate(30vh);
+   transform: translate(50vh, 24px);
    background-color: ${props => props.theme.color.secondary[100]};
    margin-top: 0;
    padding: 40px 24px;
@@ -11,7 +11,9 @@ export const ContainerStyle = styled.div`
    border-radius: 8px;
    border: ${props => props.className && 'solid 1px'};
    width: 956px;
-
+   ${Media(0)}{
+      transform: translate(25vh, 24px);
+   }
    ${Media(1)}{
       gap: 40px;
       width: 348px;

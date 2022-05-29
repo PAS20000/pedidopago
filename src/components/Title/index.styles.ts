@@ -2,13 +2,10 @@ import styled from "@emotion/styled";
 import { Media } from "../../utils/breakPoints";
 
 export const Container = styled.h1`
-    ${Media(1)}{
-        margin-top: 80px;
-        margin-left: 20px;
-    }
+    
     color: ${props => props.theme.color.secondary[1000]};
     text-align: start;
-    margin-left: 15%;
+    transform: translate(26vh,30px);
     margin-top: 51px;
     div{
         display: flex;
