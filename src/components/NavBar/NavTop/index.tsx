@@ -7,20 +7,24 @@ const NavTop = () => {
 
     return(
         <Container>
-            <NextImage 
-                src='/img/logo.png'
-                alt='logo'
-                width='50px'
-                height='50px'
-            />
+            <div className='Logo'>
+                <NextImage 
+                    src='/img/logo.png'
+                    alt='logo'
+                    width='65px'
+                    height='65px'
+                />
+            </div>
             <Flex>
                 <DefaultAtavar>
                     <p>
                         LZ
                     </p>
                 </DefaultAtavar>
-                <p>
-                    Luiz ZloChevsky<br />
+                <p className='info'>
+                    <span className='user'>
+                        Luiz ZloChevsky
+                    </span>
                     <span>
                         meus dados
                     </span>

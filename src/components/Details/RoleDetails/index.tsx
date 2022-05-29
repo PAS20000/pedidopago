@@ -29,9 +29,6 @@ const RoleDetais = ({
                     options={[name]}
                 />
             </Grid>
-            <h4>
-                Listagem de permissões
-            </h4>
             <RoleAuthsTable 
                 groupRules={groupRules}
             />

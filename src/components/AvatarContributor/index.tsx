@@ -21,27 +21,27 @@ const AvatarContributor = ({
         <Flex>
             <div className='AvatarContainer'>
             <NextImage
-                src={image}
-                alt={`imagem-${name}`}
-                width={size}
-                height={size}
-                className={'Avatar'}
-                layout='fixed'
-            />
-            <Name>
-                {!email ? 
-                    <p className='Avatar Name'>
-                        {name}
-                    </p>
-                    :
-                    <p className='Avatar Name'>
-                        {name} <br />
-                        <span className='Email'>
-                            {email}
-                        </span>
-                    </p>
-                }
-            </Name>
+                    src={image}
+                    alt={`imagem-${name}`}
+                    width={size}
+                    height={size}
+                    className={'Avatar'}
+                    layout='fixed'
+                />
+                <Name>
+                    {!email ? 
+                        <p className='AvatarName'>
+                            {name}
+                        </p>
+                        :
+                        <p className='AvatarName'>
+                            {name} <br />
+                            <span className='Email'>
+                                {email}
+                            </span>
+                        </p>
+                    }
+                </Name>
             </div>
         </Flex>
     )

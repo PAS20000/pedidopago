@@ -13,11 +13,11 @@ const Status = ({
    const { translate } = useUXCTX()
 
     return(
-    <Label>
-        <p className={(status ?? 'inactive')}>
-            {translate(status)}
-        </p>
-    </Label>
+        <Label>
+            <p className={(status ?? 'inactive')}>
+                {translate(status)}
+            </p>
+        </Label>
     )
 }
 

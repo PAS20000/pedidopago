@@ -57,25 +57,27 @@ const Table = () => {
                     }
                 </thead>
                 <tbody >
-                    {breadCrumb === 'Contributors' && dataContributors.slice(sliceData.init, sliceData.final).map(item => 
-                        <ContributorsBody 
-                            key={item.agent_id}
-                            name={item.name}
-                            agent_id={item.agent_id}
-                            image={item.image}
-                            branch={item.branch}
-                            department={item.department}
-                            role={item.role}
-                            status={item.status}
-                        />)
+                    {breadCrumb === 'Contributors' &&  sliceData.contributors &&
+                        dataContributors.slice(sliceData.contributors['init'], sliceData.contributors['final']).map(item => 
+                            <ContributorsBody 
+                                key={item.agent_id}
+                                name={item.name}
+                                agent_id={item.agent_id}
+                                image={item.image}
+                                branch={item.branch}
+                                department={item.department}
+                                role={item.role}
+                                status={item.status}
+                            />)
                     }
-                    {breadCrumb === 'Roles' && dataRoles.slice(sliceData.init, sliceData.final).map(item => 
-                        <RolesBody 
-                            key={Math.random()} 
-                            agents_quantity={item.agents_quantity}
-                            departament={item.departament}
-                            name={item.name}
-                        />)
+                    {breadCrumb === 'Roles' && sliceData.roles && 
+                        dataRoles.slice(sliceData.roles['init'], sliceData.roles['final']).map(item => 
+                            <RolesBody 
+                                key={Math.random()} 
+                                agents_quantity={item.agents_quantity}
+                                departament={item.departament}
+                                name={item.name}
+                            />)
                     }
                 </tbody>
             </ContainerTable>

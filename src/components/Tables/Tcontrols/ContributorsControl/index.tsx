@@ -5,29 +5,32 @@ import ControlButtons from '../_ControlsButton'
 import { Container, SelectContainer } from './index.styles'
 
 const ContributorsControl = () => {
-    const { sliceData, setSliceData, pages, setPages, breadCrumb } = useUXCTX()
+    const { sliceData, setSliceData, pages, setPages, breadCrumb, slicer } = useUXCTX()
     const { dataContributors } = useDataCTX({})
 
     const ShowItems = () : string => {
+        const contributors = dataContributors.length 
+        const contributorsItemsInit = sliceData.contributors.init
+        const contributorsItemsFinal = sliceData.contributors.final
 
-        if(dataContributors.length < sliceData.final){
-            return `${dataContributors.length}`
+        if(contributors < contributorsItemsFinal){
+            return `${contributors - contributorsItemsInit + contributorsItemsFinal}` // bug
         }
         else {
-            return `${sliceData.final}`
+            return `${contributors - contributorsItemsFinal}` // bug
         }
     }
 
     const CountPages = (data:Array<Object>) => {
-        const countPages = Math.ceil(data.length / 10 + 1)
+        const countPages = Math.ceil(data.length / slicer + 1)
     
         for (let opt = 1; opt < countPages; opt++) {
     
             const optCalc = () : number => {
-                if(data.length < opt * 10){
+                if(data.length < opt * slicer){
                     return data.length
                 } else {
-                    return opt * 10
+                    return opt * slicer
                 }
                 
             }
@@ -45,14 +48,8 @@ const ContributorsControl = () => {
      }
 
      return () => {
-        setSliceData({
-            init:0,
-            final:10
-        })
-        
         setPages([])
-    }
-    
+     }
     }, [breadCrumb])
     return( 
         <Container>
@@ -62,7 +59,11 @@ const ContributorsControl = () => {
                 </h4>
                 <select onChange={(e) =>  setSliceData({
                         ...sliceData,
-                        final:parseInt(e.target.value)
+                        contributors:{
+                            init:0,
+                            final:parseInt(e.target.value)
+                        },
+                        
                     })}>
                     {pages.map((opt, i) => 
                       <option key={i} value={opt}>

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { BsCheck, BsClock } from 'react-icons/bs'
-import { ObjRules, TPermissions } from '../../../../pages/role/[id]'
-import { ContainerTable } from '../index.styles'
+import { BsCheck } from 'react-icons/bs'
+import { ObjRules } from '../../../../pages/role/[id]'
+import { ContainerTable, Title } from '../index.styles'
 import TableHead from '../TableHead'
 import { Tr } from './index.styles'
 
@@ -46,6 +46,9 @@ const RoleAuthsTable = ({
 
     return(
         <>
+        <Title>
+            Listagem de permissões
+        </Title>
             <ContainerTable>
                 <thead>
                     <TableHead 

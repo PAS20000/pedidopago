@@ -6,10 +6,14 @@ export type TSearch = {
     contributors?:string
     roles?:string
 }
-
-type TSliceData = {
+export type TSliceDataObjs = {
     init:number
     final:number
+   
+}
+type TSliceData = {
+    contributors?:TSliceDataObjs
+    roles?:TSliceDataObjs
 }
 
 
@@ -44,11 +48,18 @@ const UXProvider = ({
       contributors:'',
       roles:''
   })
-
+  
   const slicer = 10
+
   const [sliceData, setSliceData] = React.useState<TSliceData>({
-      init:0,
-      final:slicer
+      contributors:{
+          init:0,
+          final:slicer
+      },
+      roles:{
+          init:0,
+          final:slicer
+      }
   })
 
   const [ pages, setPages ] = React.useState<Array<number>>([])

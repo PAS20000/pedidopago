@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Media } from "../../utils/breakPoints";
 
 export const ContainerTable = styled.table`
  @keyframes show {
@@ -18,12 +19,15 @@ export const ContainerTable = styled.table`
         animation: show 1s;
     }
     td{
-        border-bottom: solid 1px #EAEFED;
+        border-bottom: solid 1px ${props => props.theme.color.secondary[600]};
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
         padding: 5px;
+        
     }
+
+   
 `
 
 export const Title = styled.h2`

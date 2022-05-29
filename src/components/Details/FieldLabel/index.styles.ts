@@ -6,7 +6,7 @@ export const ContainerOrg = styled.div`
     div.Drop{
         padding: 15px;
         background: #F5FAF8;
-        border: 2px solid #CAD6D1;
+        border: 2px solid ${props => props.theme.color.secondary[900]};
         border-radius: 8px;
         div{
             display: flex;

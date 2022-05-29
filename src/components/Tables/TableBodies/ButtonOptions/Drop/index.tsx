@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Button, Grid, Flex } from './index.styles'
-import NextLink from '../../../../../components/Contracts/NextLink/index'
+import NextLink from '../../../../Contracts/NextLink/index'
 
 type TDrop = {
     icon:React.ReactChild
@@ -19,18 +19,18 @@ const Drop = ({
 } : TDrop) => {
     return(
         <Grid>
-            <Button className={className} onClick={onClick}>
-                <Flex>
-                    <span>
-                        {icon}
-                    </span>
-                    <NextLink href={href} target={'_self'}>
+            <NextLink href={href} target={'_self'}>
+                <Button className={className} onClick={onClick}>
+                    <Flex>
+                        <span>
+                            {icon}
+                        </span>
                         <p>
                             {ancorText}
                         </p>    
-                    </NextLink>
-                </Flex>
-            </Button>
+                    </Flex>
+                </Button>
+            </NextLink>
         </Grid>
     )
 }
