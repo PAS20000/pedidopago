@@ -16,20 +16,21 @@ type TSliceData = {
     roles?:TSliceDataObjs
 }
 
+type TSet<T> =  React.Dispatch<React.SetStateAction<T>>
 
 export type TUX = {
-    globalOpen:boolean
-    setGlobalOpen:React.Dispatch<React.SetStateAction<boolean>>
-    breadCrumb:TBread
-    setBreadCrumb:React.Dispatch<React.SetStateAction<TBread>>
-    searchValue:TSearch
-    setSearchValue:React.Dispatch<React.SetStateAction<TSearch>>
-    sliceData:TSliceData
-    setSliceData:React.Dispatch<React.SetStateAction<TSliceData>>
-    pages:Array<number>
-    setPages:React.Dispatch<React.SetStateAction<Array<number>>>
-    slicer:number
-    translate:Function
+    globalOpen: boolean
+    setGlobalOpen: TSet<boolean>
+    breadCrumb: TBread
+    setBreadCrumb: TSet<TBread>
+    searchValue: TSearch
+    setSearchValue: TSet<TSearch>
+    sliceData: TSliceData
+    setSliceData: TSet<TSliceData>
+    pages: Array<number>
+    setPages: TSet<Array<number>>
+    slicer: number
+    translate: Function
 }
 
 type TUXProvider = {
@@ -61,7 +62,7 @@ const UXProvider = ({
           final:slicer
       }
   })
-
+  
   const [ pages, setPages ] = React.useState<Array<number>>([])
 
   const translate = (status:string) : string => {
