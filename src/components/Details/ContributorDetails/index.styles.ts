@@ -19,6 +19,9 @@ export const Avatar = styled.div`
         margin: 15px;
     }
     p.Avatar.Name {
+        ${Media(1)}{
+            margin-left: 5px;
+        }
         display: grid;
         width: 168px;
         height: 27px;

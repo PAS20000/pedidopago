@@ -1,10 +1,9 @@
 import * as React from 'react'
 import { ObjRules } from '../../../../pages/role/[id]'
-import { Title } from '../../Tables/index.styles'
 import RoleAuthsTable from '../../Tables/RoleAuthsTable'
 import Container from '../../_Layout/Container'
 import FieldLabel from '../FieldLabel'
-import { Grid } from './index.styles'
+import { Grid, Title } from './index.styles'
 
 type TRoleDetails = {
     name:string

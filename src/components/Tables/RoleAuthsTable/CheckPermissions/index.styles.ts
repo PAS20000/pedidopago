@@ -1,13 +1,17 @@
 import styled from "@emotion/styled";
+import { Media } from "../../../../utils/breakPoints";
 
 export const Check = styled.div`
-    .check{
+    div.check{
         margin-left: 8px;
         width: 20px;
         height: 20px;
         font-size: 20px;
         border-radius: 6px;
-        
+
+        ${Media(1)}{
+            font-size: 24px;
+        }
     }
     div.check.allowed{
         color: ${props => props.theme.color.secondary[100]};

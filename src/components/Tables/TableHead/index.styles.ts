@@ -14,7 +14,7 @@ th{
         font-weight: bold;
         margin-bottom: 5px;
         border-color: ${props => props.theme.color.secondary[700]};
-        height: 17px;
+        height: 16px;
     }
     
     h4.first{

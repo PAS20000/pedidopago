@@ -14,7 +14,7 @@ export const ContainerTable = styled.table`
         display: flex;
         align-items: center;
     }
-    font-size: 12px;
+    font-size: 0.75rem;
     color: ${props => props.theme.color.secondary[900]};
     border-collapse: collapse;
     width: 100%;
@@ -28,7 +28,6 @@ export const ContainerTable = styled.table`
         font-weight: 400;
         line-height: 140%;
         padding: 5px;
-        
     }
 
    
@@ -47,12 +46,10 @@ export const Title = styled.h2`
     margin-bottom: 50px;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 100%;
     text-align: start;
     color: ${props => props.theme.color.secondary[1000]};
-
-   
 `
 
 export const ContainerRoles = styled.div`

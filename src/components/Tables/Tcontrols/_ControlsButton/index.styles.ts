@@ -8,14 +8,14 @@ export const Container = styled.div`
         height: 24px;
         font-style: normal;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 150%;
     }
     button{
         margin: 12px;
         width: 45px;
         height: 35px;
-        font-size: 16px;
+        font-size: 1rem;
         cursor: pointer;
         border-radius: 10px 0px 0px 10px;
         background-color: transparent;

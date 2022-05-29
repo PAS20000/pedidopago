@@ -3,7 +3,7 @@ import { Media } from "../../../utils/breakPoints";
 
 
 export const ContainerStyle = styled.div`
-   margin-left: 15%;
+   transform: translate(30vh);
    background-color: ${props => props.theme.color.secondary[100]};
    margin-top: 0;
    padding: 40px 24px;

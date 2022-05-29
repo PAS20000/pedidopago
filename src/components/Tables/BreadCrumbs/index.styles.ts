@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const Flex = styled.div`
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 100%;
     display: flex;
     align-items: center;
@@ -22,12 +22,17 @@ export const Flex = styled.div`
             color: ${props => props.theme.color.secondary[1000]};
             border-color: ${props => props.theme.color.primary[1000]};
         }
+
+        
     }
     .default.end{
-        width: 100%;
+        width: 90%;
         pointer-events: none;
+        h3{
+            width: 0;
+        }
     }
     h3{
-        width: 196px;
+        width: 29.8vh;
     }
 `
