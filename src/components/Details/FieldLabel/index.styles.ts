@@ -6,7 +6,7 @@ export const ContainerOrg = styled.div`
     div.Drop{
         padding: 15px;
         background: #F5FAF8;
-        border: 2px solid ${props => props.theme.color.secondary[900]};
+        border: solid 2px ${props => props.theme.color.secondary[500]};
         border-radius: 8px;
         div{
             display: flex;
@@ -21,6 +21,7 @@ export const ContainerOrg = styled.div`
             }
             span.icon{
                font-size: 18px;
+               color: ${props => props.theme.color.secondary[900]};
             }
         }
     }

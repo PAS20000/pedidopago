@@ -1,6 +1,12 @@
 import styled from "@emotion/styled";
+import { Media } from "../../../../utils/breakPoints";
 
 export const Card = styled.div`
+    ${Media(1)}{
+        margin: 8px;
+        margin-top: 0;
+        width: 290px;
+    }
     background-color: ${props => props.theme.color.secondary[400]};
     padding: 16px;
     width: 286.67px;
@@ -8,7 +14,6 @@ export const Card = styled.div`
     margin-left: 24px;
     border: solid 2px ${props => props.theme.color.secondary[500]};
     border-radius: 8px;
-    
     div{
         display: flex;
     }
@@ -38,5 +43,6 @@ export const Icon = styled.div`
     background-color: ${props => props.theme.color.secondary[700]};
     svg{
        padding: 0.6rem;
+       color: ${porps => porps.theme.color.secondary[300]};
     }
 `

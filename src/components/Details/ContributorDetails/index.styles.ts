@@ -1,17 +1,25 @@
 import styled from "@emotion/styled";
+import { Media } from "../../../utils/breakPoints";
 
 
 
 export const ContainerInfo = styled.div`
     display: flex;
     justify-content: space-around;
+
+    ${Media(1)}{
+        display: grid;
+        padding: 20px;
+    }
 `
 
 export const Avatar = styled.div`
+    
     div.AvatarContainer{
         margin: 15px;
     }
     p.Avatar.Name {
+        display: grid;
         width: 168px;
         height: 27px;
         font-style: normal;
@@ -21,7 +29,6 @@ export const Avatar = styled.div`
         align-items: center;
         color: ${props => props.theme.color.secondary[1000]};
         margin-left: 24px;
-
         span.Email{
             width: 213px;
             height: 17px;
@@ -38,6 +45,12 @@ export const Avatar = styled.div`
 `
 
 export const ContainerOrganizations = styled.div`
+    ${Media(1)}{        
+        margin-left: 10px;
+        margin-top: 0;
+        padding: 0;
+        width: 321px;
+    }
     border: solid 2px;
     border-color: ${props => props.theme.color.secondary[700]};
     border-radius: 10px;
@@ -49,6 +62,10 @@ export const ContainerOrganizations = styled.div`
 export const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    
+    ${Media(1)}{
+        grid-template-columns: 1fr;
+    }
 `
 
 export const Title = styled.h4`

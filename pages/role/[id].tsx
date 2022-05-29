@@ -77,7 +77,9 @@ const Role = ({
     role
 } : TRole) => {
     const { isFallback } = useRouter()
-   
+
+    console.log(role)
+
     if(isFallback){
         return <div>Carregando...</div>
     }
@@ -89,7 +91,7 @@ const Role = ({
             </Header>
             <Main>
               <Title href='/'>
-                Permissões do cargo
+                Cargo e Permissões
               </Title>
               <RoleDetais 
                 name={role.name}

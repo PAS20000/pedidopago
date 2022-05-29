@@ -7,7 +7,11 @@ export const Container = styled.nav`
     box-shadow: ${props => props.theme.globalProps.shadow};
     display: flex;
     justify-content: space-between;
-
+    p.info{
+        display: flex;
+        flex-direction: column;
+    }
+    
     ${Media(1)}{ // 360px  
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -16,7 +20,7 @@ export const Container = styled.nav`
         height: 61px;
        
         div.Logo{
-           margin-right: 95px;
+           margin-right: 150px;
         }
         p.info{
             display: none;
@@ -26,6 +30,7 @@ export const Container = styled.nav`
 
 export const Flex = styled.div`
     display: flex;
+    padding: 10px;
     p{
         display: grid;
         margin: 10px;
@@ -56,7 +61,7 @@ export const DefaultAtavar = styled.div`
         font-weight: 400;
         font-size: 14px;
         line-height: 100%;
-        margin: 13px;
+        margin: 12px;
         color: ${props => props.theme.color.secondary[1000]};
         position: absolute;
     }

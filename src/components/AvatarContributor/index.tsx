@@ -30,11 +30,11 @@ const AvatarContributor = ({
                 />
                 <Name>
                     {!email ? 
-                        <p className='AvatarName'>
+                        <p className='Avatar Name'>
                             {name}
                         </p>
                         :
-                        <p className='AvatarName'>
+                        <p className='Avatar Name'>
                             {name} <br />
                             <span className='Email'>
                                 {email}

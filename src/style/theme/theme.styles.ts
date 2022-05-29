@@ -48,6 +48,7 @@ export const light : Theme = {
           600:'#EAEFED',
           500:'#E5E5E5',
           400:'#F5FAF8',
+          300:'#465953',
           100:'#fff',
         },
     }

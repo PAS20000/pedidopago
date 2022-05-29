@@ -10,6 +10,10 @@ export const ContainerTable = styled.table`
             opacity:1;
         }
     }
+    p.Avatar.Name{
+        display: flex;
+        align-items: center;
+    }
     font-size: 12px;
     color: ${props => props.theme.color.secondary[900]};
     border-collapse: collapse;
@@ -47,6 +51,8 @@ export const Title = styled.h2`
     line-height: 100%;
     text-align: start;
     color: ${props => props.theme.color.secondary[1000]};
+
+   
 `
 
 export const ContainerRoles = styled.div`

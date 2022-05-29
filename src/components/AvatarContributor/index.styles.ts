@@ -5,10 +5,6 @@ export const Flex = styled.div`
     div.AvatarContainer{
         display: flex;
     }
-    p.AvatarName{
-        display: flex;
-        align-items: center;
-    }
 `
 
 export const Name = styled.div`

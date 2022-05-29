@@ -2,7 +2,7 @@ import * as React from 'react'
 import { TContributors } from '../../../../pages'
 import Container from '../../_Layout/Container'
 import { Avatar, ContainerInfo, ContainerOrganizations, Grid, Title } from './index.styles'
-import { GrDocumentText } from 'react-icons/gr'
+import { HiOutlineIdentification } from 'react-icons/hi'
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import AvatarContributor from '../../AvatarContributor'
@@ -51,7 +51,7 @@ const ContributorDetails = ({
             </Title>
             <ContainerInfo>
                 <Personal
-                    icon={<GrDocumentText />}
+                    icon={<HiOutlineIdentification size={'18px'}/>}
                     title={document.type} 
                     text={document.number}
                 />
@@ -66,7 +66,6 @@ const ContributorDetails = ({
                     text={birth_dateTratament()}
                 />
             </ContainerInfo>
-            
             <ContainerOrganizations>
                 <Title>
                     Dados Organizacionais

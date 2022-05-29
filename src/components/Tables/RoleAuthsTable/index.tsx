@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { BsCheck } from 'react-icons/bs'
-import { ObjRules } from '../../../../pages/role/[id]'
+import { ObjRules, TPermissions } from '../../../../pages/role/[id]'
 import { ContainerTable, Title } from '../index.styles'
 import TableHead from '../TableHead'
+import CheckPermission from './CheckPermissions'
 import { Tr } from './index.styles'
 
 type TRolesAutshTable = {
@@ -14,36 +15,35 @@ const RoleAuthsTable = ({
     groupRules
 } : TRolesAutshTable) => {
 
-    const AuthsVerify = (rule:ObjRules) => {
-        const arrayAuths = rule.permissions
-        const Read = arrayAuths.filter(auth => auth.includes('read'))
-        const Write = arrayAuths.filter(auth => auth.includes('write'))
-        const Delete = arrayAuths.filter(auth => auth.includes("delete"))
-        
-        const existAuth = (auth:boolean) : React.ReactNode => {
-            return( auth ? 
-                <div className='check allowed'>
-                    <BsCheck />
-                </div> 
-                : 
-                <div className='check notAllowed' />
-            )
-        }
-        return(
-            <>
-                <td>
-                    {existAuth(!!Read[0])}
-                </td>
-                <td>
-                    {existAuth(!!Write[0])}
-                </td>
-                <td>
-                    {existAuth(!!Delete[0])}
-                </td>
-            </>
-        )
-    }
+    const AuthsVerify = (permissions:TPermissions[]) => {
+        const Read = permissions.filter(auth => auth.includes('read'))
+        const Write = permissions.filter(auth => auth.includes('write'))
+        const Delete = permissions.filter(auth => auth.includes("delete"))
 
+        return (<>
+            <td>
+                {!!Read[0] ? 
+                    <CheckPermission auth/> 
+                    : 
+                    <CheckPermission />
+                }
+            </td>
+            <td>
+                {!!Write[0] ? 
+                    <CheckPermission auth/> 
+                    : 
+                    <CheckPermission />
+                }
+            </td>
+            <td>
+                {!!Delete[0] ? 
+                    <CheckPermission auth/> 
+                    : 
+                    <CheckPermission />
+                }
+            </td>
+        </>)
+}
     return(
         <>
         <Title>
@@ -68,7 +68,7 @@ const RoleAuthsTable = ({
                             <td>
                                 {rule.role}
                             </td>
-                            {AuthsVerify(rule)}
+                            {AuthsVerify(rule.permissions)}
                         </Tr>
                     )}
                 </tbody>

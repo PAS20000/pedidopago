@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { ObjRules } from '../../../../pages/role/[id]'
+import { Title } from '../../Tables/index.styles'
 import RoleAuthsTable from '../../Tables/RoleAuthsTable'
 import Container from '../../_Layout/Container'
 import FieldLabel from '../FieldLabel'
@@ -19,6 +20,9 @@ const RoleDetais = ({
 
     return (
         <Container>
+            <Title>
+                Dados do cargo
+            </Title>
             <Grid>
                 <FieldLabel 
                     title='departamento'

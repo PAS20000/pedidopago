@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 
 export const ContainerTr = styled.tr`
-p.AvatarName{
+p.Avatar.Name{
     width: 113px;
     height: 34px;
     font-style: normal;

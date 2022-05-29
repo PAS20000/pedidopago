@@ -13,8 +13,9 @@ export const ContainerStyle = styled.div`
    width: 956px;
 
    ${Media(1)}{
-      padding: 40px, 0px, 40px, 0px;
-      margin: 0.5rem;
-      border-color: ${props => props.theme.color.secondary[400]};
+      gap: 40px;
+      width: 348px;
+      margin: 10px;
+      margin-right: 15px;
    }
 `
