@@ -3,14 +3,14 @@ import styled from "@emotion/styled";
 
 export const ContainerTr = styled.tr`
 p.Avatar.Name{
-    width: 326.4px;
-    height: 96px;
+    width: 113px;
     font-style: normal;
     font-weight: 600;
     font-size: 0.75rem;
     line-height: 140%;
-    margin: 0;
+    margin-top: 5px;
 }
+   
 td.inactive{
     color: ${props => props.theme.color.secondary[800]};
     img{
