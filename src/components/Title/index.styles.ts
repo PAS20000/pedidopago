@@ -5,16 +5,18 @@ export const Container = styled.h1`
     
     color: ${props => props.theme.color.secondary[1000]};
     text-align: start;
-    transform: translate(26vh,30px);
+    transform: translate(25vh,30px);
     margin-top: 51px;
+
+    ${Media(0, 'min')}{
+        transform: translate(50vh, 50px)
+    }
+    
     div{
         display: flex;
         h1{
             ${Media(1, 'max')}{
-                padding: 10px;
-                font-size: 18px;
-                margin-top: 18px;
-                margin-bottom: 0;
+                transform: translate(20vh, 24px);
             }
             font-style: normal;
             font-weight: 600;
@@ -23,7 +25,7 @@ export const Container = styled.h1`
             color: ${props => props.theme.color.secondary[1000]};
         }
         a{
-            ${Media(1)}{
+            ${Media(1, 'max')}{
                 margin-right: 5px;
             }
             margin-top: 18px;

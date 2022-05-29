@@ -17,21 +17,22 @@ type TButtonOptions = {
 const ButtonOptions = ({
     id
 } : TButtonOptions) => {
-    const { breadCrumb, globalOpen, setGlobalOpen, setBreadCrumb } = useUXCTX()
+    const { breadCrumb } = useUXCTX()
     const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
+    
 
-    const Open = () => {
-        setLocalOpen(localOpen === false ? true : false)
+    const OpenClose = () => {
+        localOpen ?  setLocalOpen(false) : setLocalOpen(true)
     }
 
     return (
         <>
-            <Button onClick={Open}>
+            <Button onClick={OpenClose}>
                 <span>
                     <FiMoreVertical />
                 </span>
             </Button>
-            {localOpen && globalOpen &&
+            {localOpen &&
                 <ContainerOptions>
                     {breadCrumb === 'Contributors' && 
                         <>

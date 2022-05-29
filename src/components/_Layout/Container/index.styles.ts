@@ -10,13 +10,16 @@ export const ContainerStyle = styled.div`
    box-shadow: ${props => props.theme.globalProps.shadow};
    border-radius: 8px;
    border: ${props => props.className && 'solid 1px'};
-   width: 75%;
-
+   width: 956px;
    
    ${Media(1, 'max')}{
+      transform: translate(20vh, 24px);
       gap: 40px;
       width: 348px;
       margin: 10px;
       margin-right: 15px;
+   }
+   ${Media(0, 'min')}{
+      transform: translate(50vh, 50px);
    }
 `

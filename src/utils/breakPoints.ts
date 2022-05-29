@@ -1,4 +1,4 @@
-export const breakPoints = [1920, 360]
+export const breakPoints = [1920, 400]
 
 export const Media = (index:number, minOrMax:'min' | 'max') : string => {
     return minOrMax === 'max' ? 

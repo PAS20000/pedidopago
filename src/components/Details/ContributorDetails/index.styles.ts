@@ -5,8 +5,6 @@ import { Media } from "../../../utils/breakPoints";
 
 export const ContainerInfo = styled.div`
     display: flex;
-    justify-content: space-around;
-
     ${Media(1, 'max')}{
         display: grid;
         padding: 20px;
@@ -54,6 +52,7 @@ export const ContainerOrganizations = styled.div`
         padding: 0;
         width: 321px;
     }
+   
     border: solid 2px;
     border-color: ${props => props.theme.color.secondary[700]};
     border-radius: 10px;

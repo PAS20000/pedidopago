@@ -14,7 +14,7 @@ const ContributorsBody = ({
     status,
     agent_id
 } : TContributors) => {
-    
+
     return(
         <ContainerTr className={status ?? 'inactive'}>
             <td className={status ?? 'inactive'}>
@@ -39,7 +39,7 @@ const ContributorsBody = ({
                     {branch}
                 </p>
             </td>
-            <td>
+            <td className={status ?? 'inactive'}>
                 <Status status={status}/>
             </td>
             <td>

@@ -9,6 +9,7 @@ import Table from '../src/components/Tables'
 import NavBar from '../src/components/NavBar'
 import useResposive from '../src/hooks/useResponsive/useResponsive'
 import { breakPoints } from '../src/utils/breakPoints'
+import useUXCTX from '../src/hooks/useUXCTX/useUXCTX'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -54,7 +55,7 @@ const Home = ({
     })
 
     const { width } = useResposive()
-
+    
     return(
         <>
             <Header>

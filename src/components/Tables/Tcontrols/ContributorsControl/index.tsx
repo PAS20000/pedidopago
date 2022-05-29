@@ -17,7 +17,7 @@ const ContributorsControl = () => {
             return `${contributors - contributorsItemsInit + contributorsItemsFinal}` // bug
         }
         else {
-            return `${contributors - contributorsItemsFinal}` // bug
+            return `${contributors}` // bug
         }
     }
 
@@ -51,6 +51,8 @@ const ContributorsControl = () => {
         setPages([])
      }
     }, [breadCrumb])
+
+
     return( 
         <Container>
            <SelectContainer>

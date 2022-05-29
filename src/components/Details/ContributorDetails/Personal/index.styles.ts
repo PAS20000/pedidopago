@@ -7,6 +7,7 @@ export const Card = styled.div`
         margin-top: 0;
         width: 290px;
     }
+    
     background-color: ${props => props.theme.color.secondary[400]};
     padding: 16px;
     width: 286.67px;
@@ -38,7 +39,7 @@ export const Card = styled.div`
 export const Icon = styled.div`
     border-radius: 50%;
     text-align: center;
-    margin-right: 0.5rem;
+    margin-right: 10px;
     font-size: 18px;
     background-color: ${props => props.theme.color.secondary[700]};
     svg{

@@ -9,8 +9,5 @@ export const Container = styled.main`
    ${Media(0, 'min')}{
       transform: translate(50vh);
    }
-   ${Media(1, 'max')}{
-      margin-left: -10px;
-      padding: 1px;
-   }
+   
 `

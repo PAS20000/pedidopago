@@ -42,7 +42,7 @@ export const UXContext = React.createContext<TUX>(null);
 const UXProvider = ({
     children
 } : TUXProvider) => {
-  const [globalOpen, setGlobalOpen] = React.useState<boolean>(true)
+  const [globalOpen, setGlobalOpen] = React.useState<boolean>(false)
   const [breadCrumb, setBreadCrumb] = React.useState<TBread>('Contributors')
 
   const [searchValue, setSearchValue] = React.useState<TSearch>({
