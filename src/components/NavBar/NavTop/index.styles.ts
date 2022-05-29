@@ -11,8 +11,8 @@ export const Container = styled.nav`
         display: flex;
         flex-direction: column;
     }
-    
-    ${Media(1)}{ // 360px  
+
+    ${Media(1, 'max')}{ 
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
@@ -66,7 +66,7 @@ export const DefaultAtavar = styled.div`
         position: absolute;
     }
 
-    ${Media(1)}{
+    ${Media(1, 'max')}{
         width: 32px;
         height: 32px;
         padding: 4px;

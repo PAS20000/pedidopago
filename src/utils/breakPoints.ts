@@ -1,5 +1,8 @@
 export const breakPoints = [1920, 360]
 
-export const Media = (index:number) : string => {
-    return `@media (max-width: ${breakPoints[index]}px)`
+export const Media = (index:number, minOrMax:'min' | 'max') : string => {
+    return minOrMax === 'max' ? 
+    `@media (max-width: ${breakPoints[index]}px)`
+    :
+    `@media (min-width: ${breakPoints[index]}px)`
 }

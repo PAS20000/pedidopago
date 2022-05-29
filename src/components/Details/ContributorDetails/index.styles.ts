@@ -7,7 +7,7 @@ export const ContainerInfo = styled.div`
     display: flex;
     justify-content: space-around;
 
-    ${Media(1)}{
+    ${Media(1, 'max')}{
         display: grid;
         padding: 20px;
     }
@@ -19,7 +19,7 @@ export const Avatar = styled.div`
         margin: 15px;
     }
     p.Avatar.Name {
-        ${Media(1)}{
+        ${Media(1, 'max')}{
             margin-left: 5px;
         }
         display: grid;
@@ -48,7 +48,7 @@ export const Avatar = styled.div`
 `
 
 export const ContainerOrganizations = styled.div`
-    ${Media(1)}{        
+    ${Media(1, 'max')}{        
         margin-left: 10px;
         margin-top: 0;
         padding: 0;
@@ -66,7 +66,7 @@ export const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     
-    ${Media(1)}{
+    ${Media(1, 'max')}{
         grid-template-columns: 1fr;
     }
 `

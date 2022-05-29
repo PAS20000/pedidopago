@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Media } from "../../../../utils/breakPoints";
 
 export const Card = styled.div`
-    ${Media(1)}{
+    ${Media(1, 'max')}{
         margin: 8px;
         margin-top: 0;
         width: 290px;

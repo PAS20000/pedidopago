@@ -9,7 +9,7 @@ export const Check = styled.div`
         font-size: 20px;
         border-radius: 6px;
 
-        ${Media(1)}{
+        ${Media(1, 'max')}{
             font-size: 24px;
         }
     }

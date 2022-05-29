@@ -9,7 +9,7 @@ export const Container = styled.nav`
     box-shadow: 0px 4px 8px rgba(165, 171, 179, 0.16);
     width: 30vh;
     
-    ${Media(1)}{
+    ${Media(1, 'max')}{
         display: none;
     }
 `

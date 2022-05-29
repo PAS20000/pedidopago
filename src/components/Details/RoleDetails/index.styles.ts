@@ -6,7 +6,7 @@ export const Grid = styled.div`
     grid-template-columns: 1fr 1fr;
     
 
-    ${Media(1)}{
+    ${Media(1, 'max')}{
         grid-template-columns: 1fr;
     }
 `

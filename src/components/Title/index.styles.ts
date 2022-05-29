@@ -10,7 +10,7 @@ export const Container = styled.h1`
     div{
         display: flex;
         h1{
-            ${Media(1)}{
+            ${Media(1, 'max')}{
                 padding: 10px;
                 font-size: 18px;
                 margin-top: 18px;
