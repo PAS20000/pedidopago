@@ -11,7 +11,7 @@ export const Container = styled.h1`
     ${Media(0, 'min')}{
         transform: translate(50vh, 50px)
     }
-    
+
     div{
         display: flex;
         h1{
@@ -35,7 +35,7 @@ export const Container = styled.h1`
             text-decoration: none;
             color: ${props => props.theme.color.secondary[1000]};
             border-radius: 80px;
-            background: ${props => props.theme.color.secondary[600]}; //#EAEFED
+            background: ${props => props.theme.color.secondary[600]};
             &:hover{
                 transition: 1s;
                 opacity: 0.5;
