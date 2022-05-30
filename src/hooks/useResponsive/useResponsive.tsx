@@ -10,13 +10,17 @@ const useResposive = () : TReturn => {
     const [ height, setHeight ] = React.useState<number>(0)
 
     React.useEffect(() => {
-      setWidth(window.innerWidth)
-      setHeight(window.innerHeight)
+      
     }, [])
 
+    console.log({
+      width,
+      height,
+    })
+
     return {
-        width:width,
-        height:height,
+        width,
+        height,
     }
 }
 

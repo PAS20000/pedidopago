@@ -13,7 +13,7 @@ import Container from '../_Layout/Container'
 
 const Table = () => {
     const { breadCrumb, sliceData} = useUXCTX()
-    const { dataContributors, dataRoles } = useDataCTX({})
+    const { dataContributors, dataRoles } = useDataCTX()
    
 
     return(

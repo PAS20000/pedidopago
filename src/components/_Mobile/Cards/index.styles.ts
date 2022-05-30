@@ -1,5 +1,14 @@
 import styled from "@emotion/styled";
+import { Media } from "../../../utils/breakPoints";
 
+
+export const ContainerMedia = styled.div`
+    ${Media(1, 'min')}{
+        display: none;
+    }
+
+    transform: translate(-12vh);
+`
 
 export const CardBody = styled.div`
     @keyframes show {
@@ -17,7 +26,6 @@ export const CardBody = styled.div`
     border:solid 2px  ${props => props.className === 'open' ? props.theme.color.primary[900] : props.theme.color.secondary[700] };
 
     margin-top: 10px;
-
     h2.title{
         width: 91px;
         height: 17px;

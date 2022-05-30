@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { Media } from "../../utils/breakPoints";
 
 export const ContainerTable = styled.table`
+
  @keyframes show {
         from{
             opacity:0;
@@ -29,8 +29,6 @@ export const ContainerTable = styled.table`
         line-height: 140%;
         padding: 5px;
     }
-
-   
 `
 
 export const Title = styled.h2`

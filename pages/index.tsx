@@ -7,14 +7,20 @@ import Header from '../src/components/Header'
 import useDataCTX from '../src/hooks/useDataCTX/useDataCTX'
 import Table from '../src/components/Tables'
 import NavBar from '../src/components/NavBar'
-import useResposive from '../src/hooks/useResponsive/useResponsive'
-import { breakPoints } from '../src/utils/breakPoints'
+import { Media } from '../src/utils/breakPoints'
 import Card from '../src/components/_Mobile'
 import { TAgent } from '../src/components/Search'
+import styled from "@emotion/styled"
+
+const ContainerMedia = styled.div`
+    ${Media(1, 'max')}{
+        display: none;
+    }
+`
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-    const contributors = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
-    const roles = await axiosConfig('https://pp-api-desafio.herokuapp.com/roles')
+            const contributors = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
+            const roles = await axiosConfig('https://pp-api-desafio.herokuapp.com/roles')
             const contributorKai = await axiosConfig('https://pp-api-desafio.herokuapp.com/agent/1')
             const contributorsItems = contributors.data.items
             const Agent : TAgent = contributorKai.data.agent
@@ -73,8 +79,6 @@ const Home = ({
         setDataRoles(dataRoles)
     }, [])
 
-    const { width } = useResposive()
-    
     return(
         <>
             <Header>
@@ -85,12 +89,10 @@ const Home = ({
                     <Title>
                         Organização
                     </Title>
-                    {width > breakPoints[1] &&
+                    <Card /> {/* Mobile */} 
+                    <ContainerMedia>
                         <Table />
-                    }
-                    {/* Mobile */}
-                    {/*width <= breakPoints[1] && }*/}
-                        <Card />
+                    </ContainerMedia>
                 </section>
             </Main>
         </>

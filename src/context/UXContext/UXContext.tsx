@@ -38,7 +38,6 @@ export type TUX = {
     translate: Function
     spliceData: TSplice
     setSplicaData: TSet<TSplice>
-
 }
 
 type TUXProvider = {
@@ -75,8 +74,10 @@ const UXProvider = ({
       contributors:10,
       roles:10,
   })
-  
+
   const [ pages, setPages ] = React.useState<Array<number>>([])
+
+  const [ height, setHeight ] = React.useState<number>(0)
 
   const translate = (status:string) : string => {
     if(status === 'active'){
@@ -109,7 +110,7 @@ const UXProvider = ({
       slicer,
       translate,
       spliceData, 
-      setSplicaData
+      setSplicaData,
     }
     
    return(

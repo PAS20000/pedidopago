@@ -8,9 +8,10 @@ import Breads from './Cards/Breads'
 import RoleCard from './Cards/RoleCard'
 import { ImLoop2 } from 'react-icons/im'
 import Button from './Button'
+import { ContainerMedia } from './Cards/index.styles'
 
 const Card = () => {
-    const { dataContributors, dataRoles } = useDataCTX()
+    const { dataContributors, dataRoles,} = useDataCTX()
     const { breadCrumb, sliceData, setSliceData, slicer } = useUXCTX()
     const [phone, setPhone] = React.useState<string>()
 
@@ -50,42 +51,40 @@ const Card = () => {
     }
 
     return(
-    <Container>
-        <h1>
-            {breadCrumb === 'Contributors' && 'Colaboradores'}
-            {breadCrumb === 'Roles' && 'Cargos'}
-        </h1>
-        <>
-            <Breads />
-            <Search />
-        </>
-        {breadCrumb === 'Contributors' && 
-        dataContributors.slice(sliceData.contributors.init, sliceData.contributors.final).map(contributor => 
-            <ContributorCard 
-                key={contributor.agent_id}
-                name={contributor.name}
-                agent_id={contributor.agent_id}
-                branch={contributor.branch}
-                department={contributor.department}
-                image={contributor.image}
-                phone={phone}
-                role={contributor.role}
-                status={contributor.status}
-            />
-        )}
-        {breadCrumb === 'Roles' && dataRoles.map((role, index) => 
-            <RoleCard 
-                key={index}
-                agents_quantity={role.agents_quantity}
-                departament={role.departament}
-                name={role.name}
-            />
-        )}
+    <ContainerMedia>
+        <Container>
+                <>
+                    <Breads />
+                    <Search />
+                </>
+                {breadCrumb === 'Contributors' && 
+                dataContributors.slice(sliceData.contributors.init, sliceData.contributors.final).map(contributor => 
+                    <ContributorCard 
+                        key={contributor.agent_id}
+                        name={contributor.name}
+                        agent_id={contributor.agent_id}
+                        branch={contributor.branch}
+                        department={contributor.department}
+                        image={contributor.image}
+                        phone={phone}
+                        role={contributor.role}
+                        status={contributor.status}
+                    />
+                )}
+                {breadCrumb === 'Roles' && dataRoles.map((role, index) => 
+                    <RoleCard 
+                        key={index}
+                        agents_quantity={role.agents_quantity}
+                        departament={role.departament}
+                        name={role.name}
+                    />
+                )}
 
-        <Button icon={<ImLoop2 />} onClick={LoadMore}>
-            Carregar mais
-        </Button>
-    </Container>
+                <Button icon={<ImLoop2 />} onClick={LoadMore}>
+                    Carregar mais
+                </Button>
+        </Container>
+    </ContainerMedia>
     )
 }
 

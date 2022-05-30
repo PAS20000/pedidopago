@@ -35,7 +35,7 @@ const Breads = () => {
                 </button>
             </div>
             {open &&
-                <div className='categorias'>
+                <div className='categorias' onClick={() => setOpen(false)}>
                     <h2>
                         Categorias
                     </h2>
