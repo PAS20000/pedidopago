@@ -78,7 +78,7 @@ const Home = ({
 
         setDataContributors(dataContributor)
         setDataRoles(dataRoles)
-    }, [])
+    }, [dataContributor, dataRoles])
 
     return(
         <>
