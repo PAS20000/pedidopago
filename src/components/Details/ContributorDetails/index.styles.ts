@@ -2,12 +2,16 @@ import styled from "@emotion/styled";
 import { Media } from "../../../utils/breakPoints";
 
 
-
+export const ContainerMedia = styled.div`
+    ${Media(1, 'max')}{
+        transform: translate(-12vh);
+    }
+`
 export const ContainerInfo = styled.div`
     display: flex;
     ${Media(1, 'max')}{
         display: grid;
-        padding: 20px;
+        
     }
 `
 

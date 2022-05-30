@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { TContributors } from '../../../../pages'
 import Container from '../../_Layout/Container'
-import { Avatar, ContainerInfo, ContainerOrganizations, Grid, Title } from './index.styles'
+import { Avatar, ContainerInfo, ContainerMedia, ContainerOrganizations, Grid, Title } from './index.styles'
 import { HiOutlineIdentification } from 'react-icons/hi'
 import { FiPhoneCall } from 'react-icons/fi'
 import { AiOutlineCalendar } from 'react-icons/ai'
@@ -37,6 +37,7 @@ const ContributorDetails = ({
     }
 
     return (
+    <ContainerMedia>
         <Container>
             <Avatar>
                 <AvatarContributor 
@@ -94,6 +95,7 @@ const ContributorDetails = ({
                 </Grid>
             </ContainerOrganizations>
         </Container>
+    </ContainerMedia>
     )
 }
 

@@ -9,14 +9,20 @@ export const Container = styled.h1`
     margin-top: 51px;
 
     ${Media(0, 'min')}{
-        transform: translate(50vh, 50px)
+        transform: translate(1, 50px)
+    }
+
+    ${Media(1, 'max')}{
+        transform: translate(25vh, 14px);
     }
 
     div{
         display: flex;
+        transform: translate(-14vh);
         h1{
             ${Media(1, 'max')}{
-                transform: translate(20vh, 24px);
+                transform: translate(3vh, 14px);
+                font-size: 18px;
             }
             font-style: normal;
             font-weight: 600;
