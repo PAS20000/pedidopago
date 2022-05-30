@@ -74,8 +74,6 @@ export const ContainerOptions = styled.div`
     }
 }
 animation: show 1s;
-position: absolute;
-z-index: 2;
 background-color: ${props => props.theme.color.secondary[100]};
 border-radius: 10px;
 width: 240px;

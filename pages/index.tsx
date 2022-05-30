@@ -11,6 +11,7 @@ import useResposive from '../src/hooks/useResponsive/useResponsive'
 import { breakPoints } from '../src/utils/breakPoints'
 import useUXCTX from '../src/hooks/useUXCTX/useUXCTX'
 import Card from '../src/components/_Mobile'
+import { TAgent } from '../src/components/Search'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
     const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
@@ -50,9 +51,13 @@ const Home = ({
     dataRoles
 } : THomeProps) => {
 
+    const { setDataContributors, setDataRoles } = useDataCTX()
+
     React.useEffect(() => {
-        localStorage.setItem('contributors', JSON.stringify(dataContributor))
         localStorage.setItem('roles', JSON.stringify(dataRoles))
+        localStorage.setItem('contributors', JSON.stringify(dataContributor))
+        setDataContributors(dataContributor)
+        setDataRoles(dataRoles)
     }, [])
 
     const { width } = useResposive()

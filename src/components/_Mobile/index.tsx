@@ -19,10 +19,10 @@ const Card = () => {
 
     return(
     <Container>
-        <div>
+        <>
             <Breads />
             <Search />
-        </div>
+        </>
         {breadCrumb === 'Contributors' && dataContributors.map(contributor => 
             <ContributorCard 
                 key={contributor.agent_id}
