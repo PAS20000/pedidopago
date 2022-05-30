@@ -9,6 +9,7 @@ import RoleCard from './Cards/RoleCard'
 import { ImLoop2 } from 'react-icons/im'
 import Button from './Button'
 import { ContainerMedia } from './Cards/index.styles'
+import { TContributors } from '../../../pages'
 
 const Card = () => {
     const { dataContributors, dataRoles,} = useDataCTX()
@@ -16,10 +17,10 @@ const Card = () => {
     const [phone, setPhone] = React.useState<string>('000000000')
 
     React.useEffect(() => {
-        const contributors : TAgent = localStorage.contributors && JSON.parse(localStorage.contributors)[0]
-        const contributorKai  = contributors.phone.number
+        const document : TContributors & TAgent = dataContributors[0]
 
-        setPhone(contributorKai ?? '123456789')
+
+        setPhone(document.document.number)
     }, [])
 
 
