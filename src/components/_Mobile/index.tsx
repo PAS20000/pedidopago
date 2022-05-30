@@ -43,10 +43,18 @@ const Card = () => {
             })
         }
 
+        if(dataContributors.length < sliceData.contributors.final || dataRoles.length < sliceData.roles.final){
+            alert('Não há mais dados para carregar')
+        }
+
     }
 
     return(
     <Container>
+        <h1>
+            {breadCrumb === 'Contributors' && 'Colaboradores'}
+            {breadCrumb === 'Roles' && 'Cargos'}
+        </h1>
         <>
             <Breads />
             <Search />
