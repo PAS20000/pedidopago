@@ -1,10 +1,9 @@
 import * as React from 'react'
-import { BsCheck } from 'react-icons/bs'
 import { ObjRules, TPermissions } from '../../../../pages/role/[id]'
 import { ContainerTable, Title } from '../index.styles'
 import TableHead from '../TableHead'
 import CheckPermission from './CheckPermissions'
-import { ContainerMedia, Tr } from './index.styles'
+import { Tr } from './index.styles'
 
 type TRolesAutshTable = {
     groupRules:ObjRules[]
