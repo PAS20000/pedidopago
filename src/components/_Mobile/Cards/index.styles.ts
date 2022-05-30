@@ -94,5 +94,5 @@ box-shadow: 0px 8px 24px rgba(165, 171, 179, 0.4);
 border-radius: 8px;
 position: absolute;
 z-index: 2;
-transform: translate(10%, -200%);
+transform: ${props => props.className === 'rolesOptions' ? 'translate(10%, -95%)': 'translate(10%, -200%)'};
 `

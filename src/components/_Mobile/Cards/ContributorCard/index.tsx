@@ -3,6 +3,7 @@ import { AiOutlineEye, AiOutlineFileAdd } from 'react-icons/ai'
 import { FiTrash2 } from 'react-icons/fi'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { TContributors } from '../../../../../pages'
+import { GrUpdate } from 'react-icons/gr'
 import NextImage from '../../../Contracts/NextImage'
 import Status from '../../../Status'
 import Drop from '../../../Tables/TableBodies/ButtonOptions/Drop'
@@ -116,7 +117,6 @@ return(
                     </div>
                     </ContainerInfo>
                 }
-               
             </CardBody>
     )
 }

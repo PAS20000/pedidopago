@@ -6,10 +6,12 @@ import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import ContributorCard from './Cards/ContributorCard'
 import Breads from './Cards/Breads'
 import RoleCard from './Cards/RoleCard'
+import { GrUpdate } from 'react-icons/gr'
+import Button from './Button'
 
 const Card = () => {
     const { dataContributors, dataRoles } = useDataCTX()
-    const { breadCrumb } = useUXCTX()
+    const { breadCrumb, sliceData, setSliceData, slicer } = useUXCTX()
     const [phone, setPhone] = React.useState<string>()
 
     React.useEffect(() => {
@@ -19,13 +21,37 @@ const Card = () => {
         setPhone(contributorKai)
     }, [])
 
+
+    const LoadMore = () : void => {
+        if(breadCrumb === 'Contributors'){
+            setSliceData({
+                ...sliceData,
+                contributors:{
+                    init:0,
+                    final:sliceData.contributors.final + slicer
+                }
+            })
+        }
+
+        if(breadCrumb === 'Roles'){
+            setSliceData({
+                ...sliceData,
+                roles:{
+                    init:0,
+                    final:sliceData.roles.final + slicer
+                }
+            })
+        }
+    }
+
     return(
     <Container>
         <>
             <Breads />
             <Search />
         </>
-        {breadCrumb === 'Contributors' && dataContributors.map(contributor => 
+        {breadCrumb === 'Contributors' && 
+        dataContributors.slice(sliceData.contributors.init, sliceData.contributors.final).map(contributor => 
             <ContributorCard 
                 key={contributor.agent_id}
                 name={contributor.name}
@@ -46,6 +72,10 @@ const Card = () => {
                 name={role.name}
             />
         )}
+
+        <Button icon={<GrUpdate />} onClick={LoadMore}>
+            Carregar mais
+        </Button>
     </Container>
     )
 }

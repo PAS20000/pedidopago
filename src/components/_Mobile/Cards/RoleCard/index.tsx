@@ -1,10 +1,12 @@
 import * as React from 'react'
 import { AiOutlineEye, AiOutlineFileAdd } from 'react-icons/ai'
-import { FiTrash2 } from 'react-icons/fi'
+import { BsLayers } from 'react-icons/bs'
+import { FiEdit } from 'react-icons/fi'
+import { ImLoop } from 'react-icons/im'
 import { TRoles } from '../../../../../pages'
 import Drop from '../../../Tables/TableBodies/ButtonOptions/Drop'
 import Button from '../../Button'
-import { AvatarContainer, CardBody, CardContainer, ContainerInfo, ContainerInfoBody, Title, ContainerOptions } from '../index.styles'
+import { CardBody, ContainerInfo, ContainerInfoBody, ContainerOptions } from '../index.styles'
 
 const RoleCard = ({
    agents_quantity,
@@ -60,15 +62,27 @@ return(
                             Ações
                         </Button>
                         {openDrop && 
-                        <ContainerOptions>
-                            <Drop 
+                        <ContainerOptions className='rolesOptions'>
+                            <Drop
                                 href={`/role/1/`}
                                 icon={<AiOutlineEye />}
-                                ancorText='Ver colaborador'
+                                ancorText='Ver cargo'
                             />
                             <Drop 
-                                href='#'
-                                icon={<FiTrash2 />}
+                                href={'#'}
+                                icon={<FiEdit />}
+                                ancorText='Editar'
+                                className='isNotImplemented'
+                            />
+                            <Drop 
+                                href={'#'}
+                                icon={<BsLayers />}
+                                ancorText='Duplicar'
+                                className='isNotImplemented'
+                            />
+                            <Drop 
+                                href={'#'}
+                                icon={<ImLoop />}
                                 ancorText='Excluir'
                                 className='isNotImplemented'
                             />

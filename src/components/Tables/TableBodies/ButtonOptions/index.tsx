@@ -3,7 +3,7 @@ import { FiMoreVertical, FiTrash2, FiEdit } from 'react-icons/fi'
 import { AiOutlineEye } from 'react-icons/ai'
 import { ContainerOptions } from './indext.styles'
 import { BsLayers } from 'react-icons/bs'
-import { GrUpdate } from 'react-icons/gr'
+import { ImLoop } from 'react-icons/im'
 import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
 import Drop from './Drop'
 import { Button } from './Drop/index.styles'
@@ -67,7 +67,7 @@ const ButtonOptions = ({
                             />
                             <Drop 
                                 href={'#'}
-                                icon={<GrUpdate />}
+                                icon={<ImLoop />}
                                 ancorText='Excluir'
                                 className='isNotImplemented'
                             />
