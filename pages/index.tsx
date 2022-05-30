@@ -97,6 +97,9 @@ const Home = ({
                     </ContainerMedia>
                 </section>
             </Main>
+            <footer>
+                <a href="https://github.com/pedidopago/pp-challenge-web" target='_blank'>Github</a>
+            </footer>
         </>
     )
 }
