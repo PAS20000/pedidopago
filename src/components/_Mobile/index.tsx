@@ -13,7 +13,7 @@ import { ContainerMedia } from './Cards/index.styles'
 const Card = () => {
     const { dataContributors, dataRoles,} = useDataCTX()
     const { breadCrumb, sliceData, setSliceData, slicer } = useUXCTX()
-    const [phone, setPhone] = React.useState<string>()
+    const [phone, setPhone] = React.useState<string>('000000000')
 
     React.useEffect(() => {
         const contributors : TAgent = localStorage.contributors && JSON.parse(localStorage.contributors)[0]
