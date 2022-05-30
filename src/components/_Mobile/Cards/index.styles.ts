@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 export const CardBody = styled.div`
     flex-direction: column;
-    padding: 30px;
+    padding: 10px;
     border-radius: 8px;
     border:solid 2px  ${props => props.className === 'open' ? props.theme.color.primary[900] : props.theme.color.secondary[700] };
 
@@ -90,4 +90,7 @@ width: 240px;
 padding: 20px;
 box-shadow: 0px 8px 24px rgba(165, 171, 179, 0.4);
 border-radius: 8px;
+position: absolute;
+z-index: 2;
+transform: translate(10%, -200%);
 `
