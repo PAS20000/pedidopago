@@ -59,8 +59,7 @@ export const ContainerBread = styled.div`
     }
     div.selectBread{
             padding: 15px 30px 0px;
-            width: 122px;
-            height: 24px;
+            width: 100%;
             font-style: normal;
             font-weight: 500;
             font-size: 16px;

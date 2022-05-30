@@ -34,13 +34,13 @@ const Breads = () => {
             </div>
             {open &&
                 <div className='categorias' onClick={() => setOpen(false)}>
-                    <h2>
+                    <h2 >
                         Categorias
                     </h2>
-                    <div onClick={() => setBreadCrumb('Contributors')} className='selectBread'>
+                    <div className='selectBread' onClick={() => setBreadCrumb('Contributors')}>
                         Colaboradores
                     </div>
-                    <div onClick={() => setBreadCrumb('Roles')}  className='selectBread'>
+                    <div className='selectBread' onClick={() => setBreadCrumb('Roles')}>
                         Cargos
                     </div>
                 </div>
