@@ -9,17 +9,30 @@ import Table from '../src/components/Tables'
 import NavBar from '../src/components/NavBar'
 import useResposive from '../src/hooks/useResponsive/useResponsive'
 import { breakPoints } from '../src/utils/breakPoints'
-import useUXCTX from '../src/hooks/useUXCTX/useUXCTX'
 import Card from '../src/components/_Mobile'
 import { TAgent } from '../src/components/Search'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-    const employees = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
+    const contributors = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
     const roles = await axiosConfig('https://pp-api-desafio.herokuapp.com/roles')
+            const contributorKai = await axiosConfig('https://pp-api-desafio.herokuapp.com/agent/1')
+            const contributorsResp = contributors.data.items
+            const Agent : TAgent = contributorKai.data.agent
+            const itemsExceptKai = contributorsResp.filter((contributor) => contributor.agent_id !== 1)
+            const InJectKaiCPF = [
+                { 
+                    ...contributorsResp[0], 
+                    email:Agent.email, 
+                    phone:Agent.phone, 
+                    document:Agent.document, 
+                    birth_date:Agent.birth_date
+                }, 
+                ...itemsExceptKai,
+            ]
 
     return {
       props: {
-        dataContributor:employees.data.items,
+        dataContributor:InJectKaiCPF,
         dataRoles:roles.data.roles
       }
     }
