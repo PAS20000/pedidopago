@@ -14,10 +14,10 @@ const ContributorsControl = () => {
         const contributorsItemsFinal = sliceData.contributors.final
 
         if(contributors < contributorsItemsFinal){
-            return `${contributors - contributorsItemsInit + contributorsItemsFinal}` // bug
+            return `${contributors - contributorsItemsInit + contributorsItemsFinal}` 
         }
         else {
-            return `${contributors}` // bug
+            return `${contributorsItemsInit - ( - contributorsItemsFinal)}`
         }
     }
 

@@ -77,7 +77,6 @@ const UXProvider = ({
 
   const [ pages, setPages ] = React.useState<Array<number>>([])
 
-  const [ height, setHeight ] = React.useState<number>(0)
 
   const translate = (status:string) : string => {
     if(status === 'active'){
