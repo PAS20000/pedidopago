@@ -55,8 +55,13 @@ const Home = ({
         staticDataRoles:dataRoles
     })
 
-    const { width } = useResposive()
+    React.useEffect(() => {
+        localStorage.setItem('contributors', JSON.stringify(dataContributor))
+        localStorage.setItem('roles', JSON.stringify(dataRoles))
+    }, [])
 
+    const { width } = useResposive()
+    
     return(
         <>
             <Header>
