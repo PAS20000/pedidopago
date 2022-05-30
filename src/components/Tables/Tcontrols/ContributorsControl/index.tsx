@@ -40,10 +40,10 @@ const ContributorsControl = () => {
     }
 
     React.useEffect(() => {
-     if(breadCrumb === 'Contributors'){
+     if(breadCrumb === 'Contributors' && localStorage.contributors){
          CountPages(JSON.parse(localStorage.contributors))
      }
-     if(breadCrumb === 'Roles'){
+     if(breadCrumb === 'Roles' && localStorage.roles){
          CountPages(JSON.parse(localStorage.roles))
      }
 
