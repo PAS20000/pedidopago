@@ -17,10 +17,7 @@ const Card = () => {
     const [phone, setPhone] = React.useState<string>('000000000')
 
     React.useEffect(() => {
-        const document : TContributors & TAgent = dataContributors[0]
-
-
-        setPhone(document.document.number)
+        
     }, [])
 
 
