@@ -60,7 +60,8 @@ const DataProvider = ({
      }
 
     React.useEffect(() => {
-       
+       dataRolesGet()
+       dataContributorsGet()
     }, [])
 
    return(
