@@ -86,19 +86,21 @@ const Home = ({
                 <NavBar />
             </Header>
             <Main>
+           
                 <section>
-                    
+                
                     <Card /> {/* Mobile */} 
                     <ContainerMedia>
                         <Title>
-                            Organização
+                            Organização <a href='https://github.com/PS200000/pedidopago' target='_blank' style={{fontSize:'12px'}}>Github</a>
                         </Title>
                         <Table />
                     </ContainerMedia>
                 </section>
+               
             </Main>
             <footer>
-                <a href='https://github.com/PS200000/pedidopago' target='_blank'>Github</a>
+                
             </footer>
         </>
     )
