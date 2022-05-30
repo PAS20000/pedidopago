@@ -10,15 +10,17 @@ export const ContainerBread = styled.div`
     }
 }
     display: grid;
-    
+   
     div.categorias{
+        transform: translateY(25%);
+        position: absolute;
+        z-index: 10;
         animation: show 1s;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding: 16px 0px 40px;
         gap: 10px;
-        position: relative;
         width: 328px;
         background: #FFFFFF;
         box-shadow: 0px 8px 24px rgba(165, 171, 179, 0.4);
