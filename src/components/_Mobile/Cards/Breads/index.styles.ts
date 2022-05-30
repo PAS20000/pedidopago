@@ -32,7 +32,7 @@ export const ContainerBread = styled.div`
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        width: 316px;
+        width: 100%;
         height: 56px;
         background: #FFFFFF;
         border: 2px solid ${props => props.theme.color.secondary[700]};
