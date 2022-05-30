@@ -1,72 +1,49 @@
 import * as React from 'react'
 import { AiOutlineEye, AiOutlineFileAdd } from 'react-icons/ai'
 import { FiTrash2 } from 'react-icons/fi'
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
-import { TContributors } from '../../../../../pages'
-import NextImage from '../../../Contracts/NextImage'
-import Status from '../../../Status'
+import { TRoles } from '../../../../../pages'
 import Drop from '../../../Tables/TableBodies/ButtonOptions/Drop'
 import Button from '../../Button'
 import { AvatarContainer, CardBody, CardContainer, ContainerInfo, ContainerInfoBody, Title, ContainerOptions } from '../index.styles'
 
-
-type TContributorCard = {
-    phone:string
-}
-
-const ContributorCard = ({
-    name,
-    agent_id,
-    branch,
-    department,
-    image,
-    role,
-    status,
-    phone
-} : TContributors & TContributorCard) => {
+const RoleCard = ({
+   agents_quantity,
+   departament,
+   name
+} : TRoles) => {
 
 const [openCard, setOpenCard] = React.useState(false)
 const [openDrop, setOpenDrop] = React.useState(false)
 
 return(
     <CardBody onClick={() => setOpenCard(true)} className={openCard && 'open'}>
-                <Title>
-                    Nome completo
-                </Title>
-                <CardContainer>
-                    <AvatarContainer className={status ?? 'inactive'}>
-                        <NextImage
-                            src={image}
-                            alt={`avatar-${name}`}
-                            width='32px'
-                            height='32px'
-                            className='Avatar'
-                        />
+                {!openCard && 
+                    <div>
+                        <h2 className='title'>
+                            Cargo
+                        </h2>
                         <p className='info'>
                             {name}
                         </p>
-                    </AvatarContainer>
-                    <span>
-                        {openCard ?   <IoIosArrowUp /> : <IoIosArrowDown />}
-                    </span>
-                </CardContainer>
+                    </div>
+                }
                 {openCard && 
                     <ContainerInfo>
                         <ContainerInfoBody>
                             <div>
                                 <h2 className='title'>
-                                    Departamento
+                                    Cargo
                                 </h2>
                                 <p className='info'>
-                                    {department}
+                                    {name}
                                 </p>
                             </div>
                             <div>
                                 <h2 className='title'>
-                                    Cargo
+                                    Departamento
                                 </h2>
                                 <p className='info'>
-                                    {role}
+                                    {departament}
                                 </p>
                             </div>
                             <div>
@@ -74,24 +51,8 @@ return(
                                     Celular
                                 </h2>
                                 <p className='info'>
-                                    {phone}
+                                    {agents_quantity}
                                 </p>
-                            </div>
-                            <div>
-                                <h2 className='title'>
-                                    Unidade
-                                </h2>
-                                <p className='info'>
-                                    {branch}
-                                </p>
-                            </div>
-                            <div>
-                                <h2 className='title'>
-                                    Status
-                                </h2>
-                                <Status 
-                                    status={status}
-                                />
                             </div>
                         </ContainerInfoBody>   
                     <div>
@@ -101,7 +62,7 @@ return(
                         {openDrop && 
                         <ContainerOptions>
                             <Drop 
-                                href={`/contributor/${agent_id}/`}
+                                href={`/role/1/`}
                                 icon={<AiOutlineEye />}
                                 ancorText='Ver colaborador'
                             />
@@ -122,4 +83,4 @@ return(
 }
 
 
-export default ContributorCard
+export default RoleCard

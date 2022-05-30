@@ -5,9 +5,10 @@ import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
 import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import ContributorCard from './Cards/ContributorCard'
 import Breads from './Cards/Breads'
+import RoleCard from './Cards/RoleCard'
 
 const Card = () => {
-    const { dataContributors } = useDataCTX()
+    const { dataContributors, dataRoles } = useDataCTX()
     const { breadCrumb } = useUXCTX()
     const [phone, setPhone] = React.useState<string>()
 
@@ -37,7 +38,14 @@ const Card = () => {
                 status={contributor.status}
             />
         )}
-
+        {breadCrumb === 'Roles' && dataRoles.map((role, index) => 
+            <RoleCard 
+                key={index}
+                agents_quantity={role.agents_quantity}
+                departament={role.departament}
+                name={role.name}
+            />
+        )}
     </Container>
     )
 }

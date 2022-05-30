@@ -3,11 +3,21 @@ import styled from "@emotion/styled";
 
 export const CardBody = styled.div`
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     border-radius: 8px;
     border:solid 2px  ${props => props.className === 'open' ? props.theme.color.primary[900] : props.theme.color.secondary[700] };
 
     margin-top: 10px;
+
+    h2.title{
+        width: 91px;
+        height: 17px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 140%;
+        color: #587169;
+    }
 `
 
 
@@ -18,17 +28,19 @@ export const CardContainer = styled.div`
 
 export const AvatarContainer = styled.div`
    display: flex;
-
    opacity: ${props => props.className === 'inactive' ? 0.5 : 1};
+   .NextIMG{
+       margin-top: 12px;
+   }
    p{
-      margin: 0;
       margin-left: 8px;
       text-align: start;
       font-style: normal;
       font-weight: 600;
       font-size: 12px;
       line-height: 140%;
-      margin-top: 8px;
+      width: 125px;
+      color: ${props => props.theme.color.secondary[900]};
    }
 `
 
@@ -39,16 +51,6 @@ export const ContainerInfo = styled.div`
 export const ContainerInfoBody = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-   
-    h2{
-        width: 91px;
-        height: 17px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 140%;
-        color: #587169;
-    }
 
     p{
         width: 88px;

@@ -22,7 +22,7 @@ const NextImage = ({
 } : TNextImage) => {
 
     return (
-        <ContainerImg>
+        <ContainerImg className='NextIMG'>
             <Image 
                 src={src} 
                 width={width} 
