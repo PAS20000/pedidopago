@@ -16,12 +16,12 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     const contributors = await axiosConfig('https://pp-api-desafio.herokuapp.com/agents')
     const roles = await axiosConfig('https://pp-api-desafio.herokuapp.com/roles')
             const contributorKai = await axiosConfig('https://pp-api-desafio.herokuapp.com/agent/1')
-            const contributorsResp = contributors.data.items
+            const contributorsItems = contributors.data.items
             const Agent : TAgent = contributorKai.data.agent
-            const itemsExceptKai = contributorsResp.filter((contributor) => contributor.agent_id !== 1)
+            const itemsExceptKai = contributorsItems.filter((contributor) => contributor.agent_id !== 1)
             const InJectKaiCPF = [
                 { 
-                    ...contributorsResp[0], 
+                    ...contributorsItems[0], 
                     email:Agent.email, 
                     phone:Agent.phone, 
                     document:Agent.document, 
