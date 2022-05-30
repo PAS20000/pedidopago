@@ -14,13 +14,9 @@ const Card = () => {
     const [phone, setPhone] = React.useState<string>()
 
     React.useEffect(() => {
-        const contributorKai : TContributors & TAgent = localStorage.cotributors && JSON.parse(localStorage.contributors)[0]
         const number = '123456789'
-        if(contributorKai){
-            setPhone(contributorKai.phone.number)
-        } else {
-            setPhone(number)
-        }
+        
+        setPhone(number)
     }, [])
 
     return(
