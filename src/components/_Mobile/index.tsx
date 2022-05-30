@@ -12,9 +12,10 @@ const Card = () => {
     const [phone, setPhone] = React.useState<string>()
 
     React.useEffect(() => {
-        const number = '123456789'
-        
-        setPhone(number)
+        const contributors : TAgent = JSON.parse(localStorage.contributors)[0]
+        const contributorKai  = contributors.phone.number
+
+        setPhone(contributorKai)
     }, [])
 
     return(

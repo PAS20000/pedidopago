@@ -1,5 +1,16 @@
 import styled from "@emotion/styled";
 
+
+export const CardBody = styled.div`
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 8px;
+    border:solid 2px  ${props => props.className === 'open' ? props.theme.color.primary[900] : props.theme.color.secondary[700] };
+
+    margin-top: 10px;
+`
+
+
 export const CardContainer = styled.div`
    display: flex;
    justify-content: space-between;
@@ -7,6 +18,8 @@ export const CardContainer = styled.div`
 
 export const AvatarContainer = styled.div`
    display: flex;
+
+   opacity: ${props => props.className === 'inactive' ? 0.5 : 1};
    p{
       margin: 0;
       margin-left: 8px;
@@ -19,9 +32,6 @@ export const AvatarContainer = styled.div`
    }
 `
 
-export const CardBody = styled.div`
-    flex-direction: column;
-`
 export const ContainerInfo = styled.div`
    
 `
@@ -29,7 +39,7 @@ export const ContainerInfo = styled.div`
 export const ContainerInfoBody = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+   
     h2{
         width: 91px;
         height: 17px;

@@ -25,15 +25,16 @@ const ContributorCard = ({
     phone
 } : TContributors & TContributorCard) => {
 
-const [open, setOpen] = React.useState(false)
+const [openCard, setOpenCard] = React.useState(false)
 const [openDrop, setOpenDrop] = React.useState(false)
+
 return(
-    <CardBody key={agent_id}>
+    <CardBody key={agent_id} onClick={() => setOpenCard(true)} className={openCard && 'open'}>
                 <Title>
                     Nome completo
                 </Title>
-                <CardContainer onClick={() => setOpen(true)}>
-                    <AvatarContainer>
+                <CardContainer>
+                    <AvatarContainer className={status ?? 'inactive'}>
                         <NextImage
                             src={image}
                             alt={`avatar-${name}`}
@@ -46,10 +47,10 @@ return(
                         </p>
                     </AvatarContainer>
                     <span>
-                        {open ? <IoIosArrowDown /> : <IoIosArrowUp /> }
+                        {openCard ?   <IoIosArrowUp /> : <IoIosArrowDown />}
                     </span>
                 </CardContainer>
-                {open && 
+                {openCard && 
                     <ContainerInfo>
                         <ContainerInfoBody>
                             <div>
@@ -115,7 +116,7 @@ return(
                     </div>
                     </ContainerInfo>
                 }
-        
+               
             </CardBody>
     )
 }

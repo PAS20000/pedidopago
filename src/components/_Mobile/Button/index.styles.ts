@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 
 export const ContainerButton = styled.div`
-   
+  
+
    button{
         display: flex;
         justify-content: center;
         padding: 10px;
-        margin-left: 20px;
-        width: 90%;
+        width: 100%;
         color: ${props => props.theme.color.secondary[900]};
         border: solid 2px ${props => props.theme.color.primary[1000]};
         background-color: ${props => props.theme.color.secondary[100]};
