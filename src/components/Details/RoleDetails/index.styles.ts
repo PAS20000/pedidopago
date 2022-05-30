@@ -20,3 +20,9 @@ export const Title = styled.h2`
     text-align: start;
     color: ${props => props.theme.color.secondary[1000]};
 `
+
+export const ContainerMedia = styled.div`
+    ${Media(1, 'max')}{
+        transform: translate(-13vh);
+    }
+`

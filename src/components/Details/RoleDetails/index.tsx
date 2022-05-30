@@ -3,7 +3,7 @@ import { ObjRules } from '../../../../pages/role/[id]'
 import RoleAuthsTable from '../../Tables/RoleAuthsTable'
 import Container from '../../_Layout/Container'
 import FieldLabel from '../FieldLabel'
-import { Grid, Title } from './index.styles'
+import { ContainerMedia, Grid, Title } from './index.styles'
 
 type TRoleDetails = {
     name:string
@@ -18,6 +18,7 @@ const RoleDetais = ({
 } : TRoleDetails) => {
 
     return (
+    <ContainerMedia>
         <Container>
             <Title>
                 Dados do cargo
@@ -36,6 +37,7 @@ const RoleDetais = ({
                 groupRules={groupRules}
             />
         </Container>
+    </ContainerMedia>
     )
 }
 

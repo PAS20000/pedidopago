@@ -10,7 +10,7 @@ export const Check = styled.div`
         border-radius: 6px;
 
         ${Media(1, 'max')}{
-            font-size: 24px;
+            font-size: 20px;
         }
     }
     div.check.allowed{

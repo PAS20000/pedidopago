@@ -4,7 +4,7 @@ import { ObjRules, TPermissions } from '../../../../pages/role/[id]'
 import { ContainerTable, Title } from '../index.styles'
 import TableHead from '../TableHead'
 import CheckPermission from './CheckPermissions'
-import { Tr } from './index.styles'
+import { ContainerMedia, Tr } from './index.styles'
 
 type TRolesAutshTable = {
     groupRules:ObjRules[]
@@ -46,9 +46,9 @@ const RoleAuthsTable = ({
 }
     return(
         <>
-        <Title>
-            Listagem de permissões
-        </Title>
+            <Title>
+                Listagem de permissões
+            </Title>
             <ContainerTable>
                 <thead>
                     <TableHead 
