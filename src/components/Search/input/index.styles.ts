@@ -3,7 +3,7 @@ import { Media } from "../../../utils/breakPoints";
 
 
 export const Container = styled.div`
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px;
 `
 
