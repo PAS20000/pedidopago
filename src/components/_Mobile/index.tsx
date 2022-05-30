@@ -19,7 +19,7 @@ const Card = () => {
         const contributors : TAgent = localStorage.contributors && JSON.parse(localStorage.contributors)[0]
         const contributorKai  = contributors.phone.number
 
-        setPhone(contributorKai)
+        setPhone(contributorKai ?? '123456789')
     }, [])
 
 
