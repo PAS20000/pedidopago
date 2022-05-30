@@ -11,12 +11,16 @@ import Breads from './Cards/Breads'
 const Card = () => {
     const { dataContributors } = useDataCTX({})
     const { breadCrumb } = useUXCTX()
-    const [phone, setPocument] = React.useState<string>()
+    const [phone, setPhone] = React.useState<string>()
 
     React.useEffect(() => {
-        const contributorKai : TContributors & TAgent = JSON.parse(localStorage.contributors)[0]
-        
-        setPocument(contributorKai.phone.number)
+        const contributorKai : TContributors & TAgent = localStorage.cotributors && JSON.parse(localStorage.contributors)[0]
+        const number = '123456789'
+        if(contributorKai){
+            setPhone(contributorKai.phone.number)
+        } else {
+            setPhone(number)
+        }
     }, [])
 
     return(
