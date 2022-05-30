@@ -2,6 +2,15 @@ import styled from "@emotion/styled";
 
 
 export const CardBody = styled.div`
+    @keyframes show {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    animation: show 1s;
     flex-direction: column;
     padding: 20px;
     border-radius: 8px;

@@ -12,9 +12,8 @@ export const ContainerButton = styled.div`
         border: solid 2px ${props => props.theme.color.primary[1000]};
         background-color: ${props => props.theme.color.secondary[100]};
         border-radius: 8px;
-
+        margin-top: 45px;
         span.ButtonTitle{
-            width: 50px;
             font-style: normal;
             font-weight: 600;
             font-size: 16px;

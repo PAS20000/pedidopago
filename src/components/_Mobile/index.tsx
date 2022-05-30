@@ -6,7 +6,7 @@ import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import ContributorCard from './Cards/ContributorCard'
 import Breads from './Cards/Breads'
 import RoleCard from './Cards/RoleCard'
-import { GrUpdate } from 'react-icons/gr'
+import { ImLoop2 } from 'react-icons/im'
 import Button from './Button'
 
 const Card = () => {
@@ -73,7 +73,7 @@ const Card = () => {
             />
         )}
 
-        <Button icon={<GrUpdate />} onClick={LoadMore}>
+        <Button icon={<ImLoop2 />} onClick={LoadMore}>
             Carregar mais
         </Button>
     </Container>
