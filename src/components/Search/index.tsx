@@ -29,7 +29,7 @@ const Search = ({}) => {
     const searchContributors = (contributorSearch:string) => {
         
         const stringSearch : string = SearchTratament(contributorSearch)
-        const contributors : Array<TContributors & TAgent> = JSON.parse(localStorage.contributors)
+        const contributors : Array<TContributors & TAgent> = localStorage.contribuors && JSON.parse(localStorage.contributors)
         
         if(contributors && breadCrumb === 'Contributors'){
             setDataContributors(contributors.filter((contributor) => contributor.document &&
@@ -48,7 +48,7 @@ const Search = ({}) => {
     const searchRoles = (roleSearch:string) => {
         
         const stringSearch : string = SearchTratament(roleSearch)
-        const roles : Array<TRoles> = JSON.parse(localStorage.roles)
+        const roles : Array<TRoles> = localStorage.roles && JSON.parse(localStorage.roles)
         
         if(roles && breadCrumb === 'Roles'){
             setDataRoles(roles.filter((role) =>

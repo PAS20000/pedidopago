@@ -72,7 +72,13 @@ const Home = ({
 
     const { setDataContributors, setDataRoles } = useDataCTX()
 
-  
+    React.useEffect(() => {
+        localStorage.setItem('roles', JSON.stringify(dataRoles))
+        localStorage.setItem('contributors', JSON.stringify(dataContributor))
+
+        setDataContributors(dataContributor)
+        setDataRoles(dataRoles)
+    }, [])
 
     return(
         <>
