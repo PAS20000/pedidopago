@@ -6,7 +6,7 @@ import { Container, SelectContainer } from './index.styles'
 
 const ContributorsControl = () => {
     const { sliceData, setSliceData, pages, setPages, breadCrumb, slicer } = useUXCTX()
-    const { dataContributors } = useDataCTX({})
+    const { dataContributors } = useDataCTX()
 
     const ShowItems = () : string => {
         const contributors = dataContributors.length 
