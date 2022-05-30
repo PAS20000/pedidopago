@@ -20,7 +20,7 @@ export const Container = styled.nav`
         height: 61px;
        
         div.Logo{
-           transform: translate(-50vh);
+          margin-right: 40%;
         }
         p.info{
             display: none;

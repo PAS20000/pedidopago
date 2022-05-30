@@ -86,11 +86,12 @@ const Home = ({
             </Header>
             <Main>
                 <section>
-                    <Title>
-                        Organização
-                    </Title>
+                    
                     <Card /> {/* Mobile */} 
                     <ContainerMedia>
+                        <Title>
+                            Organização
+                        </Title>
                         <Table />
                     </ContainerMedia>
                 </section>

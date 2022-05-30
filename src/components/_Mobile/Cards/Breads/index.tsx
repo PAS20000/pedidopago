@@ -4,8 +4,6 @@ import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
 import { ContainerBread } from './index.styles'
 
 
-
-
 const Breads = () => {
 
     const { setBreadCrumb, breadCrumb } = useUXCTX()

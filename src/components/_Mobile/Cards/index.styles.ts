@@ -3,11 +3,10 @@ import { Media } from "../../../utils/breakPoints";
 
 
 export const ContainerMedia = styled.div`
+    transform: translate(-27vh);
     ${Media(1, 'min')}{
         display: none;
     }
-
-    transform: translate(-12vh);
 `
 
 export const CardBody = styled.div`
