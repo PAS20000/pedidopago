@@ -4,7 +4,7 @@ import { Container } from './index.styles'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 
 type TTitle = {
-    children:React.ReactChild
+    children:React.ReactNode
     href?:string
     
 }
