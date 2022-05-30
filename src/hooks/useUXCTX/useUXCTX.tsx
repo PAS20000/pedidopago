@@ -15,6 +15,8 @@ const useUXCTX = () : TUX  => {
             setPages,
             slicer,
             translate,
+            setSplicaData,
+            spliceData
         } 
     = React.useContext(UXContext)
 
@@ -30,7 +32,9 @@ const useUXCTX = () : TUX  => {
         pages,
         setPages,
         slicer,
-        translate: (status:string) => translate(status)
+        translate: (status:string) => translate(status),
+        setSplicaData,
+        spliceData
     }
 }
 

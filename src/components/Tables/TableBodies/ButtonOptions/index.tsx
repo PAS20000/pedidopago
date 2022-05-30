@@ -4,8 +4,6 @@ import { AiOutlineEye } from 'react-icons/ai'
 import { ContainerOptions } from './indext.styles'
 import { BsLayers } from 'react-icons/bs'
 import { GrUpdate } from 'react-icons/gr'
-import useId from '../../../../hooks/useId/useId'
-import NextLink from '../../../Contracts/NextLink'
 import useUXCTX from '../../../../hooks/useUXCTX/useUXCTX'
 import Drop from './Drop'
 import { Button } from './Drop/index.styles'
@@ -20,7 +18,6 @@ const ButtonOptions = ({
     const { breadCrumb } = useUXCTX()
     const [ localOpen, setLocalOpen ] = React.useState<boolean>(false)
     
-
     const OpenClose = () => {
         localOpen ?  setLocalOpen(false) : setLocalOpen(true)
     }

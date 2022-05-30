@@ -21,10 +21,4 @@ export const ContainerOptions = styled.div`
     padding: 20px;
     box-shadow: 0px 8px 24px rgba(165, 171, 179, 0.4);
     border-radius: 8px;
-
-    .isNotImplemented{
-        opacity: 0.5;
-        pointer-events: none;
-        cursor: none;
-    }
 `

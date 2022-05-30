@@ -16,6 +16,11 @@ type TSliceData = {
     roles?:TSliceDataObjs
 }
 
+type TSplice = {
+    contributors:number
+    roles:number
+}
+
 type TSet<T> =  React.Dispatch<React.SetStateAction<T>>
 
 export type TUX = {
@@ -31,6 +36,9 @@ export type TUX = {
     setPages: TSet<Array<number>>
     slicer: number
     translate: Function
+    spliceData: TSplice
+    setSplicaData: TSet<TSplice>
+
 }
 
 type TUXProvider = {
@@ -61,6 +69,11 @@ const UXProvider = ({
           init:0,
           final:slicer
       }
+  })
+
+  const [spliceData, setSplicaData] = React.useState({
+      contributors:10,
+      roles:10,
   })
   
   const [ pages, setPages ] = React.useState<Array<number>>([])
@@ -94,7 +107,9 @@ const UXProvider = ({
       pages,
       setPages,
       slicer,
-      translate
+      translate,
+      spliceData, 
+      setSplicaData
     }
     
    return(

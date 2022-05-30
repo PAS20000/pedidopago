@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Media } from "../../../utils/breakPoints";
 
 
 export const Container = styled.div`
@@ -7,7 +8,7 @@ export const Container = styled.div`
 `
 
 export const InputSearch = styled.input`
-    padding: 0.8rem 3rem;
+    padding: 13px 48px;
     width: 90%;
     border: 2px solid ${props => props.theme.color.secondary[700]};
     border-radius: 8px; 
@@ -20,6 +21,10 @@ export const InputSearch = styled.input`
     color: ${props => props.theme.color.secondary[900]};
     ::placeholder{
         color: ${props => props.theme.color.secondary[900]};
+    }
+
+    ${Media(1, 'max')}{
+       width: 70%;
     }
 `
 

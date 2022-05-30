@@ -30,4 +30,10 @@ export const Flex = styled.div`
 
 export const Grid = styled.div`
     display: grid;
+
+    .isNotImplemented{
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: none;
+    }
 `
