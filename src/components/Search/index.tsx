@@ -19,7 +19,7 @@ export type TAgent = {
 }
 
 const Search = ({}) => {
-    const { setDataContributors, setDataRoles } = useDataCTX({})
+    const { setDataContributors, setDataRoles } = useDataCTX()
     const { breadCrumb, searchValue, setSearchValue } = useUXCTX()
     
     const SearchTratament = (StringValue:string) : string => {

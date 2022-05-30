@@ -20,7 +20,6 @@ export const ContainerBread = styled.div`
         gap: 10px;
         position: relative;
         width: 328px;
-        height: 241px;
         background: #FFFFFF;
         box-shadow: 0px 8px 24px rgba(165, 171, 179, 0.4);
         border-radius: 12px 12px 0px 0px;
@@ -54,17 +53,17 @@ export const ContainerBread = styled.div`
         display: flex;
         align-items: center;
         color: #34423D;
-        margin: 15px;
+        padding: 10px 20px 0px;
     }
     div.selectBread{
-            margin: 15px;
+            padding: 15px 30px 0px;
             width: 122px;
             height: 24px;
             font-style: normal;
             font-weight: 500;
             font-size: 16px;
             line-height: 150%;
-            color: ${props => props.theme.color.secondary[1000]};
+            color: ${props => props.theme.color.secondary[900]};
         }
 
     span{

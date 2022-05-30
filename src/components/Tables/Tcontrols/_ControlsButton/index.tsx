@@ -6,7 +6,7 @@ import { Container } from './index.styles'
 
 const ControlButtons = () => {
     const { setSliceData, sliceData, slicer, pages, breadCrumb } = useUXCTX()
-    const { dataContributors, dataRoles } = useDataCTX({})
+    const { dataContributors, dataRoles } = useDataCTX()
 
     const [currentPage, setCurrentPage] = React.useState(1)
 

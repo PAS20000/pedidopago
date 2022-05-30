@@ -1,15 +1,13 @@
 import * as React from 'react'
-import { TContributors } from '../../../pages'
 import Container from '../_Layout/Container/index'
 import Search, { TAgent } from '../Search'
 import useDataCTX from '../../hooks/useDataCTX/useDataCTX'
 import useUXCTX from '../../hooks/useUXCTX/useUXCTX'
 import ContributorCard from './Cards/ContributorCard'
-import Field from './Cards/Breads'
 import Breads from './Cards/Breads'
 
 const Card = () => {
-    const { dataContributors } = useDataCTX({})
+    const { dataContributors } = useDataCTX()
     const { breadCrumb } = useUXCTX()
     const [phone, setPhone] = React.useState<string>()
 

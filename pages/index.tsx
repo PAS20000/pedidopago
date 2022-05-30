@@ -50,11 +50,6 @@ const Home = ({
     dataRoles
 } : THomeProps) => {
 
-    useDataCTX({
-        staticDataContributors:dataContributor, 
-        staticDataRoles:dataRoles
-    })
-
     React.useEffect(() => {
         localStorage.setItem('contributors', JSON.stringify(dataContributor))
         localStorage.setItem('roles', JSON.stringify(dataRoles))
